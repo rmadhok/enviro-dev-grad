@@ -1,40 +1,25 @@
-# Ph.D. Applied Microeconometrics<br />KDI School Fall 2024<br />Professor Josh Merfeld
+# Environmental & Development Economics<br />Department of Applied Economics, University of Minnesota<br />Instructor: Raahil Madhok
 
 ## Course websites
-1. [https://github.com/JoshMerfeld/applied-microeconometrics](https://github.com/JoshMerfeld/applied-microeconometrics)
-2. [ekdis.ac.kr](ekdis.ac.kr) (KDIS students only -- you will turn in your assignments here, but everything else is hosted on GitHub)
+1. [https://github.com/rmadhok/enviro-dev-grad](https://github.com/rmadhok/enviro-dev-grad)
+2. Add canvas page link (UMN APEC students only -- turn in assignments here; everything else hosted on GitHub)
 
 ## Course description
 
-This course is aimed at masters or Ph.D. students who wish to improve their understanding of modern empirical applied micro and the course has two main goals, both of which aim to prepare you to do applied micro-econometric research. First and foremost, we will discuss modern empirical methods. While most of the focus will be on causal inference, we will also spend time on other topics, like bootstrapping and penalized regression. The focus is very much *applied*; while we will cover some theory, the main goal is for you to understand how to interpret and implement these methods, which leads to the second goal of the course.
+This is a graduate field course on the intersection of Environmental Economics and Development Economics. While often thought of as separate fields, new research in applied microeconomics is bringing them together. The course will explore key themes underpinning environment and development while offering an in-depth survey of the research frontier. At the end, students will be able to answer the following questions:
 
-By the end of the course, you will be expected to be comfortable using the statistical package R (through RStudio). There are three main statistical languages used in applied econometrics today: Stata, R, and Python, with the first two being more popular than the third. While it is perfectly acceptable to use any of these languages, I have chosen to teach this course with R. In addition to learning R, you will also turn in assignments created using [R Markdown](https://rmarkdown.rstudio.com/).
+Why is environmental quality so bad in developing countries?
+What are the costs of poor environmental quality in developing countries?
+Why is willingness to pay for environmental quality so low in developing countries?
+What are the political economy barriers to environmental protection?
 
-By learning the techniques and the language needed to implement these techniques, you should be equipped to start doing your own research.
+Throughout the semester, we will alternate between two perspectives: (i) the development economist focusing on relationships between growth, poverty, market failures, public good provision, and environmental externalities; and (ii) the environmental economist focusing on the unique challenges of correcting externalities in poor countries.
 
+Given that there is no textbook on environment and development economics, I have organized the course around the central themes. Within each theme, we will dissect research papers that combine some theory with a variety of research designs, identification strategies, and estimation techniques. While the course is aimed at students planning to do research in environment/development, my goal is to help advance your training as applied microeconomists in general, by showing (i) what makes a successful research question, and (ii) what passes for credible empirics these days.
 
-## Resources for learning R
+## Syllabus
 
-There are quite a few (free!) resources available online to help you learn R. 
-- [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
-- [R for Data Science by Hadley Wickham](https://r4ds.had.co.nz/introduction.html)
-- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
-
-In addition to online resources, TA sections in this course will be devoted to help with R. Bring all your questions there!
-
-
-## Resources for causal inference
-
-There has been an explosion of texts related to causal inference in the past decade or so. In addition to the articles we will read throughout the semester, the followings texts are helpful references, with the first three being particularly notable:
-- Joshua Angrist and Jörn-Steffen Pischke, Mostly Harmless Econometrics
-- Joshua Angrist and Jörn-Steffen Pischke, Mastering 'Metrics: The Path from Cause to Effect
-- Scott Cunningham, Causal Inference: The Mixtape, [https://mixtape.scunning.com/](https://mixtape.scunning.com/) (this book has lots of example code, which you may find helpful)
-- Nick Huntington-Klein, The Effect: An Introduction to Research Design and Causality, [https://theeffectbook.net/](https://theeffectbook.net/) (note that this is a more introductory text than the others)
-
-## Other resources
-There are also two slide decks that are extremely helpful:
-- Paul Goldsmith-Pinkham's slides: [https://github.com/paulgp/applied-methods-phd](https://github.com/paulgp/applied-methods-phd) (these slides focus on causal inference)
-- Grant McDermott's slides: [https://github.com/uo-ec607/lectures](https://github.com/uo-ec607/lectures) (these slides focus on data science and R)
+The course syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, course policies, and the reading list
 
 
 ## Weekly slides
@@ -54,6 +39,6 @@ You can find the slides (and any data we will be using) for each week under thei
 
 ## Assignments
 
-I will also post your assignments here, under the [assignments folder](assignments/).
+Assignments will be posted under the [assignments folder](assignments/).
 
 
