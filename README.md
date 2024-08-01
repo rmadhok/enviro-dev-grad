@@ -2,14 +2,14 @@
 
 ## Course websites
 1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad) [All course material posted here]
-2. Canvas link [turn in assignments here; everything else hosted on GitHub]
+2. Canvas link [Turn in assignments here]
 
 ## Course description
 
-This is a graduate field course on the intersection of Environmental Economics and Development Economics. While often thought of as separate fields, new research in applied microeconomics is bringing them together. The course will explore key themes underpinning environment and development while offering an in-depth survey of the research frontier. At the end, students will be able to answer the following questions:
+This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development while offering an in-depth survey of the research frontier. At the end, you will be able to answer the following questions:
 
-* Why is environmental quality so bad in developing countries?
-* What are the costs of poor environmental quality in developing countries?
+* Why is environmental quality low in developing countries?
+* What are the costs of low environmental quality in developing countries?
 * Why is willingness to pay for environmental quality so low in developing countries?
 * What are the political economy barriers to environmental protection?
 
@@ -19,12 +19,9 @@ Given that there is no textbook on environment and development economics, I have
 
 ## Syllabus
 
-The course syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, course policies, and the reading list
+The syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, course policies, and the reading list
 
-
-## Weekly slides
-
-Slides for each week can be found under their respective [folder](weeks/).
+## Lectures
 
 - Week 1: Week 1 has two slides. 
   - You can find the slides for the first class [here](weeks/week1/week1a.pdf).
