@@ -6,7 +6,7 @@
 
 ## Course description
 
-This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development while offering an in-depth survey of the research frontier. At the end, you will be able to answer the following questions:
+This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development and read papers at the frontier. At the end, you will be able to answer the following questions:
 
 * Why is environmental quality low in developing countries?
 * What are the costs of low environmental quality in developing countries?
@@ -15,7 +15,7 @@ This is a graduate field course on the intersection of Environmental Economics a
 
 Throughout the semester, we will alternate between two perspectives: (i) the development economist focusing on relationships between growth, poverty, market failures, public good provision, and environmental externalities; and (ii) the environmental economist focusing on the unique challenges of correcting externalities in poor countries.
 
-Given that there is no textbook on environment and development economics, I have organized the course around the central themes. Within each theme, we will dissect research papers that combine some theory with a variety of research designs, identification strategies, and estimation techniques. While the course is aimed at students planning to do research in environment/development, my goal is to help advance your training as applied microeconomists in general, by showing (i) what makes a successful research question, and (ii) what passes for credible empirics these days.
+Since there is no textbook on environment and development economics, I have organized the course around the central themes. Within each theme, we will dissect research papers that combine some theory with a variety of research designs, identification strategies, and estimation techniques. While the course is aimed at students planning to do research in environment/development, my goal is to help advance your training as applied microeconomists in general, by showing (i) what makes a successful research question, and (ii) what passes for credible empirics these days.
 
 ## Syllabus
 
