@@ -1,11 +1,11 @@
 ---
 title:  |
-    | Microeconometrics (Causal Inference)
+    | Environmental and Development Economics
     | Week 1 - Introduction
 author:
   |
-    | Joshua D. Merfeld
-    | KDI School
+    | Raahil Madhok
+    | UMN Applied Economics
 date: "`r Sys.Date()`"
 
 # Output type and options (no TOC and yes fig captions)
@@ -16,179 +16,240 @@ classoption: "aspectratio=169"
 
 # This includes latex arguments
 header-includes:
-  - \AtBeginDocument{\title[Week 1 - Introduction]{Microeconometrics (Causal Inference) \\ Week 1 - Introduction}}
+  - \AtBeginDocument{\title[Week 1 - Introduction]{\textbf{Environmental and Development Economics} \\ Week 1 - Introduction}}
   - \input{header.tex}
 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead of pdf to decrease size of the resulting pdf
-
-
-
 ```
 
 # Introduction
 
-## Introductions
+## Introduce yourself
+
+- First, lets do introductions
 \vfill
 
-- Let's start with a little introduction
+- Name, year, memorable summer activity, **research interests**
 \vfill
 
-- Name, year, program, research interests, etc.
-  - Why are you taking this class?
-\vfill
+- Why are you taking this class?
 
-
-
-## Course Overview
+## Today
 
 \vfill
-- Microeconometrics in R
+- Course overview
+\vfill
+- Detailed outline
+\vfill
+- Grade breakdown
+\vfill
+- Course website on github: https://github.com/rmadhok/enviro-dev-grad
+  - lecture slides, assignments, syllabus
+  
 \vfill
 
-- Major themes:
-  - Regression analysis review
-    - Including maximum likelihood estimation
-    - Inference and uncertainty (e.g. bootstrapping)
-  - Causal inference
-  - Machine learning
-  - **Reproducible research**
-    - You will be doing assignments in R Markdown
+## 
+
+\centering
+\huge Course Overview
+
+## Course Overview: There is no textbook
+
+Instead, I am organizing around **\textcolor{orange}{FOUR}** key questions:
+
+1. Why is environmental quality so bad in developing countries?
+
+2. What are the costs of poor environmental quality in developing countries?
+
+3. Why is WTP for environmental quality low in developing countries?
+
+4. What are the political economy barriers to environmental protection?
+
+## Course Approach
+
+I will:
+
+- Frame (almost) each topic with some theory
+
+- Teach applied papers
+  - research design, identification strategy, estimation techniques
+
+- Emphasize recent JMPs
+
 \vfill
 
+I will NOT:
 
-## Course Overview
+- Teach econometrics
+
+- Teach coding
+
+- Teach every topic in environment/development
+
+## Course Goals
+
+For students specializing in environment/development: 
+
+1. Show you research frontier
+
+2. Inspire your thesis/JMP ideas
 
 \vfill
-- Today will just be a short introduction
+
+For other students:
+
+3. Advance your training as applied microeconomists
+
+4. Show you what makes a top-tier research question
+
+
+## Course Structure
+
+- This is a brand new class, so I give myself leeway to make changes
 \vfill
-
-- For next class, please come with R and R Studio installed on your computer
-  - You can find instructions on the syllabus
-  - You **must** bring a laptop to class. If you cannot do this, please speak with me.
+- You have the unique opportunity to determine direction of the course
+  - Think about what topics do and don't interest you
+  - And let me know!
 \vfill
-
-- Course website: https://github.com/JoshMerfeld/applied-microeconometrics
-  - You can find slides, assignments, and other materials here
-\vfill
-
-
-
-## Course Overview
-
-- This is a brand new class, so I will likely be making changes as we go
-
 - Please check the course website regularly for updates
 
+## 
 
+\centering
+\huge Course Outline and Topics
 
-## Detailed outline (tentative)
+## Weeks 1 and 2
+
+**Week 1: Theory of Environment/Development**
+
+- How to use theory to ask the right questions (lecture 2)
+
+\vfill 
+
+**Week 2: The effect of development on the environment**
+
+- air quality, water quality (lecture 3)
+- forests, biodiversity (lecture 4)
+
+## Weeks 3 and 4
+
+**Week 3: The effect of the environment on development**
+
+- human capital (lecture 5)
+- firms (lecture 6)
+
+\vfill 
+
+**Week 4: WTP for Environmental Quality**
+
+- TBD (lecture 7)
+- TBD (lecture 8)
+
+## Weeks 5, 6, and 7
+
+**Week 5: Environmental policy design**
+
+- Spillovers (lecture 9)
+- Pollution markets in developing countries (lecture 10)
+
+\vfill 
+
+**Week 6: Political economy of the environment**
+
+- Corruption and weak enforcement  (lecture 11)
+- Environmental justice (lecture 12)
 
 \vfill
-1. Linear regression (week 2)
-   - Inference (confidence intervals, hypothesis testing, bootstrapping, etc.)
-\vfill
+
+**Week 7: Research presentations**
+
+- I will provide more details throughout the semester
+
+## 
+
+\centering
+\huge Grade Breakdown
+
+## Broad Breakdown
+
+\Large 
+
+\begin{table}[]
+\begin{tabular}{lllll}
+In-class presentations      & 10\% &  &  &  \\
+Problem Set           & 20\% &  &  &  \\
+Research Proposal & 60 \% &  &  &  \\
+Participation                     & 10\%     &  &  & 
+\end{tabular}
+\end{table}
+
+## In-class presentations (10%)
+
+- At start of each lecture (from week 2), you will present a paper for 15 minutes
+
+- Each student reads paper and submits **seven** slides (5% of grade)
+  - motivation, research question, methods, results
+  - 10 mins presentation + 5 mins Q&A (5% of grade)
   
-2. Maximum likelihood estimation (week 3)
-   - Discrete choice (logit, probit, multinomial logit, etc.)
-\vfill
-  
-3. Introduction to causality (week 4)
-   - Potential outcomes framework
-   - Problems with simple regression
-   - Why randomization works
-\vfill
+- I will select presenter **randomly** with replacement**
+
+\vfill 
+
+** \footnotesize If you are never chosen, your grade is based on slides. 
 
 
+## Problem Set (20%)
 
-## Detailed outline (tentative)
+- You will replicate an environment/development paper
+  - You will also **extend** the results
 
-\vfill
-4. Differences-in-differences (weeks 5 and 6)
-   - Fixed effects, including two-way fixed effects
-   - Event studies
-   - Synthetic control
-\vfill
+- You will become familiar with coding in publication-quality papers
 
-5. Instrumental variables (weeks 7 and 8)
-   - Assumptions
-   - IVs in RCTs (LATE)
-   - Some examples
-   - Weak instruments
-   - Bartik (shift-share) instruments
-\vfill
+- You will use R or Stata
 
+## Research Proposal (60%)
 
-
-## Detailed outline (tentative)
-
-\vfill
-6. Regression discontinuity (week 9)
-   - Canonical regression discontinuity
-   - Parametric vs. non-parametric
-\vfill
-
-7. Machine learning in economics (week 10)
-   - ML for prediction (lasso, ridge, elastic net)
-   - Cross validation
-   - Heterogeneous treatment effects
-   - Brief introductionto other supervised ML (time dependent)
-\vfill
+\begin{table}[]
+\begin{tabular}{lllll}
+Written Proposal      & 30\% &  &  &  \\
+Peer Review           & 20\% &  &  &  \\
+Proposal Presentation & 10\% &  &  &  \\
+                      &      &  &  & 
+\end{tabular}
+\end{table}
 
 
+- You will develop a research proposal for an original idea
+  - You are NOT expected to actually do the analysis  
+  - I will provide small deadlines (outline, first draft, etc.) along the way
 
-## Grading
+- You will peer review each others proposals
 
-1. Homework - coding tasks (55\%)
+- You will present the proposal at the end of the semester (30 mins)
 
-- The homeworks form the main grading component of the course
-- The goal is to get you comfortable with coding *and writing* in R
-  - I will also ask you to interpret things to make sure you understand what you are doing statistically
-- I expect you to do your homeworks in R Markdown and turn in the code along with a pdf output$^1$]
-- I expect you will have four or five homeworks throughout the semester
-- For those of you without a background in R, the first few weeks will take a bit of effort. It will get easier, I promise.
+## Participation (10%)
 
-\footnotesize$^1$ Note: If you have a strong preference for using a different language (e.g. Python), please let me know and we can discuss it. However, you **must** be able to produce a pdf output with your code and results. Using Word is a no-go.
+- I take this seriously
 
+- Not enough to just show up to class
 
-
-## Grading
-
-1. Final exam (35\%)
-
-- This will be a take-home exam with a mix of theory and coding.
+- Quality of questions/discussion count
 
 
-2. Participation (10\%)
+##
 
-- I expect everyone to participate in class. That means asking questions, answering questions, and participating in discussions.
-
-
-
-## TA sections
-\vfill
-- The goal of TA sections is to help you with R and R Markdown
-\vfill
-- For help with the actual material, please come to my office hours
-\vfill
-
-
-## Questions?
-
-- Any questions about the course?
-
-
+\centering
+\Huge Questions?
 
 ## Next class
 
 \vfill
-- For next class, please come with R and R Studio installed
-  - Another code editor is also acceptable. I use VS Code -- not R Studio -- for example.
-\vfill
-- Course website: https://github.com/JoshMerfeld/applied-microeconometrics
-\vfill
+
+- Introduce conceptual framework of environment/development economics
+
 
 
 
