@@ -1,9 +1,7 @@
-# Environmental & Development Economics
-## Department of Applied Economics
-## Instructor: Raahil Madhok
+# Environmental & Development Economics<br />Department of Applied Economics, UMN <br />Instructor: Raahil Madhok
 
 ## Course websites
-1. [https://github.com/rmadhok/enviro-dev-grad](https://github.com/rmadhok/enviro-dev-grad)
+1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad)(All course material will be posted here)
 2. Add canvas page link (UMN APEC students only -- turn in assignments here; everything else hosted on GitHub)
 
 ## Course description
@@ -26,7 +24,7 @@ The course syllabus is linked [here](syllabus.pdf), and includes the grade break
 
 ## Weekly slides
 
-You can find the slides (and any data we will be using) for each week under their respective folders (weeks/). Most weeks will have just a single slide deck. Note that in each week's folder, you can also find the raw .Rmd file that I used to create the slides. You might find these helpful, though you are by no means required to look at them.
+Slides for each week can be found under their respective [folder](weeks/).
 
 - Week 1: Week 1 has two slides. 
   - You can find the slides for the first class [here](weeks/week1/week1a.pdf).
@@ -41,6 +39,9 @@ You can find the slides (and any data we will be using) for each week under thei
 
 ## Assignments
 
-Assignments will be posted under the [assignments folder](assignments/).
+Assignments will be posted in the [assignments folder](assignments/).
+
+## Credits
+I am grateful to Louis Preonas, Kelsey Jack, and Jennifer Alix-Garcia for providing reference material. This website is adapted from Josh Merfeld.
 
 
