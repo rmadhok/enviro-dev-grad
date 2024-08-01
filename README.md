@@ -1,17 +1,17 @@
-# Environmental & Development Economics<br />Department of Applied Economics, UMN <br />Instructor: Raahil Madhok
+# Environmental & Development Economics <br/> <font size="1"> Department of Applied Economics, UMN </font> <br> Instructor: Raahil Madhok
 
 ## Course websites
-1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad)(All course material will be posted here)
+1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad) (All course material will be posted here)
 2. Add canvas page link (UMN APEC students only -- turn in assignments here; everything else hosted on GitHub)
 
 ## Course description
 
 This is a graduate field course on the intersection of Environmental Economics and Development Economics. While often thought of as separate fields, new research in applied microeconomics is bringing them together. The course will explore key themes underpinning environment and development while offering an in-depth survey of the research frontier. At the end, students will be able to answer the following questions:
 
-Why is environmental quality so bad in developing countries?
-What are the costs of poor environmental quality in developing countries?
-Why is willingness to pay for environmental quality so low in developing countries?
-What are the political economy barriers to environmental protection?
+* Why is environmental quality so bad in developing countries?
+* What are the costs of poor environmental quality in developing countries?
+* Why is willingness to pay for environmental quality so low in developing countries?
+* What are the political economy barriers to environmental protection?
 
 Throughout the semester, we will alternate between two perspectives: (i) the development economist focusing on relationships between growth, poverty, market failures, public good provision, and environmental externalities; and (ii) the environmental economist focusing on the unique challenges of correcting externalities in poor countries.
 
