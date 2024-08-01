@@ -1,4 +1,6 @@
-# Environmental & Development Economics<br />##Department of Applied Economics, University of Minnesota<br /> ## Instructor: Raahil Madhok
+# Environmental & Development Economics
+## Department of Applied Economics
+## Instructor: Raahil Madhok
 
 ## Course websites
 1. [https://github.com/rmadhok/enviro-dev-grad](https://github.com/rmadhok/enviro-dev-grad)
