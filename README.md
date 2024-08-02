@@ -24,15 +24,15 @@ The syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, c
 ## Lectures
 
 - Week 1: Week 1 has two slides. 
-  - You can find the slides for the first class [here](weeks/week1/week1a.pdf).
-  - You can find the slides for the second class [here](weeks/week1/week1b.pdf).
+  - You can find the slides for the first class [here](lectures/week1/week1a.pdf).
+  - You can find the slides for the second class [here](lectures/week1/week1b.pdf).
   - You can find the data for the second class in the week 1 folder or by clicking [here](weeks/week1/data.csv) (you can download the csv in the upper-right-hand corner).
-- Week 2: You can find the slides for the the week [here](weeks/week2/week2.pdf).
-- Week 3: You can find the slides for the the week [here](weeks/week3/week3.pdf).
-- Week 4: You can find the slides for the the week [here](weeks/week4/week4.pdf).
-- Weeks 5 and 6: You can find the slides for the the two weeks [here](weeks/week5and6/week5and6.pdf).
-- Weeks 7 and 8: You can find the slides for the the two weeks [here](weeks/week7and8/week7and8.pdf).
-- Week 9: You can find the slides for the the week [here](weeks/week9/week9.pdf).
+- Week 2: You can find the slides for the the week [here](lectures/week2/week2.pdf).
+- Week 3: You can find the slides for the the week [here](lectures/week3/week3.pdf).
+- Week 4: You can find the slides for the the week [here](lectures/week4/week4.pdf).
+- Weeks 5 and 6: You can find the slides for the the two weeks [here](lectures/week5and6/week5and6.pdf).
+- Weeks 7 and 8: You can find the slides for the the two weeks [here](lectures/week7and8/week7and8.pdf).
+- Week 9: You can find the slides for the the week [here](lectures/week9/week9.pdf).
 
 ## Assignments
 

@@ -46,8 +46,8 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
 \vfill
 - Grade breakdown
 \vfill
-- Course website on github: https://github.com/rmadhok/enviro-dev-grad
-  - lecture slides, assignments, syllabus
+- Course website: https://github.com/rmadhok/enviro-dev-grad
+  - lectures, assignments, syllabus
   
 \vfill
 
@@ -91,15 +91,9 @@ I will NOT:
 
 ## Course Goals
 
-For students specializing in environment/development: 
-
-1. Show you research frontier
+1. Show you environment/development research frontier
 
 2. Inspire your thesis/JMP ideas
-
-\vfill
-
-For other students:
 
 3. Advance your training as applied microeconomists
 
@@ -173,7 +167,7 @@ For other students:
 \centering
 \huge Grade Breakdown
 
-## Broad Breakdown
+## Breakdown
 
 \Large 
 
@@ -188,13 +182,14 @@ Participation                     & 10\%     &  &  &
 
 ## In-class presentations (10%)
 
-- At start of each lecture (from week 2), you will present a paper for 15 minutes
+- At start of **first** lecture each week, you'll give a 15 min paper presentation
 
-- Each student reads paper and submits **seven** slides (5% of grade)
+- Each student submits **seven** summary slides (5% of grade)
   - motivation, research question, methods, results
   - 10 mins presentation + 5 mins Q&A (5% of grade)
   
-- I will select presenter **randomly** with replacement**
+- I will select presenter on-the-spot 
+  - **randomly** with replacement**
 
 \vfill 
 
