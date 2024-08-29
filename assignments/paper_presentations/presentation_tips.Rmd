@@ -1,0 +1,82 @@
+---
+title: |
+        | Assignment: Paper Presentations
+subtitle: |
+        | Ph.D. Environment and Development Economics
+        | UMN Department of Applied Economics
+        | Instructor: Raahil Madhok
+date: "`r Sys.Date()`"
+# Output type and options (no TOC and yes fig captions)
+output:
+  bookdown::pdf_document2: 
+    toc: false
+    fig_caption: yes
+    # This also keeps the .tex file that is used to make the output (we will eventually need this for publication)
+    keep_tex: yes
+
+# This includes latex arguments
+header-includes:
+  - \input{header.tex}
+
+---
+
+# Overview
+The goal of this assignment is to prepare you for presenting at economics conferences. As you proceed through your PhD, and then into your careers, you will inevitably attend and present at such conferences. This first few times can be nerve-wracking. 
+
+Through this assignment, you will development the ability to present a full length research paper in a clearly, concisely, and confidently. We will focus not just on content, but also public speaking skills, slide preparation, content organization, and delivery.
+
+# Structure
+One randomly-selected student will present a pre-assigned paper at the beginning of each lecture. All students will read **the same** paper, which can be found below and in the syllabus (highlighted in red). The selection procedure is as follows:
+
+1. **Slides:** Before each lecture, you will each read the assigned paper and prepare **10 slides** summarizing the paper. These slides will be uploaded to Canvas. All students are required to submit summary slides each week regardless of whether you are chosen to present.
+
+2. **The hat:** At the beginning of each lecture, I will put all your names in a hat
+
+3. **Randomization:** I will select a student to present randomly **with replacement**. This means that your name goes back into the hat each week. Thus, you may present in more than once, **or not at all**.
+
+4. **Presentation:** You will give a 10 minute "conference-style" presentation of the paper, with 5 minutes for Q&A. Presentation tips can be found below.
+
+5. **Grades:** If you are never chosen to present, your grade will be based upon your slide submissions.
+
+# Presentation Tips
+Many of these tips were provided by \href{https://pages.uoregon.edu/cameron/vita/}{Trudy Cameron} to help students prepare for AERE sessions. \href{https://www.raahilmadhok.com/pdf/fra_slides.pdf}{Here} is an example of a recent presentation I gave (15 mins/15 slides) that follows these tips.
+
+- Each presentation should have 10 slides (fewer is okay, but not more)
+- Allocate about 1 minute per slide
+- It helps to rehearse a couple of times to ensure it fits into the allotted time. It is considered poor form at conferences if you exceed your time.
+- Do not present every detail. Your job is to summarize and entice people to read the full paper.
+- Start your presentation with a single slide that succinctly bullets your: research question, setting, data, empirical strategy, and two key results. This previews the whole paper, and rest of the presentation is dedicating to elaborating each bullet. 
+- Type and use one-line bullet points. Eye-tracking to a new line can interfere with quickly grasping a point. Don't leave just a single word on a wrapped line of a bullet point). Remove superfluous words.
+- Since you only have 10 minutes, don't spend too much time on the literature review. Instead, state how your paper improves on the literature (i.e. contributions), but still include citations.
+- Aim to show only one equation. Try to to talk ``about'' your equation rather than provide a detailed explanation of every term. You want to bring along the median audience member, not just dazzle the most sophisticated theorist/econometrician in the room.
+- Try to not read your slides directly. The audience can read. The bullet points should guide what you say, which means rehearsal is important. Think carefully about how you will transition between slides.
+
+# Rubric
+
+\begin{tabular}{| p{2.1cm} | p{3.2cm} | p{3.2cm} | p{3.2cm} | p{3.2cm} | c |}
+    \hline
+    \textbf{Criteria} & \textbf{Exemplary (9-10 points)} & \textbf{Proficient (7-8 points)} & \textbf{Adequate (5-6 points)} & \textbf{Needs Improvement (1-4 points)} & \textbf{Score} \\
+    \hline
+    \textbf{1. Content} & Presentation is well-organized, provides a clear and concise summary of research, includes key points (question, setting, data, methods, results). & Presentation covers most aspects of the research but lacks some detail or clarity. & Presentation includes some key aspects but may be incomplete or unclear. & Key components of research (question, setting, data, methods, results) are missing or poorly presented. & /10 \\
+    \hline
+    \textbf{2. Slide Design \& Visuals} & Slides are well-designed, easy to follow, and visually appealing. Appropriate use of visuals enhances understanding. & Slides are clear but may have minor design issues. Visuals are used effectively but may lack impact. & Slides are functional but may be cluttered or unclear in some places. Visual aids are minimal. & Slides are difficult to follow, overcrowded, or unappealing. Minimal or inappropriate use of visuals. & /10 \\
+    \hline
+    \textbf{3. Time Management} & Presentation stays within the 10-minute limit and allocates appropriate time to each slide. & Presentation slightly exceeds or falls short of time but still covers most key points. & Presentation noticeably over/under time. Some key points are rushed or not fully covered. & Presentation significantly exceeds/under time, leading to incomplete or poorly covered content. & /10 \\
+    \hline
+    \textbf{4. Clarity \& Communication} & Information is conveyed clearly and confidently. Speaker engages the audience and transitions smoothly between slides. & Communication is clear, but speaker may be less confident or less engaging at times. & Communication is uneven or unclear at times. Speaker may rely too much on reading slides. & Presentation is unclear or disorganized, and speaker has difficulty communicating effectively. & /10 \\
+    \hline
+    \textbf{5. Depth of Analysis} & Presentation demonstrates a deep understanding of the topic, with insightful analysis of data and results. Contributions to the literature are highlighted effectively. & Presentation demonstrates a solid understanding but may lack depth in analysis or critical insights. & Presentation shows basic understanding but lacks depth in analysis or discussion of contributions. & Presentation lacks understanding of the topic, analysis is superficial or absent, and contributions are unclear. & /10 \\
+    \hline
+    \textbf{6. Audience Engagement} & Speaker interacts well with the audience, maintains attention, and responds effectively to questions. & Speaker engages the audience but may be less interactive or responsive. & Audience engagement is minimal, and responses to questions may be limited or unclear. & Speaker fails to engage the audience, with little interaction or ineffective responses to questions. & /10 \\
+    \hline
+    \textbf{7. Professionalism} & Presentation is polished, well-rehearsed, and professional. Speaker appears confident and poised. & Presentation is generally professional, though there may be minor issues with delivery or polish. & Presentation shows some professionalism but may feel unpolished or under-rehearsed. & Presentation lacks professionalism, is disorganized, or appears poorly rehearsed. & /10 \\
+    \hline
+    \textbf{Total Score} & \multicolumn{5}{c|}{\textbf{/70}} \\
+    \hline
+\end{tabular}
+
+
+
+
+
+

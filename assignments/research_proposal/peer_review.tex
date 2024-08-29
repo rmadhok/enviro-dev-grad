@@ -1,0 +1,217 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\input{header.tex}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment: Referee Report}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Ph.D.~Environmental and Development Economics\\
+UMN Applied Economics 2024\\
+Instructor: Raahil Madhok}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\textbf{Due Date: October 10th, 2024}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+In this assignment, you will conduct a peer review of a classmate's research proposal. Peer reviewing is a critical skill in the academic community, where you assess the quality, clarity, and originality of others' work while providing constructive feedback.
+
+On the evening that you submit your first draft (Oct.~3rd), you will receive a classmate's proposal to review. This will be a double-blind process so that neither of you will know who's proposal you are reviewing.
+
+Your peer review should be divided into two sections: major points and minor points. Major points will address significant issues that need more attention in the research question, conceptual framework, or research design. Minor points will address more detailed aspects that can improve the proposal, such as writing style or even suggestions for better data.
+
+Your review should be written in a formal and constructive tone, ensuring your comments are helpful for the writer's improvement.
+
+\hypertarget{structure-of-the-peer-review}{%
+\section{Structure of the Peer Review}\label{structure-of-the-peer-review}}
+
+\hypertarget{major-points-minimum-5-items}{%
+\subsection{Major Points (Minimum 5 items)}\label{major-points-minimum-5-items}}
+
+The major points should highlight the most critical issues in the proposal. Below are some questions to think about as your identify your major points. You do not necessarily need to come up with criticism under each heading. You may, for example, identify two major criticisms in the theory and none in the research design.
+
+\begin{itemize}
+\item
+  \textbf{The Research Question:} Is the question clear, well-motivated, and significant within the field of environmental and development economics? Does it have a clear connection to both theory and real-world policy relevance?
+\item
+  \textbf{Theoretical Framework:} Is the theoretical framework well-developed and logically consistent? Does it directly relate to the research questions in a meaningful way? Are the assumptions justified? If the author is adapting an existing model, does the adaptation generate new and meaningful insights?
+\item
+  \textbf{Research Design:} Is the empirical strategy clearly stated? Does the design convincingly address the research question? Are all of the identification assumptions addressed? Is there a different research design that may have yielded better identification?
+\item
+  \textbf{Data Sources:} Does the proposal rely on real, available data, and is the data appropriate for the research question? Are there any concerns about data access, quality, or relevance that could hinder the feasibility of the research?
+\item
+  \textbf{Policy Implications:} Does the proposal clearly discuss how the results of the research could influence policy decisions? Are the potential implications grounded in the real-world context?
+\end{itemize}
+
+\hypertarget{minor-points-minumum-5-items}{%
+\subsection{Minor Points (Minumum 5 items)}\label{minor-points-minumum-5-items}}
+
+The minor points are smaller issues that, while less critical than the major points, can still enhance the quality and clarity of the proposal. These might include:
+
+\begin{itemize}
+\tightlist
+\item
+  Clarity of the writing (grammar, organization, and structure),
+\item
+  Minor inconsistencies in the theoretical argument,
+\item
+  Specific technical clarifications needed in the research design or data analysis,
+\item
+  Suggestions for additional literature that could strengthen the theoretical framework,
+\item
+  Formatting issues or citation inaccuracies.
+\item
+  For each minor point, include:
+\end{itemize}
+
+\hypertarget{writing-style}{%
+\section{Writing Style}\label{writing-style}}
+
+When writing your peer review, keep in mind the following guidelines:
+
+\begin{itemize}
+\item
+  Be constructive. Frame your comments in a way that helps the author improve. For example, instead of saying ``The research question is unclear,'' say, ``The research question could be clarified by focusing more on the causal relationship between X and Y.''
+\item
+  Be specific. Provide clear examples and references to specific sections of the proposal. Vague comments like ``Improve the theoretical framework'' are less helpful than ``On page 3, the author should elaborate on how the proposed model incorporates environmental externalities.''
+\item
+  Be respectful. Even if you find serious flaws in the proposal, present your feedback respectfully and professionally. Academic critique should be rigorous but fair.
+\item
+  Balance criticism with praise. Highlight what the author has done well. This not only encourages them but also makes your review more balanced.
+\end{itemize}
+
+\hypertarget{format}{%
+\section{Format}\label{format}}
+
+\begin{itemize}
+\item
+  \textbf{Style:} Each point (major or minor) should be clearly numbered or bulletted.
+\item
+  \textbf{Length:} 4 pages max (1000 words)
+\item
+  \textbf{Format:} 12 point font, double spaced, 1 inch margins
+\item
+  \textbf{Submission:} PDF document (latex or word)
+\end{itemize}
+
+\newpage
+
+\hypertarget{rubric}{%
+\section{Rubric}\label{rubric}}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{8cm}|c|c|}
+\hline
+\textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Score} \\
+\hline
+\multirow{2}{*}{\textbf{Understanding of the Proposal}} & Demonstrates a clear understanding of the peer's research question, theoretical framework, and research design. & 10 & \\
+\hline
+\multirow{3}{*}{\textbf{Major Points}} & Each of the major points identifies key issues in the proposal, explains their importance, and provides constructive suggestions for improvement. & 30 & \\
+\cline{2-4}
+& Relevance and Depth: The major points address significant elements like research question, theoretical framework, data, design, or policy implications. & 10 & \\
+\cline{2-4}
+& Explanation of Issues: Major points clearly explain what needs improvement and why these issues matter to the overall proposal. & 10 & \\
+\cline{2-4}
+& Constructive Suggestions: Provides specific and constructive suggestions to improve the proposal. & 10 & \\
+\hline
+\multirow{3}{*}{\textbf{Minor Points}} & Each of the minor points identifies smaller issues (clarity, grammar, technical details) and suggests minor improvements. & 20 & \\
+\cline{2-4}
+& Identification of Minor Issues: The minor points identify relevant and helpful smaller issues. & 10 & \\
+\cline{2-4}
+& Clarity and Constructiveness: Provides clear, specific feedback on how to address the minor issues. & 10 & \\
+\hline
+\multirow{2}{*}{\textbf{Tone and Constructiveness}} & The review is respectful, professional, and balanced. The reviewer frames critiques in a positive and constructive manner. & 20 & \\
+\hline
+\multirow{2}{*}{\textbf{Specificity of Feedback}} & Feedback is specific, well-documented, and refers directly to the text of the proposal. Avoids vague comments. & 10 & \\
+\hline
+\multirow{2}{*}{\textbf{Writing Quality}} & The peer review is well-written, clear, and organized. Grammar and syntax are correct. & 10 & \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total Points Possible:}} & \textbf{150} \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

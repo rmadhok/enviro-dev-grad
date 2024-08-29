@@ -1,0 +1,272 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\input{header.tex}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment: Replication and Extension of Empirical Paper}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Ph.D.~Environment and Development Economics\\
+UMN Department of Applied Economics\\
+Instructor: Raahil Madhok}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\textbf{Due Date: October 21st, 2024}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+The goal of this assignment is to conduct a replication and extension of a published empirical paper in the field of environmental and development economics. This exercise is designed to help you engage deeply with research in your field of interest by reproducing key findings and contributing your own insights through an extension of the analysis. The goal is to enhance your understanding of empirical methods, familiarize yourself with the challenges of coding, and encourage critical thinking about existing research.
+
+You will select an empirical paper of your choice, replicate and extend it, and submit a short write-up explaining what you did. You will also submit your code.
+
+\hypertarget{assignment-components}{%
+\section{Assignment Components}\label{assignment-components}}
+
+\hypertarget{select-a-paper}{%
+\subsection{Select a paper}\label{select-a-paper}}
+
+\begin{itemize}
+\tightlist
+\item
+  Most papers on the syllabus have replication files.
+\item
+  Choose a paper that aligns with your research interests
+\item
+  You may choose a different peer-reviewed paper in environmental \& development economics that has publicly available data
+\item
+  Note: you will benefit most from selecting a paper with methods you intend to use in your own research.
+\end{itemize}
+
+\hypertarget{replication-code}{%
+\subsection{Replication Code}\label{replication-code}}
+
+\begin{itemize}
+\tightlist
+\item
+  Replicate \textbf{2-3 of the main tables or figures}. These should represent the core empirical findings
+\item
+  You can use Stata or R
+\item
+  Write your own code for the analysis. Try to do this yourself before consulting the authors' code. Doing so will help you identify potential sources of divergence between your results and the published findings.
+\item
+  Extensively comment your code to explain exactly what each part does
+\item
+  Output all tables to LaTeX. If you do not know how, use ChatGPT to help you.
+\end{itemize}
+
+\hypertarget{extension}{%
+\subsection{Extension}\label{extension}}
+
+\begin{itemize}
+\tightlist
+\item
+  After replicating the main tables, you will \textbf{extend the analysis}
+\item
+  The extension is up to you, but should be carefully thought out and yield a new insight
+
+  \begin{itemize}
+  \tightlist
+  \item
+    I reserve the right to determine what is ``carefully thought out'\,'
+  \item
+    E.g. if you drop the five largest outcome values and re-run the analysis, this \textbf{does not count}
+  \item
+    But, if you plot a histogram, find outliers, and truncate at the 95th percentile, \textbf{that counts}
+  \end{itemize}
+\item
+  Some ideas for an extension are:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Enhance the research question}: this could mean studying heterogeneity or
+  \item
+    \textbf{Robustness checks}: Verify the original results under different assumptions or specifications.
+  \item
+    \textbf{Error identification and correction}: If you identify any mistakes in the original analysis, provide a corrected version with clear explanations.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{write-up-6-pages-double-spaced}{%
+\section{Write-up (6 pages double spaced)}\label{write-up-6-pages-double-spaced}}
+
+After conducting the replication and extension, you will explain what you did in a short write-up. The report should contain the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Summary:} A one paragraph summary of the paper's research question, setting, methodology, and main findings
+\item
+  \textbf{Replication Process}: Describe which tables/figures you opted to replicate, the steps you took to replicate the results, and any issues you encountered. Include a detailed explanation of your data processing and analysis.
+\item
+  \textbf{Results}: Present your replicated tables/figures and compare them with the original paper's results. Discuss any differences.
+\item
+  \textbf{Extension}: Explain the extension you undertook, your motivation for doing so, and the results you obtained. Provide any new tables or figures related to your extension.
+\end{enumerate}
+
+\hypertarget{submission-format}{%
+\subsection{Submission Format}\label{submission-format}}
+
+\begin{itemize}
+\tightlist
+\item
+  Submit your write up as a PDF in Canvas
+\item
+  Submit your code: either link to repository in your write-up or upload through Canvas
+\item
+  Format:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Length:} Max 6 pages double spaced
+  \item
+    \textbf{Format:} 12 point font, 1 inch margins
+  \item
+    \textbf{Code:} Clear, concise, and commented
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{grading-criteria}{%
+\subsection{Grading Criteria}\label{grading-criteria}}
+
+You will be evaluated based on:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Replication Quality}: Completeness, accuracy, and clarity of your replication.
+\item
+  \textbf{Extension}: Insightfulness and rigor of the extension.
+\item
+  \textbf{Writing}: Clear, well-structured, and concise writing that follows academic conventions.
+\item
+  \textbf{Code}: Organization, clarity, and documentation of the code, including reproducibility of results.
+\end{itemize}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|p{4cm}|p{6cm}|p{1.5cm}|p{4cm}|}
+\hline
+\textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Description} \\
+\hline
+\textbf{Written Report (60 Points)} & \textbf{Replication Process (15 Points)} & & \\
+\hline
+& Description of Methods and Process & 10 & Clear explanation of replication steps, including data cleaning and methodology. \\
+\hline
+& Data and Documentation Review & 5 & Thoughtful review of data quality and documentation. \\
+\hline
+\textbf{Replication Results (15 Points)} & Presentation of Results & 10 & Clear presentation and formatting of replicated tables/figures. \\
+\hline
+& Comparison with Original & 5 & Detailed comparison of replicated results with original findings. \\
+\hline
+\textbf{Extension (20 Points)} & Description and Justification & 10 & Clear explanation of extension and rationale for its connection to the original paper. \\
+\hline
+& Results of the Extension & 10 & Presentation of findings from the extension, including new tables/figures. \\
+\hline
+\textbf{Writing Quality (10 Points)} & Clarity and Structure & 5 & Report is logically structured and clearly written. \\
+\hline
+& Grammar and Style & 5 & Proper grammar, spelling, and adherence to scientific writing conventions. \\
+\hline
+\textbf{Code (40 Points)} & \textbf{Code Quality and Organization (15 Points)} & & \\
+\hline
+& Clarity and Commenting & 10 & Code is clearly written with sufficient comments. \\
+\hline
+& Organization & 5 & Code is well-organized with logical structure and consistent formatting. \\
+\hline
+\textbf{Correctness and Functionality (15 Points)} & Accuracy of Replication & 10 & Code accurately replicates the main results. \\
+\hline
+& Extension Implementation & 5 & Correct implementation of the extension in the code. \\
+\hline
+\textbf{Reproducibility and Efficiency (10 Points)} & Reproducibility & 5 & Code can be easily reproduced with clear instructions. \\
+\hline
+& Efficiency & 5 & Code is efficient, avoiding unnecessary complexity or overhead. \\
+\hline
+& & \textbf{Total} & \textbf{100 Points} \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

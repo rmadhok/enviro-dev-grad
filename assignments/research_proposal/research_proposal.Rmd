@@ -1,0 +1,155 @@
+---
+title: |
+        | Research Proposal
+subtitle: |
+        | Ph.D. Environmental and Development Economics
+        | UMN Applied Economics 2024
+        | Instructor: Raahil Madhok
+# Output type and options (no TOC and yes fig captions)
+output:
+  bookdown::pdf_document2: 
+    toc: false
+    fig_caption: yes
+    # This also keeps the .tex file that is used to make the output (we will eventually need this for publication)
+    keep_tex: yes
+
+# This includes latex arguments
+header-includes:
+  - \input{header.tex}
+
+---
+
+# Assignment Overview
+The goal of this project is to take you through a mock process of publishing in economics, including writing a paper (proposal, in this case) as well as the revise and resubmit process. You will: 1) draft a research proposal, 2) send your proposal to a classmate for peer review, and review one of their proposals, 3) integrate your reviewer's comments into your proposal, and 4) submit the final draft for ``publication'' (i.e. a final grade...). 
+
+You **are not** allowed to ``double dip''. This means the idea must be original and you cannot use your second-year paper, or a proposal from another class.
+
+The objective of this assignment is to help prepare you for writing high-quality economics research papers. Throughout the assignment, we will develop your ability to design a clear and focused research project in the field of environmental and development economics. You are not expected to carry out the analysis, although I hope that you will pursue the project to the end and use it as a dissertation chapter or separate publication.
+
+Broadly, you will identify an original and specific research question, explain why it is important, and outline the research design that you will use to address it. After receiving an ``R\&R'' on the paper, you will improve it and submit a final draft at the end of the semester.
+
+## Timeline
+\begin{table}[ht]
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Item} & \textbf{Deadline} \\ \hline
+First draft     & October 3rd     \\ \hline
+Referee report    & October 10th     \\ \hline
+Final draft    & October 31st     \\ \hline
+\end{tabular}
+\end{table}
+
+## Helpful Resources
+
+- Marc Bellemare's guide on \href{https://marcfbellemare.com/wordpress/wp-content/uploads/2020/09/BellemareHowToPaperSeptember2020.pdf}{how to write applied economics papers}
+- Keith Head's \href{https://blogs.ubc.ca/khead/research/research-advice/formula}{introduction formula}
+- Plamen Nikolov's \href{https://docs.iza.org/dp15057.pdf}{writing tips for economics research papers}
+- Read papers! 
+
+## Format
+
+- **Length:** 15 pages, double spaced (approx 4000 words)
+
+- **Format:** 12 point font, double spaced, 1-inch margins
+
+- **Submission:** PDF document (latex or word)
+
+\newpage
+# Proposal Structure
+
+## Title
+The title should be concise and informative, reflecting the focus of your research. Please do not use one word titles (e.g. "Forests") or three word titles ("Forests and Development"). 
+
+## Abstract (250 words)
+The abstract should be no more than 10 sentences (about 250 words) and provide a clear and succinct summary of the paper. Describe the central question and why it is important. Then state your methods, research design, and data. Conclude with a statement of policy implications. 
+
+## Introduction (3-4 pages)
+
+The introduction is essentially a short summary of the paper. I should be able to read your introduction and know exactly what the proposal contains. In fact, many people only read the introduction and nothing else, so it is important to be clear about what you do in each section of the paper.  
+
+- **Contextualize the issue:** Provide a brief background on the topic within environmental and development economics. What are some general descriptive statistics about the issue at hand? Is there a puzzle, or something counterintuitive that your research may shed some light on?
+
+- **Research Question**: Clearly state your research question. It should be specific, well-defined, and narrow enough to be addressed within the scope of the proposal. At the same time, it should ideally speak to a broader issue in environmental and development economics such that it contributes meaningfully to the literature. 
+
+- **Importance**: Explain why answering the research question is important. Think about its relevance for policy, environmental conservation, and economic development. Even if it is not directly policy-relevant, state what the intellectual importance is. 
+
+- **Summary:** Summarize your proposal for the rest of the introduction. Describe your data, measurement, and why your data is suitable for the research question. Describe your research design, why you chose it, and any identification assumptions you make.
+
+- **Literature Review:** Provide an overview of key literature on your topic. Identify gaps or unresolved questions that your research will address. Avoid providing a detailed summary of each paper, but rather focus on a key takeaway and how it relates to your topic. Also avoid ``punching down'' on the literature; instead, point out how your work will advance our understanding of the topic. 
+
+## Conceptual Framework (2 page)
+You are required to include a theoretical framework to guide your research design. The goal is to guide my thinking, pin down potential mechanisms, and generate empirically testable hypotheses. 
+
+The model represents a framework to fix ideas and help think about the issue at hand. It **DOES NOT** need to be a mathematical model, although I will be happy if you did construct one. If you do write a mathematical model, you are welcome to adapt any of the ones we study in class, or replicate one from the literature (adapted to your context). 
+
+Otherwise, your model can be written in words, or even graphs. If your question is about how $x$ affects $y$, think about why you expect a relationship in the first place. Is there an underlying behavioural assumption? Do you expect a positive or negative relationship, or is it ambiguous? Are you interested in recovering a direct effect, or an indirect effect via some other channel?
+
+## Data (1-2 page)
+You are expected to choose a research question where **real** data is available to answer it. The data description need not be dry and boring; it can be an opportunity to present an interesting narrative. You can discuss **why** you chose a dataset. Remind the reader about what kind of data would be needed to answer your research question, and any barriers to obtaining that data. You can also discuss what data have been used in the past, and any limitations. If data was a limiting factor preventing your research question from being answered in the past, then say so. Then finally introduce your data and highlight how it enables you to overcome previous barriers:
+
+- **Data sources**: List the data source for each variable. You are welcome to propose scraping the data, as long as the raw data exist (in pdf or online tables) and I can access it. 
+
+- **Measurement**: Describe how you will measure each variable using your data. If you are using a household survey, if the variable directly provided? Are you constructing an index? If you are using remote sensing data, briefly describe how the data product captures the variable you want to measure.
+
+- **Unit of analysis**: Desribe your unit of analysis. If your raw data is at a different level (e.g. gridded), then think about how you will aggregate the data.
+
+- **Final Dataset**: Describe your (hypothesized) final dataseta and the panel dimensions. 
+
+## Empirical Strategy (4 pages)
+In this section you will describe your research design, estimation strategy and your identification strategy.
+
+- **Estimation Strategy:** The estimation strategy comprises the equations you will use to answer your research question. Clearly state which estimator you will use to recover your coefficient(s) of interest. If relevant, describe how your coefficient connects to your theoretical framework. 
+
+- **Identification Strategy:** Clearly describe how your research design is set up to identify a causal relationship. State the variation that is exploited and how to interpret your coefficient of interest. Clearly state any assumptions needed when claiming causality. It may help to frame this as a discussion of threats to identification, and how your research design overcomes those threats. If a test is needed to improve confidence in your identification strategy (e.g. a balance test, or test of pre-trends), then write and describe the corresponding equations.
+
+In writing this section, it is important to be honest about what your empirical strategy can and cannot do. Avoid making bold claims about causality that are not fully backed up by your research design. 
+
+## Conclusion (1 page)
+- Summarize your research question again and why it is important. Try not to re-state it in exactly the same way as in your introduction. 
+
+- Discuss any limitations of your research design. Aim to think deeply beyond standard ones such as lack of external validity. 
+
+- Discuss real world implications of having answered your research question. Think about which policy-makers would be interested in your results.
+
+- Discuss implications for future research
+
+\clearpage
+# Grading Rubric
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{8cm}|c|c|}
+\hline
+\textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Score} \\
+\hline
+\multirow{2}{*}{\textbf{Title and Abstract}} & Title is concise and informative. Abstract clearly summarizes the research question, methods, data, and policy implications in no more than 250 words. & 10 & \\
+\hline
+\multirow{4}{*}{\textbf{Introduction}} & Provides a clear background and context for the research. The research question is specific, well-defined, and important. Effectively motivates the importance of the research within environmental and development economics. & 20 & \\
+\cline{2-4}
+& Includes a summary of data, methods, and a brief literature review. & & \\
+\hline
+\multirow{2}{*}{\textbf{Conceptual Framework}} & Presents a clear theoretical framework, either in words, graphs, or mathematically. Demonstrates an understanding of the mechanisms at play and generates testable hypotheses. & 15 & \\
+\hline
+\multirow{4}{*}{\textbf{Data Description}} & Describes the data sources accurately and clearly. Provides a thoughtful narrative about data selection, barriers to obtaining data, and why the data is suitable for the research question. & 15 & \\
+\cline{2-4}
+& Discusses measurement and unit of analysis effectively. & & \\
+\hline
+\multirow{4}{*}{\textbf{Empirical Strategy}} & Presents a well-defined research design and estimation strategy. Clearly explains the identification strategy, the variation exploited, and any necessary assumptions for causal inference. & 20 & \\
+\cline{2-4}
+& Addresses potential threats to identification and how they will be mitigated. & & \\
+\hline
+\multirow{2}{*}{\textbf{Conclusion}} & Restates the research question and its importance. Discusses the limitations of the research design and real-world policy implications. Suggests avenues for future research. & 10 & \\
+\hline
+\multirow{3}{*}{\textbf{Writing and Organization}} & The proposal is well-written, clear, and logically organized. There are no significant grammatical or typographical errors. & 10 & \\
+\cline{2-4}
+& Arguments flow logically from one section to the next. & & \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total Points Possible:}} & \textbf{100} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+

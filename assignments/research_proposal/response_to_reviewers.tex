@@ -1,0 +1,208 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\input{header.tex}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment: Response to Reviewers}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Ph.D.~Environmental and Development Economics\\
+UMN Applied Economics 2024\\
+Instructor: Raahil Madhok}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\textbf{Due Date: October 10th, 2024}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+In this assignment, you will write a mock ``response to the reviewer'\,' based on the peer review you received for your research proposal. This process mimics the response letter you would write in a journal submission, where you address each comment made by the referee, explain how you revised the paper, and justify any decisions you made in response to the feedback.
+
+The purpose of this exercise is to help you practice responding to critical feedback in a constructive and professional manner, while also improving your proposal based on your peer's suggestions.
+
+\hypertarget{structure-of-the-response}{%
+\section{Structure of the Response}\label{structure-of-the-response}}
+
+Your response should include the following components:
+
+\hypertarget{introduction-paragraph}{%
+\subsection{Introduction Paragraph}\label{introduction-paragraph}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Thank the reviewer}: Begin by thanking your reviewer for their thoughtful feedback
+\item
+  \textbf{General summary}: Summarize the key points of the review and provide a brief overview of the changes you have made to your proposal as a result of the feedback.
+\item
+  \textbf{Tone}: Keep your tone respectful, professional, and appreciative.
+\end{itemize}
+
+\hypertarget{point-by-point-response}{%
+\subsection{Point-by-Point Response}\label{point-by-point-response}}
+
+For each comment made by the reviewer, provide a clear and detailed response. The unwritten rule is to copy and paste the peer review into a document, turn each comment into a bulletted list, and then respond underneath each comment in the list.
+
+For each point:
+
+\begin{itemize}
+\item
+  \textbf{Restate the reviewer's comment}: Begin by restating the comment or suggestion. This ensures clarity and demonstrates that you fully understand the critique.
+\item
+  \textbf{Explain your response}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{If you have made changes}: Explain what specific changes you made to the proposal in response to the reviewer's comment. Clearly identify where in the revised proposal these changes can be found (e.g., ``We have revised Section 2, paragraphs 3 and 4, to clarify the theoretical framework and the role of environmental externalities.'').
+  \item
+    \textbf{If you disagree with the comment}: Provide a reasoned explanation for why you have chosen not to make the suggested change. Be polite and respectful, offering evidence or justification for maintaining your original approach. For example, ``While we appreciate this suggestion, we believe that keeping the focus on District-level data is more consistent with the existing literature.''
+  \end{itemize}
+\item
+  \textbf{Detail the improvement}: Explain how the changes you made improve the overall quality and clarity of your proposal. This will help the reviewer see the value of the revisions.
+\end{itemize}
+
+\hypertarget{conclusion-paragraph}{%
+\subsection{Conclusion Paragraph}\label{conclusion-paragraph}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Reaffirm gratitude}: Reiterate your appreciation for the reviewer's input.
+\item
+  \textbf{Summary of revisions}: Offer a final summary of the revisions made and express your confidence that the proposal has been strengthened as a result.
+\end{itemize}
+
+\hypertarget{guidelines-for-writing-your-response}{%
+\section{Guidelines for Writing Your Response}\label{guidelines-for-writing-your-response}}
+
+\begin{itemize}
+\item
+  \textbf{Be thorough}: Ensure that every comment in the review, whether major or minor, receives a response. Do not skip any points.
+\item
+  \textbf{Be specific}: When describing the changes you made, be as specific as possible. Reference the exact sections or pages of your proposal where you incorporated changes.
+\item
+  \textbf{Be polite and constructive}: Even if you disagree with some of the reviewer's suggestions, maintain a respectful tone. Use evidence and logical reasoning to support your decisions.
+\item
+  \textbf{Reflect improvements}: Make sure the changes you discuss in your response are actually incorporated into the revised version of your proposal. Your response and your revised proposal should be fully aligned.
+\end{itemize}
+
+\hypertarget{format}{%
+\section{Format}\label{format}}
+
+\begin{itemize}
+\item
+  \textbf{Length:} Responses (not including the original comment) should not exceed 4 pages (1000 words)
+\item
+  \textbf{Format:} 12 point font, double spaced, 1 inch margins
+\item
+  \textbf{Submission:} PDF document (latex or word)
+\end{itemize}
+
+\hypertarget{rubric}{%
+\section{Rubric}\label{rubric}}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{8cm}|c|c|}
+\hline
+\textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Score} \\
+\hline
+\multirow{2}{*}{\textbf{Comprehensive Response}} & Addresses all major and minor points raised by the reviewer, with no comments left unaddressed. & 10 & \\
+\hline
+\multirow{2}{*}{\textbf{Clarity and Specificity}} & Clearly provides a detailed, specific response to each comment. & 10 & \\
+\hline
+\multirow{2}{*}{\textbf{Incorporation of Changes}} & Demonstrates thoughtful incorporation of reviewer suggestions into the proposal, with clear references to specific changes made. & 30 & \\
+\hline
+\multirow{2}{*}{\textbf{Justification for Disagreements}} & Provides clear and well-reasoned explanations for why certain suggestions were not incorporated, using evidence and logical reasoning. & 30 & \\
+\hline
+\multirow{2}{*}{\textbf{Tone and Professionalism}} & Maintains a respectful, professional, and constructive tone throughout the response, even when disagreeing. & 10 & \\
+\hline
+\multirow{2}{*}{\textbf{Writing Quality}} & The response document is well-organized, with clear writing, correct grammar, and appropriate length. & 10 & \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total Points Possible:}} & \textbf{100} \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

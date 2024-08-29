@@ -1,1385 +1,1068 @@
 ---
-title:  |
-    | Microeconometrics (Causal Inference)
-    | Week 3 - Discrete Choice
-author:
-  |
-    | Joshua D. Merfeld
-    | KDI School of Public Policy and Management
+title: "| Environmental and Development Economics\n| Week 3 - How does the environment affect development?
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Apllied Economics
 date: "`r Sys.Date()`"
-
-# Output type and options
-output: 
+output:
   beamer_presentation:
     theme: Montpellier
-classoption: "aspectratio=169"
-
-# This includes latex arguments
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
 header-includes:
-  - \AtBeginDocument{\title[Week 3 - Discrete Choice]{Microeconometrics (Causal Inference) \\ Week 3 - Discrete Choice}}
-  - \AtBeginDocument{\author[Josh Merfeld - KDI School]{Joshua D. Merfeld \\ KDI School of Public Policy and Management}}
-  - \input{header.tex}
-
+- "\\AtBeginDocument{\\title[Week 3 - environment and development]{Environmental and Development
+  Economics \\\\ Week 3 - How does the environment affect development?}}"
+- \input{header.tex}
+- \usepackage{gensymb}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead of pdf to decrease size of the resulting pdf
 
-def.chunk.hook  <- knitr::knit_hooks$get("chunk")
-knitr::knit_hooks$set(chunk = function(x, options) {
-  x <- def.chunk.hook(x, options)
-  #ifelse(options$size != "a", paste0("\n \\", "tiny","\n\n", x, "\n\n \\normalsize"), x)
-  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
-})
+## 
+\centering
+\Huge Lecture 4
+
+\large How does the environment affect economic development?
+
+## Housekeeping
+
+- State things that are due.
+
+## Today
+
+- **Guiding question:** how does the environment affect economic development?
+\vfill
+- Today's focus: health effects
+
+\vfill
+- Next time: productivity and direct income effects
+
+## Recall our model of environment and development
+\begin{align}
+MWTP_{e} = \frac{\lambda_{e}}{\lambda_{y}} 
+ = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e} + \frac{\partial u}{\partial h}\frac{\partial h}{\partial e}\right) + \frac{\partial \Delta y}{\partial e} + \frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e} \notag
+\end{align}
+
+- Most research in environment/development economics seeks to identify $\frac{\partial h}{\partial e}$
+  - At this point, $\frac{\partial h}{\partial e}>0$ is unambiguous
+  - Focus is on **magnitudes**
+\vfill
+- What about indirect effects via productivity and health ($\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$)? 
+  - This is the research frontier
+  - Next lecture
+
+## Lets formalize our intuition
+- Weather can harm health directly (physiological stress)
+  - Or indirectly, e.g. by lowering incomes of those in weather-dependent (outdoor) jobs
+
+- There is a market for defensive goods (e.g. medicine, AC, etc.) which $\uparrow$ P(survival)
+
+- But in developing countries, credit constraints restrict consumption smoothing
+
+- Lets incorporate this into a model and study the comparative statics
+  - Goal: exploain how weather affects health, considering financial constraints
+  - Health is endogenously determined by consumption and health investments
+
+## Setup
+- **Agents:** value consumption $c_{it}$ and health $h_{it}$.
+- **Objective:** Maximize lifetime utility
+$$\mathbb{E}_{0} \left[\sum_{t=0}^{\infty} \beta^{t}u_{i}(c_{it}, h_{it}) \right]$$
+\vfill
+- **Health Status**: Determined by health investments ($q_{it}$) + exogenous weather ($z_{it}$)
+$$h_{it} = h_{i}(\underbrace{q_{it}}_{(+)}, \underbrace{z_{it}}_{(-)})$$
+
+## Setup
+
+- **Production**: $c_{it}$ produced by $f(\cdot)$, and $q_{it}$ traded at price $P_{t}$
+  - Agent endowed with labor $a_{it}$, sold at wage $\omega_{t}$
+  - Labor can be affected by weather ($z_{it}$)
+$$a_{it} = a_{i}(z_{it})$$
+
+\vfill
+
+- **Financial Constraints**: Savings ($x_{it}$) and borrowing are limited by:
+  - Minimum savings: $x_{it} \geq -b_i(r_t)$
+  - Maximum savings: $x_{it} \leq b_i(r_t)$
+\vfill
+
+- **Budget Constraint**: Income is used for consumption and health investments:
+  $$x_{i,t+1} \leq r_t x_{it} + w_t a_i(z_{it}) - P_t q_{it} - c_{it}$$
 
 
+## Setup
+
+- **Market Equilibrium**: set optimal demand for labor/capital = aggregate supply  
+  - where $K_{t} = \int x_{it}di$
+  - wages $w_t$ and interest rates $r_t$ are determined in equilibrium as:
+  $$w_t = w(K_t), \quad r_t = r(K_t) $$
+
+## Mechanisms relating weather to health
+
+- **Direct health effect:** random shock $z_{it}$ enters health directly: $h_{it} = h_{i}(q_{it}, z_{it})$
+  - Physiological channel: extreme temperature stresses cadiovascular/respiratory system
+  - Impact can depend on region, or proximity to water (where pathogens thrive in hot weather), denoted by agent-specific function $h_{i}(\cdot)$
+\vfill
+- **Indirect health effect:** through productivity $a_{i}(z_{it})$
+  - Likely in rural areas, where ag workers are outside
+\vfill  
+- **Mitigation:** agent minimizes neg. utility shock from $z_{it}$ by purchasing $q_{it}$.
+  - This could also be opp cost of working inside (at lower $w_{it}$) to avoid outdoors
+  - Effect of mitigation limited by $\frac{\partial h_{i}(q_{it}, z_{it})}{\partial q_{it}}$
+\vfill
+- **Smoothing:** agent can also mitigate by reallocating resources b/w periods
+  - Agents with near-binding borrowing constraints experience worse shocks
+
+## Comparative Statics
+- **Object of interest**: aggregate correlation b/w health \( h_{it} \) and weather \( z_{it} \):
+    $$H_t = \left| \frac{\int h_{it} z_{it}^{(T)} di}{\int h_{it} di} \right|$$
+\vfill
+- **Rural Areas**: Consider a set of changes that:
+  - increases responsiveness of $a_{i}(z_{it})$ to $z_{it}^{T}$.
+  - raises prices for health goods $P_t$ above that of urban 
+  - lower incomes by reducing $a_{i}(z_{it})$ for any $z_{it}$
+  - Any one of these leads to increase in $H_{t}$
+\vfill
+**Prediction:** rural areas will have stronger correlation b/w weather and health 
+
+## Effect of Bank Access
+
+- **Relaxing financial constraints** increases either or both of $(-b_{i}(r_{t}), b_{i}(r_{t}))$
+  - Partial credit modeled as increase in $b_{i}(r_{t})$ only (i.e. can save more)
+<!-- loans typically for production only -->
+  - Allows agents to smooth consumption; draw down savings to mitigate weather shock
+  - Reduces the correlation between weather shocks \( z_{it} \) and health outcomes \( h_{it} \).
+\vfill
+
+- **Prediction**: $\text{Prediction: } H_t \downarrow \text{ as } b_i(r_t) \uparrow$
+  - Areas with better financial access have smaller effect of $z_{it}$ on health
+
+## What is the effect on weather on health?
+
+- What is the ideal experiment?
+
+- What variation in environmental quality can approximate the experiment?
+  - How would you measure environmental quality?
+  - What might this measure miss?
+  - What variation isolates a causal relationship?
+  - What does that variation miss?
+
+## Climate change versus weather
+
+- Climate change is long term, weather is short term
+
+- Studying impacts of weather is easier:
+  - Usually use high dimensional fixed effects
+  - E.g. with district and state-year FEs, exploit monthly deviations from average
+  
+- Studying impacts of climate is harder:
+  - There is no good counterfactual for climate change
+  - New method: long differences (Burke and Emerick, 2016)
+
+## Deschenes et al. (2013): Weather and Death in India
+
+- **Research question:** how do temperature shocks affect mortality?
+  - How does that different between urban/rural areas?
+  - What is the role of income as an intermediary?
+
+- **Setting:** Indian districts from 1957-2000
+
+- **Data:** daily gridded weather + annual infant mortality
+
+- **Design:** panel fixed effects
+  - Difference-in-differences with rural bank expansion
+
+- **Result:** 1) heat $\uparrow$ mortality, 2) driven by rural populations, 3) credit access mitigates effect by facilitating consumption smoothing
+
+<!-- ## Conceptual Model -->
+<!-- - Goal: distinguish two channels thru which weather affects health -->
+<!--   - Direct: physiological response -->
+<!--   - Indirect: lower income (less health spending) -->
+
+<!-- - Idea: More weather-dependent production $\rightarrow$ worse income shocks from high temps -->
+<!--   - Implies rural people suffer more b/c cannot smooth consumption -->
+
+<!-- - Extend classic incomplete market macro model in two ways: -->
+<!--   - health, which depends on shocks and choices -->
+<!--   - savings constraints -->
+
+<!-- - In response to shocks -->
+<!--   - reallocate resources b/w health and other consumption -->
+<!--   - reallocation resources across periods (smoothing) -->
+  
+## Empirical Implications
+
+- Remember permanent income hypothesis? 
+  - Income shocks in $t=0$ caused by weather shock only affects contemporaneous survival via extent to which income shock reduces NPV lifetime income 
+\vfill
+- From model: if two agents face same shock at $t=0$, and one has income stream that depends on weather
+  - Then impact of shock on his death is stronger
+\vfill
+- What if income shocks are at high frequency?
+  - Will weather shock be enough to affect remaining lifetime income (and survival)?
+  - This is why studying climate vs. weather is important
+
+## Data
+
+Rural 
+
+- Yields: annual, district level output/cultivated area (27 crops) (World Bank)
+
+- Ag price index: mean crop price weighted by value in district (World Bank)
+
+- Ag wages: daily wage rate (World Bank)
+
+Urban 
+
+- Manufacturing productivity: output per worker (ASI)
+
+- Urban CPI: NSS survey
+
+- Manufacturing wages: ASI (nominal wage / CPI)
+
+## Empirical Strategy
+Flexible specification to model effect of daily temperature:
+$$ Y_{dt} = \sum_{j=1}^{11} \theta_{j}TMEAN_{dtj} + \sum_{k} \delta_{k}1\{RAIN_{dt} \text{ in tercile k\}} + \alpha_{d} + \gamma_{t} + \lambda_{r}^{1}t + \lambda_{r}^{2}t^{2} + \epsilon_{dt} $$
+
+- $r$ is a climatic region
+- $TMEAN$ is days in year $t$ where: 
+  - daily mean temp $<70\degree$, $\geq 97\degree$, or in the nine 3$\degree$ bins in between 
+- $\theta_{j}$'s capture non-linearities, despite having annual unit of analysis
+- $RAIN$ accounts for correlation b/w temperature and rainfall
+
+## Identifying Assumptions?
+
+- Impact governed by daily mean alone
+
+- Impact of days' mean temperature on annual mortality is constant within 3$\degree$ intervals
+  - This is reasonable
+  
+- By using number of days in each bin, assume that the sequence of hot and cold days is irrelevant. 
+
+- Annual deviation from district average is random
+
+- Anything else? Reverse causality?
 
 
-library(tidyverse)
-library(kableExtra)
-library(fixest)
-library(ggpubr)
-library(RColorBrewer)
-library(haven)
-library(mfx)
-library(nnet)
-library(survival)
-library(survminer)
+## Secondary Approach
+- consolidates same information
+- workhorse model nowadays because more parsimonious
 
-df <- read_dta("data.dta")
-data(iris)
-multinomresults <- multinom(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)
+$$Y_{dt} = \beta CDD 80_{dt} + \sum_{k=1}^{3} + \sum_{k} \delta_{k}1\{RAIN_{dt} \text{ in tercile k\}} + \alpha_{d} + \gamma_{t} + \lambda_{r}^{1}t + \lambda_{r}^{2}t^{2} + \epsilon_{dt}$$
+
+- where CDD80 is cumulative degree days in district that exceeded 80$\degree$. 
+- All bins $j < 80\degree$ are zero 
+  - The three above $80 \degree$ restricted to be linearly increasing in average temp  
+- Assumption: days when mean daily temp below 80 irrelevant for determining Y
+
+## Results: Yields
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+A single day with temperature over 85$\degree$ reduces yields by 0.5\%
+
+## Results: Wages
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+A single day with temperature over 85$\degree$ reduces ag wages by 0.25-0.5\%
+
+## Results: Urban vs. Rural
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+What is happening? Direct (agonomical) effect should not vary
+
+## Results: Mortality
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Rural: years with more days with exceeding 87$\degree$ have 0.5\% higher mortality 
+
+## Bank Access
+- If income $\rightarrow$ consumption smoothing, then it should mute relationship
+  - Mechanism: lifetime utility maximized when $u'(c)$ equated across $t$ (Euler) 
+\vfill
+- Test: Between 1977-1990, central bank extends banking to the poor
+  - Existing banks required to open four branches in unbanked areas
+\vfill
+- Method: compare weather-death relationship in banked/unbanked areas
+  - Difference in differences
+  - Identification problem?
+\vfill
+- Instrument: SEE BURGESS AND PANDE (2005)
+
+## Equation
+
+- See BURGESS AND PANDE (2005)
+
+## Results: Credit Access
+
+- On full sample, one more bank has no effect on weather-death relationship
+  - Is single bank opening enough to enable smoothing?
+\vfill
+- Make dummy equal to one for 75th pctile of banks, zero for 25th pctile
+  - Moving from 25th to 75th pctile of banks eliminates effect of temperature!
+\vfill
+- Mitigating effect of banks concentrated within growing season
+  - Smoothing by farmers key mechanism
+\vfill
+- **Takeaway: credit enables poor to withstand environmental shocks**
+
+## Discussion
+- aggregated data (district) with satellite temperature makes it hard to distinguish atmospheric/ambient means from experienced exposure
+- How can we then measure direct effect through physiological channel
+  - Leave it to the epidemiologists...
+
+## Back to the question
+- How does environmental quality affect economic development?
+\vfill
+- Most reduced form studies identify $\frac{\partial h}{\partial e}$
+\vfill
+- Recall, this is an input into estimating benefits (MTWP) of $\uparrow e$
+  - which we need to know in order to set optimal environmental policy
+  - optimal in the sense that agents decisions are first-best
+\vfill
+- Is physical health the only thing that matters for estimating $\frac{\partial h}{\partial e}$?
+
+## Chen et al. (2024): Air Pollution and Mental Health
+
+- **Research question:** What is the impact of air pollution on mental health?
+  - Direct mechanism: oxidative stress
+  - Indirect mechanism: labor productivity, income, physical activity
+
+- **Setting:** China in 2014-2015
+
+- **Data:** Kessler Physchological Distress Scale
+  - PM2.5 from China National Environmental Monitoring Center
+
+- **Design:** instrument pollution with thermal inversions
+
+- **Results:** Pollution $\uparrow$ depression
+  - Mechanisms: lower exercise, worse physical health
+  - Total cost = \$22.88 billion, similar to mortality costs!
+  
+## Background
+
+- Why do we care about mental health?
+  - Poverty associated with life satisfaction and **stress**
+  - These mechanisms affect productivity, which perpetuates poverty
+  - See Haushofer and Salicath (2023); Haushofer and Fehr (2014)
+\vfill
+- Frontier in development economics: RCTs on income and stress
+  - Cash transfers $\uparrow$ subjective well-being (McGuire et al., 2022)
+  - Cash transfers $\downarrow$ suicide in Indonesia (Christian et al., 2019)
+  - Cash transfers $\rightarrow$ depression (Haushofer and Shapiro, 2016)
+\vfill
+- Toxicology literature: pollution $\uparrow$ oxidative stress (Calderon-Garciduenas et al., 2003; Sørensen et al., 2003; MohanKumar et al., 2008, Power et al., 2015)
+
+## Background
+- Theory of change: **pollution $\rightarrow$ stress** $\rightarrow$ productivity
+  - Poverty correlated with pollution and stress
+  - Direct effect of pollution on productivity (Graff Zivin \& Niedell, 2012; California)
+  - Many parts of the chain are open areas for research!
+
+## Air Pollution and Mental Health
+
+What are the empirical challenges?
+
+1. OVB: pollution correlated with economic activity
+    - Richer counties more polluted
+    - Induces **negative** bias
+    - Solution: ?
+
+2. ?
+
+3. ?
+
+4. ?
+
+## Instrumental Variable: Thermal Inversion
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/inversion2.png",
+                        auto_pdf = TRUE
+                        )
 
 ```
 
+## Instrumental Variable: Thermal Inversion
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/inversion.png",
+                        auto_pdf = TRUE
+                        )
 
-# Introduction
+```
 
-## What are we doing today?
+## Instrumental Variable: Thermal Inversion
+
+- Air is warmer near surface, becomes cooler at higher altitudes
+
+- Thermal inversion: temperature-altitude gradient is reversed
+  - Rare phenomenon
+  - Depends on **random** meteorological factors
+
+- Cool air is denser and does not rise
+
+- Pollution becomes trapped near surface
+
+## What do you think?
+
+- Pros and cons
+
+- Inversions are short lived (last for a few hours)
+  - cannot estimate impact of sustained exposure
+  - Is mental health affected by rare short term events?
+
+- correlated with weather, which can have direct effect on mental health
+  - control for ground level temperature/rain
+  
+- If mechanism is through chronic condition, then TI may isolate wrong type of variation
+
+- TI are very localized phenomena. Is this what we want to study?
+
+## Data
+
+- Mental health: 2014 China Family Panel Study Survey
+  - 16,000 rural and 13,000 urban residents (162 counties out of 1,355)
+  - Six questions about mental health on 0-24 Scale
+  - Depression, nervousness, restlessness, hopelessness, effort, worthlessness
 \vfill
-
-- This week we will review methods for limited dependent variables
-  - We will also discuss how to interpret the results
+- Pollution: PM2.5
+  - Webscraped
+  - Validate with satellite data?
 \vfill
+- Thermal inversion (MERRA-2 Air Temperature Layers)
+  - Inversion = 1 if temperature of first layer (110m) $<$ second layer (320m)
+  - IV: number of inversions in month prior to each interview
 
-- Some of this will be review, but there will be some new stuff, too
-  - For example, we will discuss poisson regression, which you might not have seen before
+## Inversions and Pollution
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "65%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Do thermal inversions seem rare and random?
+
+## Empirical Strategy
+
+First Stage:
+
+$$ P_{ict} = \alpha_{0} + \alpha_{1}I_{ict} + f(W_{ict}) + \gamma_{c} + \sigma_{t} + \mu_{ict} $$
+
+Second Stage:
+$$ H_{ict} = \beta_{0} + \beta_{1}P_{ict} + f(W_{ict}) + \gamma_{c} + \sigma_{t} + \epsilon_{ict} $$
+
+- $P_{ict}$ is PM2.5 in month prior to interview
+- $I_{ict}$ is instrument, number of thermal inversions in past month
+- $H_{ict}$ is total mental illness score (0-24)
+- $f(W_{ict})$ are flexible weather controls
+- $\sigma_{t}$ are year-month FEs (**important**!)
+
+## Main Results: Mental Health
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- 1 $\mu/m^{3}$ PM2.5 $\uparrow$ mental illness by 0.1164 units (4\% of mean; 0.4$\sigma$)
+- 1 $\mu/m^{3}$ PM2.5 $\uparrow$ prob. of several mental illness by 0.42pp (9.5\% of mean)
+
+## Main Results: Symptoms
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Not driven by any one particular symptom
+
+## Main Results: Persistence
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Effect of pollution exposure on mental health dissipates over time
+
+## Mechanisms
+- Focus on indirect effects (physical health, productivity, behavior)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Driven by reduction in physical exercise, not other illness
+- Very small impact compared to pollution effect (0.002$\sigma$ vs. 0.4$\sigma$)
+
+## Heterogeneity
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Why are effects larger for men?
+
+## Economic Cost? Back of the Envelope
+
+- 1$\sigma$ $\uparrow$ in PM2.5 leads to 9.5\% $\uparrow$ in prob. of severe mental illness
 \vfill
-
-
-
-## What are we doing today?
+  - About 0.095 $\times$ 1.4 billion = 13.3 million additional people 
+- Annual cost per patient of mental illness in China is \$USD 3,665 (Xu et. al 2016)
 \vfill
-
-- Much of the mathematical notation and theory comes from *Econometrics* by Bruce Hansen
-  - I already discussed the older version of the textbook that is available for free online
+- Assume 8\% of patients with mental illness get treated (Phillips et al., 2009)
 \vfill
-
-- A small note:
-  - You can use OLS for binary outcomes! This is actually pretty common in economics.
-  - I'll discuss this more in a bit.
-  - Other disciplines (e.g. public health) really like some of the new methods we will discuss today, so they are worth knowing.
+- **Economic cost of mental illness:** $13.3 \times 3665 \times 0.008 \times 12 = 46.7$ billion USD
 \vfill
-
-
-
-
-
-
-# Binary Choice
-
-## Binary choice
+- Mortality cost of $1\sigma$ PM2.5 is \$USD 30 billion in USA (Deryugina et al., 2016)
 
 \vfill
-- Let's start with the simplest possibility: binary choice
+**Issues with the back of the envelope calculation?**
+<!-- 1) for severe mental illness; 2) what about non-medial costs? productivity
+3) hard to interpret in sd. do a counterfactual with policy-relevant change in pollution -->
+
+
+## Discussion
+
+- small sample
+- few counties
+- Small time window
+  - cannot include year FEs or control for annual macro trends
+- exploit short term variation (daily)
+- mechanism unclear
+
+## 
+\centering
+\huge Lecture 5
+
+\large How does the environment affect economic development?
+
+## Housekeeping
+
+- State things that are due
+
+## Today
+
+- **Guiding question:** how does the environment affect economic development?
 \vfill
-- You can think of this as a No/Yes or False/True question, but we will generally refer to it as 0/1 choice
-  - In programming, always remember that $FALSE=0$ and $TRUE=1$
+- Today's focus: productivity and income
+  - worker productivity
+  - absenteeism
+
+## Pollution and Productivity
+
+- We know temperature is neg. associated w/ output (Dell, Jones, and Olken 2012)
 \vfill
-- Focusing on the binary choice case will allow us to build intuition for the more general case of discrete choice
-  - We will also be able to use the same data as we move to the more general case
+- We also know high temperatures are associated with lower crop yields
+  - Mendelsohn and Dinar (1999), Auffhammer et al. (2006), Schlenker and Roberts (2009),
+  Lobell et al. (2011), and Gupta et al. (2017)
 \vfill
-
-
-
-
-
-## Dichotomous variables
+- What are the mechanims?
+  - heat stress, mortality, conflict
 \vfill
-- We will be thinking about this $Y\in\{0,1\}$
-  - In other words, $Y$ is a dichotomous (dummy) variable that can only be equal to 0 or 1
-\vfill
-- We are going to discuss methods to output *conditional probabilities*:
-\begin{gather} \mathbb{P}\left[Y=1|X\right] \end{gather}
-\vfill
+- Open and policy-relevant research area
+  - If we know importance of each mechanism, we know where to target policy
 
+## Somanathan et al. (2021): Temperature, Productivity, and Labor
 
+- **Research question:** What is the effect of temperature on output?
+  - How does heat stress mediate the temperature-output relationship
 
+- **Setting:** India's manufacturing sector (cloth weaving, sewing, steel)
 
+- **Data:** High-frequency (15 year panel, daily)
+  - Worker-level, sewing line level, team level, plant-year, district-year
 
-## The error term
+- **Design:** panel fixed effects
+
+- **Result:** 1) heat $\downarrow$ plant-level annual output, 2) driven by output elasticity of labor, not capital 3) AC used in labor-intensive tasks (pareto efficient)
+
+## Background
+
+- Workers should respond quickly when working in uncomfy temperatures
+  - Heat impacts on labor can be identified from daily or aggregated data
+  - Distinguishes heat stress from alternative mechanisms which materialized over long time scales (i.e. conflict)
 \vfill
-- Consider the following model:
-\begin{gather} Y = \beta X + \epsilon, \end{gather}
-where $X$ can have any number of columns (variables), $k$.
+- Two channels through which temperatures affect workers
+  - Produce less (productivity)
+  - Absenteeism
 \vfill
-- We already know that $\epsilon$ does not need to be normally distributed
+- Can we expect lumpy investments in climate control in developing countries?
+  - Depends on value-added per worker
+  - If too low, then electricity cost not worth it
+
+## Data: Worker + Cloth Weaving
+
+- Worker data
+  - Surveyed output and attendance from cloth-weaving, garment sewing, and steel firms
+  - Three cloth-weaving factories in Surat, 
+  - Eight garment plants (Delhi, Hyderabad, Chhindwara)
+  - Steel plant (one large plant in Central India)
 \vfill
-- In fact, if $Y\in\{0,1\}$, then $\epsilon$ *will never be normally distributed*
+- Cloth data (2012): 147 workers
+  - Daily meters woven (for each worker)
+  - Worker pay slips each day (output + attendance)
+
+## Data: Garment Sewing
+- Garment sewing (2012-2013): Line level
+  - Lines of 10-20 workers
+  - Productivity: hourly output relative to target
+  - Daily production from 103 sewing lines
+\vfill
+- Climate control
+  - Phased rollout of cooling equipment
+  - 84 of 103 sewing lines in Delhi, of which 74 had cooling
+
+## Data: Rail and Steel Plant
+- Supplies rectangular blocks of steel to Indian Railways
+- Three shifts per day
+- Workers assigned to one of three teams, which rotate across shifts
+- Data:
+  - Team and number of blocks for each shift during 1999-2008
+  - 9,172 shifts over 3,337 working days
+  - Team-level absences over 857 days for 2000-2003
+
+## Garment factory and cloth weaving
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Rail/Steel Mill
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Data: Panel
+- Annual Survey of Industries (1999-2013)
+  - Census of large manufacturing plants ($>$ 100 workers)
+  - Random sample of small plants
+  - Output, fixed assets, input expenses, employment
+  - Unbalanced panel of 58,377 plants
+\vfill
+- District Manufacturing GDP (1998-2009)
+  - Planning Commission of India
+  - ASI plants + unregistered plants
+\vfill
+- Weather: public weather stations + gridded data (IMD)
+  - Daily maximum at closest station to factory
+  - Gridded data for panel data
+
+## Data: Diamond Firms
+- Survey 150 diamond cutting plants in Surat
+  - Random sample from 500 registered units
+- Five operations: 1) grading 2) marking, 3) rounding, 4) cutting, 5) polish
+- Ask about number of workers and use of AC in each operation
+- Ask to rate on 1-5 scale importance of each operation to quality of final output
   - Why?
-\vfill
 
+## Empirical Strategy
+Temperature-output estimated with weekly data as follows:
 
+$$y_{iw} = \alpha_{i} + \gamma_{M} + \gamma_{t} + \sum_{j=2}^{J} \beta_{j}T_{iw}^{j} + \theta R_{iw} + \lambda X_{iw} + \epsilon_{iw} $$ 
 
+- $y_{iw}$ is physical output by worker $i$ in week $w$
+- If absent, output=0 for that day before aggregating to week
+- $\alpha_{i}$ is individual FE (what does it account for?)
+- $\gamma_{M/t}$ are month/year FEs (what does it account for?)
+- $T_{j}$ counts days falling into temperature bin $j$ (captures nonlinearities)
 
+## Results: Garment Sewing
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
 
-## The error term
-\vfill
-- $\epsilon$ has a two-point conditional distribution:
-\begin{gather} \epsilon = \Biggl\{ \begin{array}{ll} 1 - P(X), & \text{with probability } P(X) \\ P(X), & \text{with probability } 1 - P(X) \end{array} \end{gather}
-\vfill
-- $\epsilon$ is *heteroskedastic*:
-\begin{gather} \text{Var}(\epsilon|X) = P(X)(1-P(X)) \end{gather}
-- In fact, the variance of any dummy variable is $P(1-P)$, where $P$ is the probability of the dummy variable being equal to 1
-\vfill
+knitr::include_graphics(
+                        path = "assets/anant2021_fig1.png",
+                        auto_pdf = TRUE
+                        )
 
-
-
-
-
-## Scatterplots are pretty worthless!
-:::::::::::::: {.columns}
-::: {.column}
-```{r scatter, echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-# for reading in Stata data. 
-# Install this using your console
-library(haven) 
-# read in data for the week:
-df <- read_dta("data.dta")
-
-# scatter of in_poverty on h_age:
-ggplot(data = df) +
-  geom_point(aes(x = h_age, y = in_poverty)) +
-  labs(x = "Head age", y = "In poverty this month") +
-  theme_minimal()
 ```
-:::
-::: {.column}
-```{r scatter2, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "100%", fig.align = "center"}
-ggplot(data = df) +
-  geom_point(aes(x = h_age, y = in_poverty)) +
-  labs(x = "Head age", y = "In poverty this month") +
-  theme_minimal()
-```
-:::
-::::::::::::::
+- output is lower in hotter weeks **without climate control**
+- Moving from lowest to highest temperature bin $\downarrow$ productivity by 8\%
+- Note: these are 90\% CI's!
 
+## Results: Cloth and Steel
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/anant2021_fig2.png",
+                        auto_pdf = TRUE
+                        )
 
-
-
-## Let's plot out the conditional probabilities (means)
-:::::::::::::: {.columns}
-::: {.column}
-```{r scatter3, echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-# means by age
-povmeans <- df %>%
-            group_by(h_age) %>%
-            summarize(mean = mean(in_poverty)) %>%
-            ungroup
-
-# scatter of in_poverty on h_age:
-ggplot(data = povmeans) +
-  geom_point(aes(x = h_age, y = mean)) +
-  labs(x = "Head age", y = "P(poverty)") +
-  theme_minimal()
-```
-:::
-::: {.column}
-```{r scatter4, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "100%", fig.align = "center"}
-# means by age
-povmeans <- df %>%
-            group_by(h_age) %>%
-            summarize(mean = mean(in_poverty)) %>%
-            ungroup
-
-# scatter of in_poverty on h_age:
-ggplot(data = povmeans) +
-  geom_point(aes(x = h_age, y = mean)) +
-  labs(x = "Head age", y = "P(poverty)", title = "Mean poverty by age of head") +
-  theme_minimal()
-```
-:::
-::::::::::::::
-
-
-
-
-
-## Linear probability model (LPM) 
-\vfill
-- We can estimate this using OLS:
-\begin{gather} Y = \beta X + \epsilon \end{gather}
-\vfill
-```{r lpm, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "100%", fig.align = "center"}
-f1 <- feols(in_poverty ~ h_male + h_age, data = df)
-f2 <- feols(in_poverty ~ h_male + h_age, data = df, vcov = "HC1")
-etable(f1, f2)
 ```
 
-\vfill
+## Lagged Effects
+- Previously, $\beta_{j}$ combined productivity and absenteeism channel
+- Now we use daily data
+$$y_{id} = \alpha_{i} + \gamma_{M} + \gamma_{t} + \sum_{j} \beta_{j}T_{id}^{j} + \sum_{j} \omega_{j}L_{id}^{j} + \theta R_{id} + \lambda X_{id} + \epsilon_{id} $$ 
+- where $T^{j}$ is now an indicator for day $d$ falling into temperature bin $j$
+- $X_{id}$ includes day-of-week FE
+- $L_{id}^{j}$ counts number of days in bin $j$ during six preceding days
 
+## Discussion
 
-
-
-
-## Linear probability model (LPM) 
-\vfill
-```{r lpm2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "100%", fig.align = "center"}
-summary(feols(in_poverty ~ h_male + h_age, data = df, vcov = "HC1"))
-```
-\vfill
-
-- The interpretation of these coefficients is pretty straightforward:
-  - It is the change in the probability of being in poverty for a one-unit change in the variable of interest
-  - Male-headed households are 6.1 *percentage points* less likely to be poor than female-headed households, controlling for age.
-  - Each addidition year of age *increases* the probability of being in poverty by 0.005 *percentage points*, controlling for gender of the head.
-\vfill
-
-
-
-
-
-## Linear probability model (LPM) 
-\vfill
-- Sometimes people motivate other estimation methods based on heteroskedasticity
-  - But we can easily correct for this using robust standard errors (HC1 in feols)
-\vfill
-- There are two other problems with LPM, though: \pause
-  - The predicted values can be outside of the 0-1 range
-    - Is this a problem? Maybe. Maybe not. It depends on what you're doing. \pause
-  - Constant effects throughout the probability distribution
-    - Is this realistic? If we think someone has a 95 percent probability of being poor, do we think the percentage point change would be the same for changing a variable relative to someone with a 50 percent probability of being poor?
-\vfill
-
-
-
-
-
-
-## Another option
-
-\vfill
-- We can think of this as a *latent variable* model:
-\begin{gather} Y^* = \beta X + \epsilon \\
-                \epsilon\sim G(\epsilon) \\
-                Y = \mathbbm{1}(Y^*>0) = \Biggl\{ \begin{array}{ll} 1, & \text{if } Y^*>0 \\ 0, & \text{otherwise} \end{array} \end{gather}
-where $Y^*$ is the latent variable, $G(\cdot)$ is the distribution of $\epsilon$, and $\mathbbm{1}(\cdot)$ is the indicator function.
-\vfill
-- One way to think about this is that $y^*$ is utility, but we only observe whether the choice increases utility ($y=1$) or doesn't ($y=0$).
-\vfill
-
-
-
-
-
-
-
-## Let's give this a bit more structure
-
-\vfill
-- Note that $Y=1$ iff $Y^*>0$, which is the same as saying $\beta X + \epsilon > 0$
-\vfill
-- The response probability is then given by the CDF of $\epsilon$ evaluated at $-\beta X$:
-\begin{gather} \mathbb{P}\left[Y=1|X\right] = \mathbb{P}\left[\epsilon > -\beta X\right] = 1 - G(-\beta X) = G(\beta X) \end{gather}
-\vfill
-- Note that CDFs (cumulative distribution functions) give us probabilities of being *less than or equal to* a given value
-  - The last equality holds because $G(\cdot)$ will always be *symmetric around 0* here
-  - That value here is $\beta X$
-\vfill
-
-
-
-
-
-
-## CDF examples of the logistic (sigmoid) function - Wikipedia
-\center
-	\includegraphics[width=0.7\columnwidth]{assets/cdfwiki}
-
-
-
-
-
-
-
-## The link function
-\vfill
-- The function $G(\cdot)$ is called the *link function* and plays an important role here
-\vfill
-- Two common link functions are the *logit* and *probit* link functions:
-  - They are defined as follows:
-  - Logit: $G(\epsilon) = \frac{e^{\epsilon}}{1+e^{\epsilon}} = \frac{1}{1+e^{-\epsilon}}$
-  - Probit: $G(\epsilon) = \Phi(\epsilon)$, where $\Phi(\cdot)$ is the CDF of the standard normal distribution
-\vfill
-- We will discuss these in more detail in a bit
-\vfill 
-
-
-
-
-
-
-
-## Likelihood
-\vfill
-- Likelihood: the joint probability of the data evaluated with the sample, as a function of the parameters
-  - What?
-\vfill
-- Let's start with probit, which uses a normal distribution. Here is the conditional density of $Y$ given $X$ under this assumption:
-  \begin{gather} f(Y|X) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{1}{2\sigma^2}(Y-\beta X)^2\right) \end{gather}
-\vfill
-
-
-
-
-
-
-
-## Likelihood
-\vfill
-\begin{gather} f(Y|X) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{1}{2\sigma^2}(y-\beta X)^2\right) \end{gather}
-
-- In this case, what is the probability we *observe our sample given the values of $\beta$ and $\sigma$*?
-\begin{align} f(y_1,\ldots,y_n | x_1,\ldots, x_n) &= \prod_{i=1}^n f(y_i | x_i) \\
-                                                  &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{1}{2\sigma^2}(y_i-\beta x_i)^2\right) \\
-                                                  &= \frac{1}{(2\pi\sigma^2)^{n/2}}\exp\left(-\frac{1}{2\sigma^2}\prod_{i=1}^n(y_i-\beta x_i)^2\right) \\
-                                                  &= L_n(\beta, \sigma^2) \end{align}
-\vfill
-
-
-
-
-
-
-
-## Likelihood
-\vfill
-\begin{gather} f(y_1,\ldots,y_n | x_1,\ldots, x_n) = L_n(\beta, \sigma^2) \end{gather}
-
-- This is the *likelihood function* 
+- Is lag specification plausible?
+  - Is six days a plausible window to detect cumulative exposure? 
   
-  - Note that it is a function of the parameters, $\beta$ and $\sigma^2$
+- What are the identification assumptions?
+
+- What are the threats?
+
+## Lagged Effects: Productivity
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Lower output on hot days in sites w/o climate control
+- Weavers: additional day $>35\degree$ in past week $\downarrow$ daily output by 3\%
+
+## Lagged Effects: Absenteeism
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- How do you interpret these results?
+
+## 15-year plant-level panel results
+$$y_{it} = \alpha_{i} + \gamma_{t} + \sum_{j=2}^{5}\beta_{j}T_{it}^{j} + \theta R_{it} + \epsilon_{it} $$
+outcome is log value of plant $i$ output in year $t$
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "95%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Recap of Results
+
+- Daily worker data: workers are less productive on hot days
 \vfill
-- The properties of logs make this easier to work with:
-\begin{gather} \ell_n(\beta, \sigma^2) = \log(L_n(\beta, \sigma^2)) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-\beta x_i)^2 \end{gather}
-- This is the *log likelihood function* 
-  
-  - It is of course also a function of the parameters, $\beta$ and $\sigma^2$
+- Daily worker data: (kind of) more absenteeism on hot days
 \vfill
-
-
-
-
-
-
-
-## Maximum likelihood estimation
-
+- Plant panel: **aggregate** output is lower on hot days
+  - This is the object we are interested in
+  - Remember $\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$
 \vfill
-\begin{gather} \ell_n(\beta, \sigma^2) = \log(L_n(\beta, \sigma^2)) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-\beta x_i)^2 \end{gather}
+- **How much of the temperature-induced $\Delta Y$ is due to $\Delta MP_{L}$?**
 
-\vfill
-- We have our log likelihood function, which is a function of the parameters, $\beta$ and $\sigma^2$
+## Lets make a Cobb-Douglas model
 
-\vfill
+Consider a production function:
+$$ Y = A \cdot K^{\omega} \cdot L^{\beta} $$
+Now modify by letting elasticities be a function of temperature, $T$
+$$ Y = A(T) \cdot K^{\omega(T)} \cdot L^{\beta(T)} $$
+where:
+\begin{align*}
+A(T) &= A_{0} + \sum a_{j}T_{j} \\
+\omega(T) &= \omega_{0} + \sum \omega_{j}T_{j} \\
+\beta(T) &= \beta_{0} + \sum \beta_{j}T_{j}
+\end{align*}
 
+## Estimating Equation
 
+- Log-linearizing, we get Equation (7) from the paper:
 
+$$ y = \alpha_{0} + \sum_{j=2}^{5} \alpha_{j}T^{j} + \omega_{0} \cdot k + \sum_{j=2}^{5} \omega_{j}T^{j}k + \beta_{0} \cdot l + \sum_{j=2}^{5} \beta_{j}T^{j}l $$
 
+- Data:
+  - k: opening value of equipment and machinery at start of financial year
+  - l: number of full-time workers
 
+- **Results**
+  - temperature effects on output elasticitiy of L is negative and significant
+  - temperature effects on output elasticity of K are (weakly) positive
+  - Controlling for interactions, residual temperature-output effect is zero
+  - Since overall temperature-output relationship is negative, temperature-induced declines in labor productivity drive the effect
 
-## Maximum likelihood estimation
+## Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "55%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+<!-- ## Adaptation -->
+<!-- - Foregone output from high temperature may encourage adaptation -->
+<!-- \vfill -->
+<!-- - Short term decision: compare cooling costs with output loss -->
+<!-- \vfill -->
+<!-- - Long term decision: labor-capital substitution or move location -->
+<!-- \vfill -->
+<!-- - Efficient allocation: if labor productivity drives temperature-output relation, then labor-intensive processes with high value added should be protected -->
+<!-- \vfill -->
+<!-- - Diamond processes: 1) sorting/grading; 2) marking; 3) rounding; 4) cutting; 5) polish -->
+<!--   - Measure labor intensity (share of workers engaged in each process) -->
+<!--   - Mechanization (share of total machines used in each process) -->
+<!--   - Importance rating (scale 1-5, from survey) -->
+<!-- \vfill -->
+<!-- - Estimate probability of AC with logit model  -->
+
+## Discussion
+- What do you think about the paper
+- Critique
+- How can they improve the identification?
+- This data is as good as it gets: did they do everything they could?
+  - What about long term effects/adaptation?
+- Alternative explanations
+
+## Back to the model
+\begin{align}
+MWTP_{e} = \frac{\lambda_{e}}{\lambda_{y}} 
+ = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e} + \frac{\partial u}{\partial h}\frac{\partial h}{\partial e}\right) + \frac{\partial \Delta y}{\partial e} + \frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e} \notag
+\end{align}
+
+- Most research in environment/development economics seeks to identify $\frac{\partial h}{\partial e}$
+  - At this point, $\frac{\partial h}{\partial e}>0$ is unambiguous
+  - Focus is on **magnitudes**
   
 \vfill
-- What we want to do is find the values of $\beta$ and $\sigma^2$ that *maximize* this function
-  - In other words, the values that make our sample the most likely to have been observed, or the biggest probability of observing our sample
-  
+- What about indirect effects via productivity ($\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$)? 
+  - This is the research frontier
 \vfill
-- This is called *maximum likelihood estimation*
+- Next: what about $\frac{\partial \Delta y}{\partial e}$, the direct effect of environment on incomes
+  - Almost no research on this
 
-\begin{gather} \left(\hat{\beta}, \hat{\sigma}^2\right) = \underset{\beta\in\mathbb{R}^k,\sigma^2>0}{\text{argmax}}\;\ell_n(\beta, \sigma^2) \end{gather}
-where $k$ is the number of variables (coefficients), including the intercept.
+## How might the environment **directly** affect incomes? 
+
+- Assume landholders vary in distance to a central market
+- Each chooses land and labor to maximize farm profits
+- New PA imposed that overlaps existing productive land and restricts land use
+- Assuming initially efficient allocation, what happens to net welfare?
+- What if land rents increase outside the PA?
+
+## Background: Conservation and Development
+
+- On other hand, PAs may generate tourism income and other positive spillovers
+
+- Surprisingly little evidence on income channel
+
+- Main challenge: non-random placement of PAs
+
+
+## Sims (2010): Conservation and Development: Evidence from Thailand
+
+**Research Question:** How does PA policy affect local poverty outcomes? 
+  - What are the mechanisms?
+
+**Setting:** Thailand in 2000
+
+**Data:** Household consumption surveys + PA locations
+
+**Empirical Strategy:** Instrument PA location with priority watershed status
+
+**Results:** PAs increase consumption and lower poverty
+  - Higher tourism is the main mechanism
+
+## Data
+
+- Wildlife sanctuaries (N=31) and national parks (N=57)
+  - Source: World Database on Protected Areas
+  - Includes year of establishment
 \vfill
-
-
-
-
-
-
-
-## Maximum likelihood estimation
+- Poverty Mapping
+  - Model household income in 2000 Thai Economic Survey as a function of household characteristics and assets
+  - Use coefficient to predict household income in census households
 \vfill
-- A simple example is a coin flip
-\vfill
-- Let's say we flip a coin. If it's a fair coin, what is the probability of obtaining heads?\pause
-  - 50% or 0.5 (we generally work with the proportion 0.5, and not the percent)\pause
-\vfill
-- What is the probability of obtaining heads twice in a row?\pause
-  - 0.5 * 0.5 = 0.25\pause
-\vfill
-- Three times in a row? \pause
-  - 0.5 * 0.5 * 0.5 = 0.125
-\vfill
+- Poverty Measure
+$$ FGT(\alpha) = \frac{1}{n}\sum_{y_{i}<p}\left( \frac{p-y_{i}}{p} \right)^{\alpha} $$
+where $p$ is poverty line and $y_{i}$ is income
 
+## Empirical Strategy: Ordinary Least Squares
 
+$$y_{ij} = \beta_{1} PA_{ij} + \beta_{2}G_{ij} + \beta_{3}X_{ij} + \alpha_{j} + \epsilon_{j}$$
 
-
-
-
-
-## Maximum likelihood estimation
-\vfill
-- Say we flip the coin a bunch of times
-  - For argument's sake, let's say we flip it 100 times and obtain 60 heads
-\vfill
-- If we know nothing about whether the coin is actually fair, what is the *most likely distribution* that would give us 60 heads and 40 tails? \pause
-  - It's a distribution in which the probability of heads is 0.6! \pause
-\vfill
-- This is like maximum likelihood estimation. We are trying to find the parameters that makes our sample the most likely to have been observed.
-  - In this case, the parameter would be the true mean of the distribution of the coin (where heads = 1 and tails = 0).
-  - We could then of course test whether this is significantly different from 0.5, which might be our null hypothesis.
-\vfill
-
-
-
-
-
-
-
-
-## Generalizing maximum likelihood estimation
-\vfill
-\begin{gather} \left(\hat{\beta}, \hat{\sigma}^2\right) = \underset{\beta\in\mathbb{R}^k,\sigma^2>0}{\text{argmax}}\;\ell_n(\beta, \sigma^2) \end{gather}
-
-- MLE is generally always estimated using numerical optimization
-  - We will not discuss the details of this here
-  - The basic reason is that most likelihood functions are not easy to maximize analytically (i.e. they have no closed-form solution)
-
-\vfill
-- In the case of the normal regression model, however, there is a closed-form solution
-  - And this is the same closed-form solution as OLS!
-
+- $y_{ij}$ is socioeconomic outcome for locality $i$ in district $j$
+- $PA_{ij}$ is share of locality land designated as PA prior to 2000
+- $G_{ij}$ are fixed geographic controls (slope, elevation, water, etc.)
+- $X_{ij}$ is a measure of pre-treatment (historic forest cover, distance to major roads)
+- $\alpha_{i}$ are district fixed effects
 \vfill
 
+**What variation is exploited?**
 
+**What are the identification assumptions?**
 
+**What are potential omitted characteristics?**
 
+<!-- talk about spatial spillovers -->
 
+## OLS Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/sims2010_fig1.png",
+                        auto_pdf = TRUE
+                        )
 
-## Logit for binary choice
+```
+- Median land share protect is 1/3
+- Expected $\uparrow$ in consumption is about 4.5\% (divide by coeff. by 3)
+
+## Instrumental Variables Solution
+
+- Instrument PA placement with **priority watershed status**
 \vfill
-- Let's return to our binary choice model.
-  - Regardless of how you estimate it, the probability mass function for $Y$ is:
-
-\begin{gather} \pi(y) = p^y(1-p)^{1-y}, \end{gather}
-where $p$ is the probability of $Y=1$, or the mean. Remember that $Y\in\{0,1\}$; i.e., it can only equal 0 or 1.
-
-- Let's bring our link function back into it. The *conditional* probability is:
-\begin{gather} \pi(Y|X)=G(\beta X)^Y(1-G(\beta X))^{1-Y}=G(\beta X)^Y(G(-\beta X))^{1-Y}=G(\beta Z),   \end{gather}
-
-where $Z = \Biggl\{ \begin{array}{ll} X, & \text{if } Y=1 \\ -X, & \text{if } Y=0 \end{array}$
+- Upper watersheds (headwaters) protected to improve **downstream** water quality
+  - Watershed protected not driven by local (headwater) economic needs
 \vfill
+- First Stage:
+ $$ PA_{ij} = \pi_{1}Z_{ij} + \pi_{2}G_{ij} + \pi_{3}X_{ij} + \pi_{4}W_{ij} + \delta_{j} + u_{ij} $$
 
-
-
-
-
-
-
-## Logit for binary choice
+- $Z_{ij}$ includes a) $i$ overlaps major tributary, b) distance to nearest major tributary .
 \vfill
-\begin{gather} \pi(Y|X)=G(\beta Z),   \end{gather}
+- $\pi_{1}$ picks up variation in PA driven by differences in downstream characteristics
 
-- Taking logs (because they're easy to work with), we get the log likelihood function:
-\begin{gather} \ell_n(\beta) = \sum_{i=1}^n \log G(\beta Z) \end{gather}
-\vfill
+## Watershed Instrument
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
 
-- This is the same as the log likelihood function for probit, except that the link function is different.
-\vfill
+knitr::include_graphics(
+                        path = "assets/sims2010_fig2.png",
+                        auto_pdf = TRUE
+                        )
 
-
-
-
-
-
-
-## Logit for binary choice
-\vfill
-- Again, we want to find the values of $\beta$ (and $\sigma$, which will show up in the link function) that maximize this function.
-\begin{gather} \left(\hat{\beta}, \hat{\sigma}^2\right) = \underset{\beta\in\mathbb{R}^k,\sigma^2>0}{\text{argmax}}\;\ell_n(\beta, \sigma^2) \end{gather}
-
-- Something interesting is that in practice, we don't numerically maximize...
-  - Instead, we *minimize* the *negative* of the log likelihood function!
-
-\begin{gather} \left(\hat{\beta}, \hat{\sigma}^2\right) = \underset{\beta\in\mathbb{R}^k,\sigma^2>0}{\text{argmin}}\;-\ell_n(\beta, \sigma^2) \end{gather}
-\vfill
-
-
-
-
-
-
-
-## An example in R - Household variables and poverty using glm()
-```{r mle1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-summary(glm(in_poverty ~ h_male, data = df, family = binomial(link = "logit")))
 ```
 
+## Discussion
+\centering
+Is the IV plausible? Why or why not?
 
+## IV Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/sims2010_fig3.png",
+                        auto_pdf = TRUE
+                        )
 
-
-
-
-## Interpreting logit output
-```{r mle2, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-summary(glm(in_poverty ~ h_male, data = df, family = binomial(link = "logit")))$coefficients
 ```
+- Signs agree with OLS, but magnitudes are more than 2x as large
+- Consistent with idea that OLS negatively biased
+
+## Mechanisms: Is tourism responsible?
+
+- PAs restricts land use, so why does income increase?
 \vfill
-
-- How do we interpret these coefficients?
-  - The coefficients are "log odds"
+- Test 1: Test whether impacts in national parks $>$ in wildlife sanctuaries
+  - Idea: NP's encourage tourism whereas sanctuaries only permit ecotourism/research
 \vfill
-- For male household heads, the log odds of being in poverty is 0.280 *lower* than that for female household heads
-  - What?
+- Test 2: Back-of envelope calculation
+  - if we know costs/benefits of tourism, is it enough to explain net $\uparrow$ in consumption?
 \vfill
+- Test 3: Are benefits higher where tourism is higher
+  - Park statistics show that visitation is highest near major cities
 
+## Test 1: National parks vs. Wildlife Sanctuaries
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/sims2010_fig4.png",
+                        auto_pdf = TRUE
+                        )
 
-
-
-
-
-## Log odds
-\vfill
-- What are log odds?
-  - Let's start with odds:
-
-\begin{gather} \text{odds} = \frac{p}{1-p}, \end{gather}
-
-where $p$ is the probability of $y = 1$ (being poor in this case).
-
-- Log odds?
-
-\begin{gather} \text{log odds} = \log\left(\frac{p}{1-p}\right) \end{gather}
-
-\vfill
-
-
-
-
-
-## Log odds and logit
-\vfill
-- Logit regression is basically estimating:
-
-\begin{gather} \log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 X_1 + \ldots + \beta_k X_k \end{gather}
-
-\vfill
-
-
-
-
-
-
-
-## The intercept is the log odds of being in poverty for female households
-```{r mle3, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-summary(glm(in_poverty ~ h_male, data = df, family = binomial(link = "logit")))$coefficients
 ```
-\vfill
-\begin{gather} \log\left(\frac{p}{1-p}\right) = -0.6196447 \\
-                   \left(\frac{p}{1-p}\right) = exp(-0.6196447) \\
-                   \left(\frac{p}{1-p}\right) \approx 0.538  \\ 
-                   p = 0.538-0.538p \\
-                   1.538p = 0.538 \\
-                        p\approx 0.350  \end{gather}
+- Effects larger where tourism is allowed (NPs)
+- Difference in coefficients not statistically significant
 
-What is the actual mean for female headed households? `r format(mean(df$in_poverty[df$h_male==0]), digits = 3)`
-\vfill
+## Test 2: Back of the envelope calculation
 
+- Assume income is agricultural and reduced proportionally to land lost
+- Assume credit constraints (no savings) $\rightarrow$ income losses = consumption losses
+- Consumption cost of PAs is 11\% of income (forest cover coeff. - see paper)
+- To achieve 5\% *net* $\uparrow$ in consumption, tourism must generate 16\% consumption
+  - Equivalent to 233 Baht per month (0.16 $\times$ mean consumption)
+- 10.81 mil. tourists in 2020 and 172,978 hh in PA localities = 61 tourists/hh
+- Each tourist would need to contribute: (233*12)/61 = 46 Baht (\$USD 1.20) of net income to generate observed increases in consumption
 
+**Is this reasonable?**
 
+## Test 3: Heterogeneity by Distance to City
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
 
+knitr::include_graphics(
+                        path = "assets/sims2010_fig5a.png",
+                        auto_pdf = TRUE
+                        )
 
+```
+- Most tourists near city, but effects concentrated at intermediate distance
+- Why?
+<!-- Close cities, opportunity cost of agricultural production is higher (urban wage, because migration cost is low). Tourism income may not be enough to compensate for high opportunity cost. At far distances, opportunity costs are lower (wage divided by migration cost), but so are tourism prospects. Sweet spot is in the middle. This is just an ex-post rationalization and would make a good research idea. -->
 
+## Test 3: Heterogeneity by Distance to City
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
 
-## The coefficient?
-\vfill
-\begin{gather} \log\left(\frac{p_m}{1-p_m}\right) - \log\left(\frac{p_f}{1-p_f}\right) = -0.2795628 \\
-                \log\left(\frac{\frac{p_m}{1-p_m}}{\frac{p_f}{1-p_f}}\right) = -0.2795628 \\
-                \left(\frac{\frac{p_m}{1-p_m}}{\frac{p_f}{1-p_f}}\right) = exp(-0.2795628) \\
-                \left(\frac{\frac{p_m}{1-p_m}}{\frac{p_f}{1-p_f}}\right) = 0.7561142 \end{gather}
-\vfill
+knitr::include_graphics(
+                        path = "assets/sims2010_fig5b.png",
+                        auto_pdf = TRUE
+                        )
 
-- In the last line, this is referred to as an *odds ratio*. 
-  - It's less than one, which means male-headed households are *less likely* to be in poverty.
-  - Their *odds* of being in poverty are around 24% lower.
- \vfill
-
-
-
-
-
-
-
-## The coefficient?
-\vfill
-- Mean for female-headed households: `r format(mean(df$in_poverty[df$h_male==0]), digits = 3)`
-  - odds ($\frac{p_f}{1-p_f}$): `r format(mean(df$in_poverty[df$h_male==0])/(1-mean(df$in_poverty[df$h_male==0])), digits = 3)`
-\vfill
-- Mean for male-headed households: `r format(mean(df$in_poverty[df$h_male==1]), digits = 3)`
-  - odds $\left(\frac{p_m}{1-p_m}\right)$: `r format(mean(df$in_poverty[df$h_male==1])/(1-mean(df$in_poverty[df$h_male==1])), digits = 3)`
-\vfill
-- Odds ratio ($\frac{\frac{p_m}{1-p_m}}{\frac{p_f}{1-p_f}}$): `r format((mean(df$in_poverty[df$h_male==1])/(1-mean(df$in_poverty[df$h_male==1])))/(mean(df$in_poverty[df$h_male==0])/(1-mean(df$in_poverty[df$h_male==0]))), digits = 3)`
- \vfill
- - Exponentiating shows us the odds ratio!
-\vfill
-
-
-
-
-
-
-
-## Marginal effects
-\vfill
-- We can also calculate marginal effects
-  - These are the change in the probability of being in poverty for a one-unit change in the variable of interest
-  - An important note is that this *depends on where you are located in the distribution*
-\vfill
-- We just calculated the means, so with only the binary independent variable, we know that the marginal effect is:
-  - `r format(mean(df$in_poverty[df$h_male==1]) - mean(df$in_poverty[df$h_male==0]), digits = 3)`
-\vfill
-- We will use the "mfx" package for this, so please install it in the console.
-\vfill
-
-
-
-
-
-
-
-
-
-
-## Marginal effects
-```{r mle4, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-logitmfx(in_poverty ~ h_male, data = df)
-
-# for binary outcomes, it shows the change from 0 to 1!
 ```
 
-
-
-
-
-
-
-
-
-
-## logit with more coefficients
-```{r mle5, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-logitmfx(in_poverty ~ h_male + h_age, data = df)
-
-# for binary outcomes, it shows the change from 0 to 1!
-# for continuous variables, it's the derivative (i.e. instantaneous change)!
-# By default, it calculates these by holding variables AT THEIR MEANS
-```
-
-
-
-
-
-
-
-## Probit
-```{r probit1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-summary(glm(in_poverty ~ h_male, data = df, family = binomial(link = "probit")))$coefficients
-```
-\vfill
-
-- What about probit coefficients?
-  - These relate to the *CDF of the standard normal distribution*
-
-\vfill
-
-- The intercept is the mean for female-headed households 
-
-\vfill
-
-
-
-
-
-
-
-## Standard normal CDF
-- The intercept is -0.3856924
-  - The mean poverty for female-headed households is `r format(mean(df$in_poverty[df$h_male==0]), digits = 3)`
-- Here's the CDF for the standard normal distribution with the intercept:
-
-```{r probit2, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-ggplot() +
-  stat_function(data = data.frame(x = c(-3, 3)), aes(x = x), fun = pnorm) +
-  theme_minimal() +
-  labs(x = "x", y = "CDF(x)") +
-  geom_vline(xintercept = -0.3856924, linetype = "dotted", color = "blue")
-```
-
-
-
-
-
-
-
-## Standard normal CDF
-- The intercept is -0.3856924
-  - The mean poverty for female-headed households is `r format(mean(df$in_poverty[df$h_male==0]), digits = 3)`
-- Here's the CDF for the standard normal distribution with BOTH:
-
-```{r probit3, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-ggplot() +
-  stat_function(data = data.frame(x = c(-3, 3)), aes(x = x), fun = pnorm) +
-  theme_minimal() +
-  labs(x = "x", y = "CDF(x)") +
-  geom_vline(xintercept = -0.3856924, linetype = "dotted", color = "blue") +
-  geom_hline(yintercept = mean(df$in_poverty[df$h_male==0]), linetype = "dotted", color = "blue")
-```
-
-
-
-
-
-
-
-## Now let's look at the coefficient on h_male
-```{r probit4, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "65%", fig.align = "center"}
-summary(glm(in_poverty ~ h_male, data = df, family = binomial(link = "probit")))$coefficients
-```
-
-
-
-
-
-
-
-
-## Standard normal CDF
-- The intercept is -0.3038412 and the coefficient is -0.1699918
-- Here's the CDF for the standard normal distribution with BOTH:
-
-```{r probit5, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-ggplot() +
-  stat_function(data = data.frame(x = c(-3, 3)), aes(x = x), fun = pnorm) +
-  theme_minimal() +
-  labs(x = "x", y = "CDF(x)") +
-  geom_vline(xintercept = -0.3038412, linetype = "dotted", color = "blue") +
-  geom_vline(xintercept = -0.3038412-0.2540258, linetype = "dotted", color = "orange")
-```
-
-
-
-
-
-
-
-
-## Standard normal CDF
-- The intercept is -0.3856924 and the coefficient is -0.1699918
-- What's the change in PROBABILITY? $\text{mean(male)} - \text{mean(female)}$ or `r format(mean(df$in_poverty[df$h_male==1]) - mean(df$in_poverty[df$h_male==0]), digits = 3)`
-
-```{r probit6, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-ggplot() +
-  stat_function(data = data.frame(x = c(-3, 3)), aes(x = x), fun = pnorm) +
-  theme_minimal() +
-  labs(x = "x", y = "CDF(x)") +
-  geom_vline(xintercept = -0.3856924, linetype = "dotted", color = "blue") +
-  geom_vline(xintercept = -0.3856924-0.1699918, linetype = "dotted", color = "orange") +
-  geom_hline(yintercept = mean(df$in_poverty[df$h_male==0]), linetype = "dotted", color = "blue") +
-  geom_hline(yintercept = mean(df$in_poverty[df$h_male==1]), linetype = "dotted", color = "orange")
-```
-
-
-
-
-
-
-
-
-## Marginal effects
-- The intercept is -0.3856924 and the coefficient is -0.1699918
-- What's the change in PROBABILITY? $\text{mean(male)} - \text{mean(female)}$ or `r format(mean(df$in_poverty[df$h_male==1]) - mean(df$in_poverty[df$h_male==0]), digits = 3)`
-
-\vfill
-```{r probit7, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-probitmfx(in_poverty ~ h_male, data = df)
-```
-
-
-
-
-
-
-
-
-## Probit and marginal effects
-
-\vfill
-```{r probit8, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# change in z-scores
-summary(glm(in_poverty ~ h_male + h_age, data = df, family = binomial(link = "probit")))$coefficients
-```
-
-\vfill
-```{r probit9, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# change in probability, holding other variables at their means
-probitmfx(in_poverty ~ h_male + h_age, data = df)
-```
-\vfill
-
-
-
-
-
-# Multiple discrete choice
-
-## What if the outcome has more than two categories?
-\vfill
-- Many outcomes are not 0/1.
-\vfill
-- We can think of outcomes with discrete categories, but more than two:
-  - Religion
-  - Political party
-  - Opinion on a likert scale (e.g. strongly agree, agree, neutral, disagree, strongly disagree)
-  - Months in poverty
-\vfill
-- There's a key difference between the first two and the last two:
-  - The first two are *unordered*
-  - The last two are *ordered*
-\vfill
-
-
-
-
-
-
-## Months in poverty - distribution
-```{r ologit1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-ggplot() +
-    geom_histogram(data = df, aes(x = months_in_poverty), binwidth = 1) + 
-    theme_minimal() +
-    labs(x = "Months in poverty", y = "Count") +
-    scale_x_continuous(breaks = seq(0, 12, 1)) +
-    geom_vline(xintercept = mean(df$months_in_poverty), linetype = "dotted", color = "blue")
-```
-
-
-
-
-
-
-## Ordered logistic regression with the polr function
-\vfill
-```{r ologit2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# note that the outcome must be a FACTOR variable for polr
-summary(polr(as_factor(months_in_poverty) ~ h_male + h_age, data = df, Hess = TRUE))
-```
-\vfill
-
-
-
-
-
-
-
-## Ordered data: ordinal logit/probit
-\vfill
-- When we have ordered discrete variable, we can use an ordered logit or probit model
-  - These are also called *ordinal* logit/probit models
-\vfill
-- The idea is that we have a latent variable, $Y^*$, that is continuous
-  - We observe $Y$ as a discrete variable, but it is *ordered*
-  - We can think of $Y$ as being *binned* into categories
-
-\begin{gather} Y = \Biggl\{ \begin{array}{ll} 1, & \text{if } Y^*\in(-\infty,\theta_1] \\ 2, & \text{if } Y^*\in(\theta_1,\theta_2] \\ \vdots & \vdots \\ J, & \text{if } Y^*\in(\theta_{J-1},\infty) \end{array} \end{gather}
-\vfill
-
-
-
-
-## The interpretation?
-\vfill
-```{r ologit3, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# note that the outcome must be a FACTOR variable for polr
-summary(polr(as_factor(months_in_poverty) ~ h_male + h_age, data = df, Hess = TRUE))
-```
-- The interpretation is similar to logit: a change in the log-odds of being in a higher level of months in poverty!
-\vfill
-
-
-
-
-## Understanding fit with MLE
-\vfill
-- There is no r-squared in MLE
-  - It is not a true r-squared *because there is no sense of "mean" with discrete data, especially unordered data*
-\vfill 
-- We can use the log likelihood function to compare models
-  - The log likelihood function is a function of the parameters, $\beta$ and $\sigma^2$
-  - The higher the log likelihood, the better the fit
-\vfill
-- We can also use the *Akaike Information Criterion* (AIC) and *Bayesian Information Criterion* (BIC)
-  - These are functions of the log likelihood function and the number of parameters
-  - The lower the AIC/BIC, the better the fit
-\vfill
-- These are best thought of as useful for comparing across models
-  - Difficult to interpret them on their own
-\vfill
-
-
-
-
-## AIC
-\vfill
-- AIC is defined as follows:
-  - $k$ is the number of parameters in the model
-  - $L$ is the log likelihood function
-  - AIC: $2k - 2\log(L)$
-\vfill
-```{r aic, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# save our model
-results <- glm(in_poverty ~ h_male + h_age, data = df, family = binomial(link = "probit"))
-
-# log likelihood
-logLik(results)
-
-# aic from temp
-results$aic
-
-# Calculate AIC by hand:
-2*3 - 2*(-2788.727)
-```
-\vfill
-
-
-
-
-## BIC
-\vfill
-- BIC is defined as follows:
-  - $k$ is the number of parameters in the model
-  - $L$ is the log likelihood function
-  - $n$ is the number of observations
-  - BIC: $k\log(n) - 2\log(L)$
-\vfill
-```{r bic, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# save our model
-results <- glm(in_poverty ~ h_male + h_age, data = df, family = binomial(link = "probit"))
-
-# log likelihood
-logLik(results)
-nrow(df)
-
-# Calculate BIC by hand:
-3*log(4609) - 2*(-2788.727)
-```
-\vfill
-
-
-
-
-
-
-## Pseudo r-squared
-\vfill
-- We can also calculate a pseudo r-squared
-  - This is a measure of the change in the log likelihood function relative to the null model (no coefficients except intercepts)
-\vfill
-```{r pseudor2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# null model
-logLik(glm(in_poverty ~ 1, data = df, family = binomial(link = "probit")))
-# our model
-logLik(glm(in_poverty ~ h_male + h_age, data = df, family = binomial(link = "probit")))
-# pseudo r-squared: 1 - (log likelihood of model / log likelihood of null model)
-1 - (-2788.727/-2791.606)
-# Same thing: (null - model) / null
-(-2791.606 - -2788.727)/-2791.606
-```
-\vfill
-
-
-
-
-
-## Multinomial probit/logit
-\vfill
-- Ordered logit/probit is used when the outcome is *ordered*
-\vfill
-- But what if it's not, like trying to predict what the species of a flower is?
-  - Let's use a built-in dataset in R called "iris" to look at this:
-\vfill
-```{r iris1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-data(iris)
-head(iris)
-```
-\vfill
-
-
-
-
-
-## Multinomial probit/logit
-\vfill
-```{r iris2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-data(iris)
-table(iris$Species)
-colnames(iris)
-```
-\vfill
-- Let's use sepal/pedal length/width to predict the species
-\vfill
-
-
-
-
-
-## Multinomial probit/logit
-\vfill
-```{r iris3, echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-data(iris)
-library(nnet)
-multinomresults <- multinom(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)
-```
-\vfill
-```{r iris4, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-summary(multinomresults)$coefficients
-```
-\vfill
-
-- Note how setosa isn't there... it's the omitted category
-  - We can interpret the coefficients as the log odds of being in a particular category relative to setosa (the omitted category)
-\vfill
-
-
-
-
-
-
-
-# Extensions
-
-## Extensions
-\vfill
-- GLM is a very general framework
-  - We can use it for other distributions, too
-\vfill
-- Let's look at a poisson distribution
-  - The poisson distribution is often used for count data
-  - It has assumptions (mean = variance), but violation isn't a big deal!
-\vfill 
-
-
-
-
-## The poisson distribution
-\vfill
-- The poisson distribution is defined as follows:
-\begin{gather} f(y; \lambda) = \frac{\lambda^ye^{-\lambda}}{y!} \end{gather}
-
-- Note the $e$: this is going to lead to a nice log interpretation
-- $y$ is the number of occurrences of the variable (in our example, it will be number of months in poverty)
-\vfill
-- As mentioned, one implication of this distribution is:
-\begin{gather} E(y) = Var(y) = \lambda \end{gather}
-i.e. the mean of $y$ equals its variance. But we can work around this if it's false (which it probably is).
-\vfill
-
-
-
-
-## Possion, months in poverty (with feols - feglm)
-\vfill
-```{r poisson1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# could save results. Not going to here... just display them
-summary(feglm(months_in_poverty ~ h_male + h_age, data = df, family = "poisson"))
-# notice the difference in standard errors if we use HC1 (which we want to here because of overdispersion)
-summary(feglm(months_in_poverty ~ h_male + h_age, data = df, family = "poisson", vcov = "HC1"))
-```
-\vfill
-
-
-
-
-## Interpreting poisson coefficients
-\vfill
-```{r poisson2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-summary(feglm(months_in_poverty ~ h_male, data = df, family = "poisson", vcov = "HC1"))$coefficients
-```
-\vfill
-
-- How do we interpret poisson coefficients?
-  - They are the *log* of the *rate* of the outcome
-  - i.e. the log of the number of months in poverty
-\vfill
-- The log count for male-headed households is around 0.28 *lower* than for female-headed households
-\vfill
-
-
-
-
-## The intercept is log count for female households
-\vfill
-```{r poisson3, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-summary(feglm(months_in_poverty ~ h_male, data = df, family = "poisson", vcov = "HC1"))$coefficients
-# intercept is log count, so exponentiate for levels
-exp(1.5189645)
-# what is the mean for female-headed households?
-mean(df$months_in_poverty[df$h_male==0])
-# intercept plus coefficient for male-headed households
-exp(1.5189645 - 0.2772304)
-# mean for male-headed households?
-mean(df$months_in_poverty[df$h_male==1])
-```
-\vfill
-
-
-
-
-## Quasi-poisson
-\vfill
-- The poisson distribution has a mean = variance assumption
-  - This is often violated
-  - We can use quasi-poisson instead
-\vfill
-- The quasi-poisson is the same as poisson, but the variance is estimated from the data
-  - With feglm, it estimates the variance as a *linear function of the mean*
-\vfill
-- Small note: if you use glm, you can use the "quasipoisson" family
-  - This is more similar to poisson with vcov = "HC1"!
-    - If you use "HC1" in both, you'll get identical results.
-  - This is only about the structure of the error term. Not the coefficients.
-\vfill
-
-
-
-
-## Possion vs quasi-poisson (note the similar standard errors with HC1 for poisson)
-\vfill
-```{r poisson4, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-# Poisson with HC1
-summary(feglm(months_in_poverty ~ h_male + h_age, data = df, family = "poisson", vcov = "HC1"))
-# quasipoisson
-summary(feglm(months_in_poverty ~ h_male + h_age, data = df, family = "quasipoisson"))
-```
-\vfill
-
-
-
-
-## Doesn't have to be integers!
-\vfill
-- You can use poisson for non-integer outcomes, too!
-  - It's just a distribution
-  - It's often used for integer outcomes because it's a count distribution
-\vfill
-- Jeff Wooldridge is a huge proponent of using (quasi) poisson
-\vfill
-- Two really nice things: it is robust and has an easy interpretation
-\vfill 
-
-
-
-# Survival models
-
-## Hazard/survival models
-\vfill
-- These models are used for *duration* data
-  - i.e. time until an event occurs or a state changes
-  - e.g. time until death after being diagnosed with cancer, time until a person leaves poverty, time until a person gets a job, until contracting a disease, etc.
-\vfill
-- You need a very specific kind of data for this...
-  - We want to know what kinds of variables predict the occurence of some event (e.g. death).
-\vfill
-- **Warning:** I am not an expert on survival models. I will give you a brief overview, but you should consult a textbook for more information.
-\vfill
-
-
-
-
-
-## Pfizer-BioNTech COVID-19 vaccine
-\center
-	\includegraphics[width=0.8\columnwidth]{assets/covidhazard}
-
-
-
-
-
-
-## Survival models
-\vfill
-- Let's use the package `survival` in R.
-  - It has a dataset set up for us, called diabetic
-\vfill
-```{r surv1, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-library(survival)
-# dataset with "high-risk" diabetic retinopathy patients
-head(diabetic)
-```
-\vfill
-
-- Note: this is a *panel* dataset
-  - Each row is a patient (id)
-  - Each patient has multiple observations (time)
-  - Interested in loss of sight (status = 1)
-\vfill
-
-
-
-
-
-## Survival function
-\vfill 
-- Let's first look at the survival function
-  - This is the probability of surviving past a certain time
-  - We're going to use the Kaplan-Meier estimator
-\vfill
-```{r surv2, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-KM <- survfit(Surv(time = time, event = status) ~ 1, data = diabetic)
-# note that Surv() is necessary here. It's a function that creates a survival object.
-# The ~ 1 means this is for EVERYONE.
-```
-\vfill
-
-
-
-
-
-## Survival curve
-\vfill
-```{r surv4, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-KM <- survfit(Surv(time = time, event = status) ~ 1, data = diabetic)
-plot(KM, ylab = "Survival probability", xlab = "Time (months)")
-```
-
-\vfill
-
-
-
-
-
-## Comparing survival curves based on treatment
-\vfill
-- Base R has ugly plots. We can use `survminer` to make it work with `ggplot2`.
-\vfill
-```{r surv5, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-library(survminer)
-KM <- survfit(Surv(time = time, event = status) ~ 1, data = diabetic)
-ggsurvplot(KM) +
-  labs(y = "Survival probability", x = "Time (months)")
-```
-\vfill
-
-
-
-
-
-## Comparing survival curves based on treatment
-\vfill
-```{r surv6, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-KM <- survfit(Surv(time = time, event = status) ~ trt, data = diabetic)
-ggsurvplot(KM)$plot +
-  labs(y = "Survival probability", x = "Time (months)") +
-  scale_color_discrete("Treatment:", labels = c("No", "Yes")) +
-  theme(legend.position = c(0.1, 0.2))
-```
-\vfill
-
-
-
-
-
-## Comparing survival curves based on treatment, empirically
-\vfill
-```{r surv7, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-survdiff(Surv(time = time, event = status) ~ trt, data = diabetic)
-
-# changes the weighting (more weight on earlier time points); doesn't matter here! Huge differences.
-survdiff(Surv(time = time, event = status) ~ trt, data = diabetic, rho = 1)
-```
-\vfill
-
-
-
-
-
-## Adding more covariates
-\vfill
-- Plotting two survival curves with a simply treatment dummy is straightforward.
-  - But what if we want to add more covariates?
-  - For example, the `diabetic` dataset has age at diagnosis and which eye the problem is. Does this matter?
-\vfill
-- We can use a Cox proportional hazards model to do this.
-  - This is a semi-parametric model that is very popular in survival analysis.
-  - It is a *proportional hazards* model, which means that the hazard ratio is constant over time.
-  - Its nature means we do not estimate the baseline hazard function.
-    - Instead, we compare across variables
-  \vfill
-
-
-
-
-
-## Adding more covariates
-\vfill
-```{r surv8, echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, size = "tiny", out.width = "55%", fig.align = "center"}
-coxph(Surv(time = time, event = status) ~ age + as_factor(eye) + trt, data = diabetic)
-```
-\vfill
-
-- Note that treatment is randomized, so we *shouldn't* see large changes in the coefficient on treatment when we add covariates.
-  - More on this next week!
-\vfill
-
-
-
-
-
-## Some warnings
-\vfill
-- Note that all these methods have assumptions that can sometimes be important
-\vfill
-- Given our time, I am purposefully just showing you the basics
-  - If any of these specific methods interest you, I suggest doing more in-depth readings. I can provide some suggestions.
-\vfill
-
-
-
-
-
-## Articles for next week (check syllabus for textbook readings)
-\vfill
-- Deserranno, E., Stryjan, M., & Sulaiman, M. (2019). Leader selection and service delivery in community groups: Experimental evidence from Uganda. *American Economic Journal: Applied Economics*, 11(4), 240-267.
-\vfill
-- Fischer, T., Frölich, M., & Landmann, A. (2023). Adverse Selection in Low-Income Health Insurance Markets: Evidence from an RCT in Pakistan. *American Economic Journal: Applied Economics*, 15(3), 313-340.
-\vfill
-
-
-
-
-
+## Discussion
+- What do you think of the paper?
+- Do you believe the instrument?
+- What are some alternative explanations? 

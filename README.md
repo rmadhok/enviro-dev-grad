@@ -8,6 +8,7 @@
 
 This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development and read papers at the research frontier. At the end, you will be able to answer the following questions:
 
+* How does economic development affect the environment, and vice versa?
 * Why is environmental quality low in developing countries?
 * What are the costs of low environmental quality in developing countries?
 * Why is willingness to pay for environmental quality so low in developing countries?
@@ -36,7 +37,12 @@ The syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, c
 
 ## Assignments
 
-Assignments will be posted in the [assignments folder](assignments/).
+Assignments are posted in the [assignments folder](assignments/).
+- Assignment 1: [Class Presentations](assignments/paper_presentations/presentation_tips.pdf)
+- Assignment 2: [Replication Exercise](assignments/replication_exercise/replication_exercise.pdf)
+- Assignment 3: [Research Proposal](assignments/research_proposal/research_proposal.pdf)
+- Assignment 4: [Peer Review](assignments/research_proposal/peer_review.pdf)
+
 
 ## Credits
 I am grateful to Louis Preonas, Kelsey Jack, and Jennifer Alix-Garcia for providing reference material.
