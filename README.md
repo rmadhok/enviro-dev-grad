@@ -23,17 +23,10 @@ Since there is no textbook, I have organized the course around the central theme
 The syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, course policies, and the reading list
 
 ## Lectures
+Each week is divided into two lectures:
+- Week 1: You can find slides for the first week [here](lectures/week1/week1.pdf)
 
-- Week 1: Week 1 has two slides. 
-  - You can find the slides for the first class [here](lectures/week1/week1a.pdf).
-  - You can find the slides for the second class [here](lectures/week1/week1b.pdf).
-  - You can find the data for the second class in the week 1 folder or by clicking [here](weeks/week1/data.csv) (you can download the csv in the upper-right-hand corner).
-- Week 2: You can find the slides for the the week [here](lectures/week2/week2.pdf).
-- Week 3: You can find the slides for the the week [here](lectures/week3/week3.pdf).
-- Week 4: You can find the slides for the the week [here](lectures/week4/week4.pdf).
-- Weeks 5 and 6: You can find the slides for the the two weeks [here](lectures/week5and6/week5and6.pdf).
-- Weeks 7 and 8: You can find the slides for the the two weeks [here](lectures/week7and8/week7and8.pdf).
-- Week 9: You can find the slides for the the week [here](lectures/week9/week9.pdf).
+Slides for remaining weeks will be posted before each class
 
 ## Assignments
 
