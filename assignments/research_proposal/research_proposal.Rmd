@@ -19,6 +19,8 @@ header-includes:
 
 ---
 
+**Due date: Final draft due Oct. 31st, 2024**
+
 # Assignment Overview
 The goal of this project is to take you through a mock process of publishing in economics, including writing a paper (proposal, in this case) as well as the revise and resubmit process. You will: 1) draft a research proposal, 2) send your proposal to a classmate for peer review, and review one of their proposals, 3) integrate your reviewer's comments into your proposal, and 4) submit the final draft for ``publication'' (i.e. a final grade...). 
 
@@ -38,13 +40,13 @@ Referee report    & October 10th     \\ \hline
 Final draft    & October 31st     \\ \hline
 \end{tabular}
 \end{table}
+Note: the first draft is pass/fail. I will check it for completion and award a pass. If you fail to submit a first draft, then five percentage points will be taken off of your final grade. 
 
 ## Helpful Resources
 
 - Marc Bellemare's guide on \href{https://marcfbellemare.com/wordpress/wp-content/uploads/2020/09/BellemareHowToPaperSeptember2020.pdf}{how to write applied economics papers}
 - Keith Head's \href{https://blogs.ubc.ca/khead/research/research-advice/formula}{introduction formula}
 - Plamen Nikolov's \href{https://docs.iza.org/dp15057.pdf}{writing tips for economics research papers}
-- Read papers! 
 
 ## Format
 

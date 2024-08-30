@@ -1,0 +1,1068 @@
+---
+title: "| Environmental and Development Economics\n| Week 3 - How does the environment affect development?
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Apllied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Week 3 - environment and development]{Environmental and Development
+  Economics \\\\ Week 3 - How does the environment affect development?}}"
+- \input{header.tex}
+- \usepackage{gensymb}
+---
+
+
+## 
+\centering
+\Huge Lecture 4
+
+\large How does the environment affect economic development?
+
+## Housekeeping
+
+- State things that are due.
+
+## Today
+
+- **Guiding question:** how does the environment affect economic development?
+\vfill
+- Today's focus: health effects
+
+\vfill
+- Next time: productivity and direct income effects
+
+## Recall our model of environment and development
+\begin{align}
+MWTP_{e} = \frac{\lambda_{e}}{\lambda_{y}} 
+ = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e} + \frac{\partial u}{\partial h}\frac{\partial h}{\partial e}\right) + \frac{\partial \Delta y}{\partial e} + \frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e} \notag
+\end{align}
+
+- Most research in environment/development economics seeks to identify $\frac{\partial h}{\partial e}$
+  - At this point, $\frac{\partial h}{\partial e}>0$ is unambiguous
+  - Focus is on **magnitudes**
+\vfill
+- What about indirect effects via productivity and health ($\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$)? 
+  - This is the research frontier
+  - Next lecture
+
+## Lets formalize our intuition
+- Weather can harm health directly (physiological stress)
+  - Or indirectly, e.g. by lowering incomes of those in weather-dependent (outdoor) jobs
+
+- There is a market for defensive goods (e.g. medicine, AC, etc.) which $\uparrow$ P(survival)
+
+- But in developing countries, credit constraints restrict consumption smoothing
+
+- Lets incorporate this into a model and study the comparative statics
+  - Goal: exploain how weather affects health, considering financial constraints
+  - Health is endogenously determined by consumption and health investments
+
+## Setup
+- **Agents:** value consumption $c_{it}$ and health $h_{it}$.
+- **Objective:** Maximize lifetime utility
+$$\mathbb{E}_{0} \left[\sum_{t=0}^{\infty} \beta^{t}u_{i}(c_{it}, h_{it}) \right]$$
+\vfill
+- **Health Status**: Determined by health investments ($q_{it}$) + exogenous weather ($z_{it}$)
+$$h_{it} = h_{i}(\underbrace{q_{it}}_{(+)}, \underbrace{z_{it}}_{(-)})$$
+
+## Setup
+
+- **Production**: $c_{it}$ produced by $f(\cdot)$, and $q_{it}$ traded at price $P_{t}$
+  - Agent endowed with labor $a_{it}$, sold at wage $\omega_{t}$
+  - Labor can be affected by weather ($z_{it}$)
+$$a_{it} = a_{i}(z_{it})$$
+
+\vfill
+
+- **Financial Constraints**: Savings ($x_{it}$) and borrowing are limited by:
+  - Minimum savings: $x_{it} \geq -b_i(r_t)$
+  - Maximum savings: $x_{it} \leq b_i(r_t)$
+\vfill
+
+- **Budget Constraint**: Income is used for consumption and health investments:
+  $$x_{i,t+1} \leq r_t x_{it} + w_t a_i(z_{it}) - P_t q_{it} - c_{it}$$
+
+
+## Setup
+
+- **Market Equilibrium**: set optimal demand for labor/capital = aggregate supply  
+  - where $K_{t} = \int x_{it}di$
+  - wages $w_t$ and interest rates $r_t$ are determined in equilibrium as:
+  $$w_t = w(K_t), \quad r_t = r(K_t) $$
+
+## Mechanisms relating weather to health
+
+- **Direct health effect:** random shock $z_{it}$ enters health directly: $h_{it} = h_{i}(q_{it}, z_{it})$
+  - Physiological channel: extreme temperature stresses cadiovascular/respiratory system
+  - Impact can depend on region, or proximity to water (where pathogens thrive in hot weather), denoted by agent-specific function $h_{i}(\cdot)$
+\vfill
+- **Indirect health effect:** through productivity $a_{i}(z_{it})$
+  - Likely in rural areas, where ag workers are outside
+\vfill  
+- **Mitigation:** agent minimizes neg. utility shock from $z_{it}$ by purchasing $q_{it}$.
+  - This could also be opp cost of working inside (at lower $w_{it}$) to avoid outdoors
+  - Effect of mitigation limited by $\frac{\partial h_{i}(q_{it}, z_{it})}{\partial q_{it}}$
+\vfill
+- **Smoothing:** agent can also mitigate by reallocating resources b/w periods
+  - Agents with near-binding borrowing constraints experience worse shocks
+
+## Comparative Statics
+- **Object of interest**: aggregate correlation b/w health \( h_{it} \) and weather \( z_{it} \):
+    $$H_t = \left| \frac{\int h_{it} z_{it}^{(T)} di}{\int h_{it} di} \right|$$
+\vfill
+- **Rural Areas**: Consider a set of changes that:
+  - increases responsiveness of $a_{i}(z_{it})$ to $z_{it}^{T}$.
+  - raises prices for health goods $P_t$ above that of urban 
+  - lower incomes by reducing $a_{i}(z_{it})$ for any $z_{it}$
+  - Any one of these leads to increase in $H_{t}$
+\vfill
+**Prediction:** rural areas will have stronger correlation b/w weather and health 
+
+## Effect of Bank Access
+
+- **Relaxing financial constraints** increases either or both of $(-b_{i}(r_{t}), b_{i}(r_{t}))$
+  - Partial credit modeled as increase in $b_{i}(r_{t})$ only (i.e. can save more)
+<!-- loans typically for production only -->
+  - Allows agents to smooth consumption; draw down savings to mitigate weather shock
+  - Reduces the correlation between weather shocks \( z_{it} \) and health outcomes \( h_{it} \).
+\vfill
+
+- **Prediction**: $\text{Prediction: } H_t \downarrow \text{ as } b_i(r_t) \uparrow$
+  - Areas with better financial access have smaller effect of $z_{it}$ on health
+
+## What is the effect on weather on health?
+
+- What is the ideal experiment?
+
+- What variation in environmental quality can approximate the experiment?
+  - How would you measure environmental quality?
+  - What might this measure miss?
+  - What variation isolates a causal relationship?
+  - What does that variation miss?
+
+## Climate change versus weather
+
+- Climate change is long term, weather is short term
+
+- Studying impacts of weather is easier:
+  - Usually use high dimensional fixed effects
+  - E.g. with district and state-year FEs, exploit monthly deviations from average
+  
+- Studying impacts of climate is harder:
+  - There is no good counterfactual for climate change
+  - New method: long differences (Burke and Emerick, 2016)
+
+## Deschenes et al. (2013): Weather and Death in India
+
+- **Research question:** how do temperature shocks affect mortality?
+  - How does that different between urban/rural areas?
+  - What is the role of income as an intermediary?
+
+- **Setting:** Indian districts from 1957-2000
+
+- **Data:** daily gridded weather + annual infant mortality
+
+- **Design:** panel fixed effects
+  - Difference-in-differences with rural bank expansion
+
+- **Result:** 1) heat $\uparrow$ mortality, 2) driven by rural populations, 3) credit access mitigates effect by facilitating consumption smoothing
+
+<!-- ## Conceptual Model -->
+<!-- - Goal: distinguish two channels thru which weather affects health -->
+<!--   - Direct: physiological response -->
+<!--   - Indirect: lower income (less health spending) -->
+
+<!-- - Idea: More weather-dependent production $\rightarrow$ worse income shocks from high temps -->
+<!--   - Implies rural people suffer more b/c cannot smooth consumption -->
+
+<!-- - Extend classic incomplete market macro model in two ways: -->
+<!--   - health, which depends on shocks and choices -->
+<!--   - savings constraints -->
+
+<!-- - In response to shocks -->
+<!--   - reallocate resources b/w health and other consumption -->
+<!--   - reallocation resources across periods (smoothing) -->
+  
+## Empirical Implications
+
+- Remember permanent income hypothesis? 
+  - Income shocks in $t=0$ caused by weather shock only affects contemporaneous survival via extent to which income shock reduces NPV lifetime income 
+\vfill
+- From model: if two agents face same shock at $t=0$, and one has income stream that depends on weather
+  - Then impact of shock on his death is stronger
+\vfill
+- What if income shocks are at high frequency?
+  - Will weather shock be enough to affect remaining lifetime income (and survival)?
+  - This is why studying climate vs. weather is important
+
+## Data
+
+Rural 
+
+- Yields: annual, district level output/cultivated area (27 crops) (World Bank)
+
+- Ag price index: mean crop price weighted by value in district (World Bank)
+
+- Ag wages: daily wage rate (World Bank)
+
+Urban 
+
+- Manufacturing productivity: output per worker (ASI)
+
+- Urban CPI: NSS survey
+
+- Manufacturing wages: ASI (nominal wage / CPI)
+
+## Empirical Strategy
+Flexible specification to model effect of daily temperature:
+$$ Y_{dt} = \sum_{j=1}^{11} \theta_{j}TMEAN_{dtj} + \sum_{k} \delta_{k}1\{RAIN_{dt} \text{ in tercile k\}} + \alpha_{d} + \gamma_{t} + \lambda_{r}^{1}t + \lambda_{r}^{2}t^{2} + \epsilon_{dt} $$
+
+- $r$ is a climatic region
+- $TMEAN$ is days in year $t$ where: 
+  - daily mean temp $<70\degree$, $\geq 97\degree$, or in the nine 3$\degree$ bins in between 
+- $\theta_{j}$'s capture non-linearities, despite having annual unit of analysis
+- $RAIN$ accounts for correlation b/w temperature and rainfall
+
+## Identifying Assumptions?
+
+- Impact governed by daily mean alone
+
+- Impact of days' mean temperature on annual mortality is constant within 3$\degree$ intervals
+  - This is reasonable
+  
+- By using number of days in each bin, assume that the sequence of hot and cold days is irrelevant. 
+
+- Annual deviation from district average is random
+
+- Anything else? Reverse causality?
+
+
+## Secondary Approach
+- consolidates same information
+- workhorse model nowadays because more parsimonious
+
+$$Y_{dt} = \beta CDD 80_{dt} + \sum_{k=1}^{3} + \sum_{k} \delta_{k}1\{RAIN_{dt} \text{ in tercile k\}} + \alpha_{d} + \gamma_{t} + \lambda_{r}^{1}t + \lambda_{r}^{2}t^{2} + \epsilon_{dt}$$
+
+- where CDD80 is cumulative degree days in district that exceeded 80$\degree$. 
+- All bins $j < 80\degree$ are zero 
+  - The three above $80 \degree$ restricted to be linearly increasing in average temp  
+- Assumption: days when mean daily temp below 80 irrelevant for determining Y
+
+## Results: Yields
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+A single day with temperature over 85$\degree$ reduces yields by 0.5\%
+
+## Results: Wages
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+A single day with temperature over 85$\degree$ reduces ag wages by 0.25-0.5\%
+
+## Results: Urban vs. Rural
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+What is happening? Direct (agonomical) effect should not vary
+
+## Results: Mortality
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/des2013_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Rural: years with more days with exceeding 87$\degree$ have 0.5\% higher mortality 
+
+## Bank Access
+- If income $\rightarrow$ consumption smoothing, then it should mute relationship
+  - Mechanism: lifetime utility maximized when $u'(c)$ equated across $t$ (Euler) 
+\vfill
+- Test: Between 1977-1990, central bank extends banking to the poor
+  - Existing banks required to open four branches in unbanked areas
+\vfill
+- Method: compare weather-death relationship in banked/unbanked areas
+  - Difference in differences
+  - Identification problem?
+\vfill
+- Instrument: SEE BURGESS AND PANDE (2005)
+
+## Equation
+
+- See BURGESS AND PANDE (2005)
+
+## Results: Credit Access
+
+- On full sample, one more bank has no effect on weather-death relationship
+  - Is single bank opening enough to enable smoothing?
+\vfill
+- Make dummy equal to one for 75th pctile of banks, zero for 25th pctile
+  - Moving from 25th to 75th pctile of banks eliminates effect of temperature!
+\vfill
+- Mitigating effect of banks concentrated within growing season
+  - Smoothing by farmers key mechanism
+\vfill
+- **Takeaway: credit enables poor to withstand environmental shocks**
+
+## Discussion
+- aggregated data (district) with satellite temperature makes it hard to distinguish atmospheric/ambient means from experienced exposure
+- How can we then measure direct effect through physiological channel
+  - Leave it to the epidemiologists...
+
+## Back to the question
+- How does environmental quality affect economic development?
+\vfill
+- Most reduced form studies identify $\frac{\partial h}{\partial e}$
+\vfill
+- Recall, this is an input into estimating benefits (MTWP) of $\uparrow e$
+  - which we need to know in order to set optimal environmental policy
+  - optimal in the sense that agents decisions are first-best
+\vfill
+- Is physical health the only thing that matters for estimating $\frac{\partial h}{\partial e}$?
+
+## Chen et al. (2024): Air Pollution and Mental Health
+
+- **Research question:** What is the impact of air pollution on mental health?
+  - Direct mechanism: oxidative stress
+  - Indirect mechanism: labor productivity, income, physical activity
+
+- **Setting:** China in 2014-2015
+
+- **Data:** Kessler Physchological Distress Scale
+  - PM2.5 from China National Environmental Monitoring Center
+
+- **Design:** instrument pollution with thermal inversions
+
+- **Results:** Pollution $\uparrow$ depression
+  - Mechanisms: lower exercise, worse physical health
+  - Total cost = \$22.88 billion, similar to mortality costs!
+  
+## Background
+
+- Why do we care about mental health?
+  - Poverty associated with life satisfaction and **stress**
+  - These mechanisms affect productivity, which perpetuates poverty
+  - See Haushofer and Salicath (2023); Haushofer and Fehr (2014)
+\vfill
+- Frontier in development economics: RCTs on income and stress
+  - Cash transfers $\uparrow$ subjective well-being (McGuire et al., 2022)
+  - Cash transfers $\downarrow$ suicide in Indonesia (Christian et al., 2019)
+  - Cash transfers $\rightarrow$ depression (Haushofer and Shapiro, 2016)
+\vfill
+- Toxicology literature: pollution $\uparrow$ oxidative stress (Calderon-Garciduenas et al., 2003; Sørensen et al., 2003; MohanKumar et al., 2008, Power et al., 2015)
+
+## Background
+- Theory of change: **pollution $\rightarrow$ stress** $\rightarrow$ productivity
+  - Poverty correlated with pollution and stress
+  - Direct effect of pollution on productivity (Graff Zivin \& Niedell, 2012; California)
+  - Many parts of the chain are open areas for research!
+
+## Air Pollution and Mental Health
+
+What are the empirical challenges?
+
+1. OVB: pollution correlated with economic activity
+    - Richer counties more polluted
+    - Induces **negative** bias
+    - Solution: ?
+
+2. ?
+
+3. ?
+
+4. ?
+
+## Instrumental Variable: Thermal Inversion
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/inversion2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Instrumental Variable: Thermal Inversion
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/inversion.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Instrumental Variable: Thermal Inversion
+
+- Air is warmer near surface, becomes cooler at higher altitudes
+
+- Thermal inversion: temperature-altitude gradient is reversed
+  - Rare phenomenon
+  - Depends on **random** meteorological factors
+
+- Cool air is denser and does not rise
+
+- Pollution becomes trapped near surface
+
+## What do you think?
+
+- Pros and cons
+
+- Inversions are short lived (last for a few hours)
+  - cannot estimate impact of sustained exposure
+  - Is mental health affected by rare short term events?
+
+- correlated with weather, which can have direct effect on mental health
+  - control for ground level temperature/rain
+  
+- If mechanism is through chronic condition, then TI may isolate wrong type of variation
+
+- TI are very localized phenomena. Is this what we want to study?
+
+## Data
+
+- Mental health: 2014 China Family Panel Study Survey
+  - 16,000 rural and 13,000 urban residents (162 counties out of 1,355)
+  - Six questions about mental health on 0-24 Scale
+  - Depression, nervousness, restlessness, hopelessness, effort, worthlessness
+\vfill
+- Pollution: PM2.5
+  - Webscraped
+  - Validate with satellite data?
+\vfill
+- Thermal inversion (MERRA-2 Air Temperature Layers)
+  - Inversion = 1 if temperature of first layer (110m) $<$ second layer (320m)
+  - IV: number of inversions in month prior to each interview
+
+## Inversions and Pollution
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "65%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Do thermal inversions seem rare and random?
+
+## Empirical Strategy
+
+First Stage:
+
+$$ P_{ict} = \alpha_{0} + \alpha_{1}I_{ict} + f(W_{ict}) + \gamma_{c} + \sigma_{t} + \mu_{ict} $$
+
+Second Stage:
+$$ H_{ict} = \beta_{0} + \beta_{1}P_{ict} + f(W_{ict}) + \gamma_{c} + \sigma_{t} + \epsilon_{ict} $$
+
+- $P_{ict}$ is PM2.5 in month prior to interview
+- $I_{ict}$ is instrument, number of thermal inversions in past month
+- $H_{ict}$ is total mental illness score (0-24)
+- $f(W_{ict})$ are flexible weather controls
+- $\sigma_{t}$ are year-month FEs (**important**!)
+
+## Main Results: Mental Health
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- 1 $\mu/m^{3}$ PM2.5 $\uparrow$ mental illness by 0.1164 units (4\% of mean; 0.4$\sigma$)
+- 1 $\mu/m^{3}$ PM2.5 $\uparrow$ prob. of several mental illness by 0.42pp (9.5\% of mean)
+
+## Main Results: Symptoms
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Not driven by any one particular symptom
+
+## Main Results: Persistence
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Effect of pollution exposure on mental health dissipates over time
+
+## Mechanisms
+- Focus on indirect effects (physical health, productivity, behavior)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Driven by reduction in physical exercise, not other illness
+- Very small impact compared to pollution effect (0.002$\sigma$ vs. 0.4$\sigma$)
+
+## Heterogeneity
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/oliva2024_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Why are effects larger for men?
+
+## Economic Cost? Back of the Envelope
+
+- 1$\sigma$ $\uparrow$ in PM2.5 leads to 9.5\% $\uparrow$ in prob. of severe mental illness
+\vfill
+  - About 0.095 $\times$ 1.4 billion = 13.3 million additional people 
+- Annual cost per patient of mental illness in China is \$USD 3,665 (Xu et. al 2016)
+\vfill
+- Assume 8\% of patients with mental illness get treated (Phillips et al., 2009)
+\vfill
+- **Economic cost of mental illness:** $13.3 \times 3665 \times 0.008 \times 12 = 46.7$ billion USD
+\vfill
+- Mortality cost of $1\sigma$ PM2.5 is \$USD 30 billion in USA (Deryugina et al., 2016)
+
+\vfill
+**Issues with the back of the envelope calculation?**
+<!-- 1) for severe mental illness; 2) what about non-medial costs? productivity
+3) hard to interpret in sd. do a counterfactual with policy-relevant change in pollution -->
+
+
+## Discussion
+
+- small sample
+- few counties
+- Small time window
+  - cannot include year FEs or control for annual macro trends
+- exploit short term variation (daily)
+- mechanism unclear
+
+## 
+\centering
+\huge Lecture 5
+
+\large How does the environment affect economic development?
+
+## Housekeeping
+
+- State things that are due
+
+## Today
+
+- **Guiding question:** how does the environment affect economic development?
+\vfill
+- Today's focus: productivity and income
+  - worker productivity
+  - absenteeism
+
+## Pollution and Productivity
+
+- We know temperature is neg. associated w/ output (Dell, Jones, and Olken 2012)
+\vfill
+- We also know high temperatures are associated with lower crop yields
+  - Mendelsohn and Dinar (1999), Auffhammer et al. (2006), Schlenker and Roberts (2009),
+  Lobell et al. (2011), and Gupta et al. (2017)
+\vfill
+- What are the mechanims?
+  - heat stress, mortality, conflict
+\vfill
+- Open and policy-relevant research area
+  - If we know importance of each mechanism, we know where to target policy
+
+## Somanathan et al. (2021): Temperature, Productivity, and Labor
+
+- **Research question:** What is the effect of temperature on output?
+  - How does heat stress mediate the temperature-output relationship
+
+- **Setting:** India's manufacturing sector (cloth weaving, sewing, steel)
+
+- **Data:** High-frequency (15 year panel, daily)
+  - Worker-level, sewing line level, team level, plant-year, district-year
+
+- **Design:** panel fixed effects
+
+- **Result:** 1) heat $\downarrow$ plant-level annual output, 2) driven by output elasticity of labor, not capital 3) AC used in labor-intensive tasks (pareto efficient)
+
+## Background
+
+- Workers should respond quickly when working in uncomfy temperatures
+  - Heat impacts on labor can be identified from daily or aggregated data
+  - Distinguishes heat stress from alternative mechanisms which materialized over long time scales (i.e. conflict)
+\vfill
+- Two channels through which temperatures affect workers
+  - Produce less (productivity)
+  - Absenteeism
+\vfill
+- Can we expect lumpy investments in climate control in developing countries?
+  - Depends on value-added per worker
+  - If too low, then electricity cost not worth it
+
+## Data: Worker + Cloth Weaving
+
+- Worker data
+  - Surveyed output and attendance from cloth-weaving, garment sewing, and steel firms
+  - Three cloth-weaving factories in Surat, 
+  - Eight garment plants (Delhi, Hyderabad, Chhindwara)
+  - Steel plant (one large plant in Central India)
+\vfill
+- Cloth data (2012): 147 workers
+  - Daily meters woven (for each worker)
+  - Worker pay slips each day (output + attendance)
+
+## Data: Garment Sewing
+- Garment sewing (2012-2013): Line level
+  - Lines of 10-20 workers
+  - Productivity: hourly output relative to target
+  - Daily production from 103 sewing lines
+\vfill
+- Climate control
+  - Phased rollout of cooling equipment
+  - 84 of 103 sewing lines in Delhi, of which 74 had cooling
+
+## Data: Rail and Steel Plant
+- Supplies rectangular blocks of steel to Indian Railways
+- Three shifts per day
+- Workers assigned to one of three teams, which rotate across shifts
+- Data:
+  - Team and number of blocks for each shift during 1999-2008
+  - 9,172 shifts over 3,337 working days
+  - Team-level absences over 857 days for 2000-2003
+
+## Garment factory and cloth weaving
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Rail/Steel Mill
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Data: Panel
+- Annual Survey of Industries (1999-2013)
+  - Census of large manufacturing plants ($>$ 100 workers)
+  - Random sample of small plants
+  - Output, fixed assets, input expenses, employment
+  - Unbalanced panel of 58,377 plants
+\vfill
+- District Manufacturing GDP (1998-2009)
+  - Planning Commission of India
+  - ASI plants + unregistered plants
+\vfill
+- Weather: public weather stations + gridded data (IMD)
+  - Daily maximum at closest station to factory
+  - Gridded data for panel data
+
+## Data: Diamond Firms
+- Survey 150 diamond cutting plants in Surat
+  - Random sample from 500 registered units
+- Five operations: 1) grading 2) marking, 3) rounding, 4) cutting, 5) polish
+- Ask about number of workers and use of AC in each operation
+- Ask to rate on 1-5 scale importance of each operation to quality of final output
+  - Why?
+
+## Empirical Strategy
+Temperature-output estimated with weekly data as follows:
+
+$$y_{iw} = \alpha_{i} + \gamma_{M} + \gamma_{t} + \sum_{j=2}^{J} \beta_{j}T_{iw}^{j} + \theta R_{iw} + \lambda X_{iw} + \epsilon_{iw} $$ 
+
+- $y_{iw}$ is physical output by worker $i$ in week $w$
+- If absent, output=0 for that day before aggregating to week
+- $\alpha_{i}$ is individual FE (what does it account for?)
+- $\gamma_{M/t}$ are month/year FEs (what does it account for?)
+- $T_{j}$ counts days falling into temperature bin $j$ (captures nonlinearities)
+
+## Results: Garment Sewing
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- output is lower in hotter weeks **without climate control**
+- Moving from lowest to highest temperature bin $\downarrow$ productivity by 8\%
+- Note: these are 90\% CI's!
+
+## Results: Cloth and Steel
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Lagged Effects
+- Previously, $\beta_{j}$ combined productivity and absenteeism channel
+- Now we use daily data
+$$y_{id} = \alpha_{i} + \gamma_{M} + \gamma_{t} + \sum_{j} \beta_{j}T_{id}^{j} + \sum_{j} \omega_{j}L_{id}^{j} + \theta R_{id} + \lambda X_{id} + \epsilon_{id} $$ 
+- where $T^{j}$ is now an indicator for day $d$ falling into temperature bin $j$
+- $X_{id}$ includes day-of-week FE
+- $L_{id}^{j}$ counts number of days in bin $j$ during six preceding days
+
+## Discussion
+
+- Is lag specification plausible?
+  - Is six days a plausible window to detect cumulative exposure? 
+  
+- What are the identification assumptions?
+
+- What are the threats?
+
+## Lagged Effects: Productivity
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Lower output on hot days in sites w/o climate control
+- Weavers: additional day $>35\degree$ in past week $\downarrow$ daily output by 3\%
+
+## Lagged Effects: Absenteeism
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- How do you interpret these results?
+
+## 15-year plant-level panel results
+$$y_{it} = \alpha_{i} + \gamma_{t} + \sum_{j=2}^{5}\beta_{j}T_{it}^{j} + \theta R_{it} + \epsilon_{it} $$
+outcome is log value of plant $i$ output in year $t$
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "95%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Recap of Results
+
+- Daily worker data: workers are less productive on hot days
+\vfill
+- Daily worker data: (kind of) more absenteeism on hot days
+\vfill
+- Plant panel: **aggregate** output is lower on hot days
+  - This is the object we are interested in
+  - Remember $\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$
+\vfill
+- **How much of the temperature-induced $\Delta Y$ is due to $\Delta MP_{L}$?**
+
+## Lets make a Cobb-Douglas model
+
+Consider a production function:
+$$ Y = A \cdot K^{\omega} \cdot L^{\beta} $$
+Now modify by letting elasticities be a function of temperature, $T$
+$$ Y = A(T) \cdot K^{\omega(T)} \cdot L^{\beta(T)} $$
+where:
+\begin{align*}
+A(T) &= A_{0} + \sum a_{j}T_{j} \\
+\omega(T) &= \omega_{0} + \sum \omega_{j}T_{j} \\
+\beta(T) &= \beta_{0} + \sum \beta_{j}T_{j}
+\end{align*}
+
+## Estimating Equation
+
+- Log-linearizing, we get Equation (7) from the paper:
+
+$$ y = \alpha_{0} + \sum_{j=2}^{5} \alpha_{j}T^{j} + \omega_{0} \cdot k + \sum_{j=2}^{5} \omega_{j}T^{j}k + \beta_{0} \cdot l + \sum_{j=2}^{5} \beta_{j}T^{j}l $$
+
+- Data:
+  - k: opening value of equipment and machinery at start of financial year
+  - l: number of full-time workers
+
+- **Results**
+  - temperature effects on output elasticitiy of L is negative and significant
+  - temperature effects on output elasticity of K are (weakly) positive
+  - Controlling for interactions, residual temperature-output effect is zero
+  - Since overall temperature-output relationship is negative, temperature-induced declines in labor productivity drive the effect
+
+## Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "55%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/anant2021_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+<!-- ## Adaptation -->
+<!-- - Foregone output from high temperature may encourage adaptation -->
+<!-- \vfill -->
+<!-- - Short term decision: compare cooling costs with output loss -->
+<!-- \vfill -->
+<!-- - Long term decision: labor-capital substitution or move location -->
+<!-- \vfill -->
+<!-- - Efficient allocation: if labor productivity drives temperature-output relation, then labor-intensive processes with high value added should be protected -->
+<!-- \vfill -->
+<!-- - Diamond processes: 1) sorting/grading; 2) marking; 3) rounding; 4) cutting; 5) polish -->
+<!--   - Measure labor intensity (share of workers engaged in each process) -->
+<!--   - Mechanization (share of total machines used in each process) -->
+<!--   - Importance rating (scale 1-5, from survey) -->
+<!-- \vfill -->
+<!-- - Estimate probability of AC with logit model  -->
+
+## Discussion
+- What do you think about the paper
+- Critique
+- How can they improve the identification?
+- This data is as good as it gets: did they do everything they could?
+  - What about long term effects/adaptation?
+- Alternative explanations
+
+## Back to the model
+\begin{align}
+MWTP_{e} = \frac{\lambda_{e}}{\lambda_{y}} 
+ = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e} + \frac{\partial u}{\partial h}\frac{\partial h}{\partial e}\right) + \frac{\partial \Delta y}{\partial e} + \frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e} \notag
+\end{align}
+
+- Most research in environment/development economics seeks to identify $\frac{\partial h}{\partial e}$
+  - At this point, $\frac{\partial h}{\partial e}>0$ is unambiguous
+  - Focus is on **magnitudes**
+  
+\vfill
+- What about indirect effects via productivity ($\frac{\partial \Delta y}{\partial h}\frac{\partial h}{\partial e}$)? 
+  - This is the research frontier
+\vfill
+- Next: what about $\frac{\partial \Delta y}{\partial e}$, the direct effect of environment on incomes
+  - Almost no research on this
+
+## How might the environment **directly** affect incomes? 
+
+- Assume landholders vary in distance to a central market
+- Each chooses land and labor to maximize farm profits
+- New PA imposed that overlaps existing productive land and restricts land use
+- Assuming initially efficient allocation, what happens to net welfare?
+- What if land rents increase outside the PA?
+
+## Background: Conservation and Development
+
+- On other hand, PAs may generate tourism income and other positive spillovers
+
+- Surprisingly little evidence on income channel
+
+- Main challenge: non-random placement of PAs
+
+
+## Sims (2010): Conservation and Development: Evidence from Thailand
+
+**Research Question:** How does PA policy affect local poverty outcomes? 
+  - What are the mechanisms?
+
+**Setting:** Thailand in 2000
+
+**Data:** Household consumption surveys + PA locations
+
+**Empirical Strategy:** Instrument PA location with priority watershed status
+
+**Results:** PAs increase consumption and lower poverty
+  - Higher tourism is the main mechanism
+
+## Data
+
+- Wildlife sanctuaries (N=31) and national parks (N=57)
+  - Source: World Database on Protected Areas
+  - Includes year of establishment
+\vfill
+- Poverty Mapping
+  - Model household income in 2000 Thai Economic Survey as a function of household characteristics and assets
+  - Use coefficient to predict household income in census households
+\vfill
+- Poverty Measure
+$$ FGT(\alpha) = \frac{1}{n}\sum_{y_{i}<p}\left( \frac{p-y_{i}}{p} \right)^{\alpha} $$
+where $p$ is poverty line and $y_{i}$ is income
+
+## Empirical Strategy: Ordinary Least Squares
+
+$$y_{ij} = \beta_{1} PA_{ij} + \beta_{2}G_{ij} + \beta_{3}X_{ij} + \alpha_{j} + \epsilon_{j}$$
+
+- $y_{ij}$ is socioeconomic outcome for locality $i$ in district $j$
+- $PA_{ij}$ is share of locality land designated as PA prior to 2000
+- $G_{ij}$ are fixed geographic controls (slope, elevation, water, etc.)
+- $X_{ij}$ is a measure of pre-treatment (historic forest cover, distance to major roads)
+- $\alpha_{i}$ are district fixed effects
+\vfill
+
+**What variation is exploited?**
+
+**What are the identification assumptions?**
+
+**What are potential omitted characteristics?**
+
+<!-- talk about spatial spillovers -->
+
+## OLS Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Median land share protect is 1/3
+- Expected $\uparrow$ in consumption is about 4.5\% (divide by coeff. by 3)
+
+## Instrumental Variables Solution
+
+- Instrument PA placement with **priority watershed status**
+\vfill
+- Upper watersheds (headwaters) protected to improve **downstream** water quality
+  - Watershed protected not driven by local (headwater) economic needs
+\vfill
+- First Stage:
+ $$ PA_{ij} = \pi_{1}Z_{ij} + \pi_{2}G_{ij} + \pi_{3}X_{ij} + \pi_{4}W_{ij} + \delta_{j} + u_{ij} $$
+
+- $Z_{ij}$ includes a) $i$ overlaps major tributary, b) distance to nearest major tributary .
+\vfill
+- $\pi_{1}$ picks up variation in PA driven by differences in downstream characteristics
+
+## Watershed Instrument
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Discussion
+\centering
+Is the IV plausible? Why or why not?
+
+## IV Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Signs agree with OLS, but magnitudes are more than 2x as large
+- Consistent with idea that OLS negatively biased
+
+## Mechanisms: Is tourism responsible?
+
+- PAs restricts land use, so why does income increase?
+\vfill
+- Test 1: Test whether impacts in national parks $>$ in wildlife sanctuaries
+  - Idea: NP's encourage tourism whereas sanctuaries only permit ecotourism/research
+\vfill
+- Test 2: Back-of envelope calculation
+  - if we know costs/benefits of tourism, is it enough to explain net $\uparrow$ in consumption?
+\vfill
+- Test 3: Are benefits higher where tourism is higher
+  - Park statistics show that visitation is highest near major cities
+
+## Test 1: National parks vs. Wildlife Sanctuaries
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Effects larger where tourism is allowed (NPs)
+- Difference in coefficients not statistically significant
+
+## Test 2: Back of the envelope calculation
+
+- Assume income is agricultural and reduced proportionally to land lost
+- Assume credit constraints (no savings) $\rightarrow$ income losses = consumption losses
+- Consumption cost of PAs is 11\% of income (forest cover coeff. - see paper)
+- To achieve 5\% *net* $\uparrow$ in consumption, tourism must generate 16\% consumption
+  - Equivalent to 233 Baht per month (0.16 $\times$ mean consumption)
+- 10.81 mil. tourists in 2020 and 172,978 hh in PA localities = 61 tourists/hh
+- Each tourist would need to contribute: (233*12)/61 = 46 Baht (\$USD 1.20) of net income to generate observed increases in consumption
+
+**Is this reasonable?**
+
+## Test 3: Heterogeneity by Distance to City
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig5a.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Most tourists near city, but effects concentrated at intermediate distance
+- Why?
+<!-- Close cities, opportunity cost of agricultural production is higher (urban wage, because migration cost is low). Tourism income may not be enough to compensate for high opportunity cost. At far distances, opportunity costs are lower (wage divided by migration cost), but so are tourism prospects. Sweet spot is in the middle. This is just an ex-post rationalization and would make a good research idea. -->
+
+## Test 3: Heterogeneity by Distance to City
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/sims2010_fig5b.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Discussion
+- What do you think of the paper?
+- Do you believe the instrument?
+- What are some alternative explanations? 
