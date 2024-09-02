@@ -40,7 +40,7 @@ Referee report    & October 10th     \\ \hline
 Final draft    & October 31st     \\ \hline
 \end{tabular}
 \end{table}
-Note: the first draft is pass/fail. I will check it for completion and award a pass. If you fail to submit a first draft, then five percentage points will be taken off of your final grade. 
+Note: the first draft is pass/fail. I will check it for completion and award a pass. If you fail to submit a first draft, then three percentage points will be taken off of your final grade. 
 
 ## Helpful Resources
 
