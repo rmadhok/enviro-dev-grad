@@ -38,6 +38,8 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
 ## Housekeeping
 
 - **Class Time/Location:** Tues/Thurs 11:45am-1:25pm, Ruttan 119
+  - Last class: Oct 17th
+  
 \vfill
 - **Office Hours:** Thursdays 1:30pm-2:30pm, Ruttan 337D
 \vfill
@@ -396,9 +398,9 @@ knitr::include_graphics(
 Set up:
 
 - $n$ identical agents with utility from consumption, EQ, and health
-- Initial wealth $y_{0}$, health $h_{0}$, environmental equality $e_{0}$
+- Initial individual wealth $y_{0}$, health $h_{0}$, environmental equality $e_{0}$
 - health depends on self-protection, $s$, and $e$
-- Assume perfect markets (i.e. no externalities)
+- Assume perfect markets (i.e. no externalities) to benchmark first-best
 
 ## First Best
 
@@ -454,14 +456,14 @@ MWTP_{s} & = \frac{\lambda_{s}}{\lambda_{y}} \notag \\ & = \frac{1}{\lambda_{y}}
 \vfill
 **Note: if $U''(c)<0$, high $y \rightarrow$ low MUC ($\lambda_{y}$) and high $MWTP_{s}$**
 
-## The Social Planner
+## The Fist Best Outcome
 
-- In first best, social planner sets MB = MC
-  - where $MC_{e} = \frac{\partial c_{e}}{\partial \Delta e}$ and $MC_{s} = \frac{\partial c_{s}}{\partial \Delta s}$
+- Agent sets ratio of marginal costs = ratio of marginal benefits
+$$\frac{MWTP_{e}}{MWTP_{s}}=\frac{\frac{\partial c_{e}}{\partial \Delta e}}{\frac{\partial c_{s}}{\partial \Delta s}}$$
+
 \vfill
-- But to aggregate over $n$, we must assume:
+- For social planner to aggregate over $n$, we must assume:
   - No preferences of her own
-  - No market failures
   - Can observe true MWTP
   - Anything else?
 \vfill
@@ -472,8 +474,8 @@ MWTP_{s} & = \frac{\lambda_{s}}{\lambda_{y}} \notag \\ & = \frac{1}{\lambda_{y}}
 ## Course Structure
 
 - Set the stage: 
-  - how does environment affect development ($\frac{\partial h}{\partial e}$) (week 2)
-  - how does development affect the environment (week 3)
+  - how does environment affect development ($\frac{\partial h}{\partial e}$) (module 2)
+  - how does development affect the environment (module 3)
   
 \vfill 
 
@@ -484,6 +486,7 @@ MWTP_{s} & = \frac{\lambda_{s}}{\lambda_{y}} \notag \\ & = \frac{1}{\lambda_{y}}
 \vfill 
 
 - Goal: where can you make a contribution?
+  - E.g. Lots of work on $\frac{\partial h}{\partial e}$, but very little on $\frac{\partial \Delta y}{\partial e}$
 
 
 ## Why is environmental quality so low in LMICs?
@@ -540,7 +543,7 @@ Four explanations informed by the model:
 \vfill
 - Many examples from LMICs
   - pollution (Duflo et al., 2013)
-  - deforestation (Burgess et al., 2012; Viera et al., 2024)
+  - deforestation (Burgess et al., 2012)
   - human-wildlife conflict (Madhok et al., 2024)
 \vfill
 - Leads to second best policy (inefficient)
@@ -548,7 +551,7 @@ Four explanations informed by the model:
 
 ## 4. Market Failures
 
-- This is partially a couse on development economics
+- This is partially a course on development economics
   - About market failures: land, labor, credit, etc.
 \vfill
 - Implication for us: revealed $MWTP_{e} \neq$ first best $MWTP_{e}$
