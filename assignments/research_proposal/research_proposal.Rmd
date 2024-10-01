@@ -22,13 +22,13 @@ header-includes:
 **Due date: Final draft due Oct. 31st, 2024**
 
 # Assignment Overview
-The goal of this project is to take you through a mock process of publishing in economics, including writing a paper (proposal, in this case) as well as the revise and resubmit process. You will: 1) draft a research proposal, 2) send your proposal to a classmate for peer review, and review one of their proposals, 3) integrate your reviewer's comments into your proposal, and 4) submit the final draft for ``publication'' (i.e. a final grade...). 
+The goal of this project is to take you through a mock process of publishing in economics, including writing a paper (proposal, in this case), the revise and resubmit process, and presenting it. You will: 1) draft a research proposal, 2) send it to a classmate for peer review, and review one of their proposals, 3) integrate your reviewer's comments into your proposal, 4) present your proposal to the class, and 5) submit the final draft for "publication" (i.e. a final grade...) at the end of the semester.  
 
-You **are not** allowed to ``double dip''. This means the idea must be original and you cannot use your second-year paper, or a proposal from another class.
+You **are not** allowed to ``double dip''. The idea must be original and you cannot use your second-year paper, or a proposal from another class.
 
 The objective of this assignment is to help prepare you for writing high-quality economics research papers. Throughout the assignment, we will develop your ability to design a clear and focused research project in the field of environmental and development economics. You are not expected to carry out the analysis, although I hope that you will pursue the project to the end and use it as a dissertation chapter or separate publication.
 
-Broadly, you will identify an original and specific research question, explain why it is important, and outline the research design that you will use to address it. After receiving an ``R\&R'' on the paper, you will improve it and submit a final draft at the end of the semester.
+Broadly, you will identify an original research question, explain why it is important, and outline the research design that you will use to address it. After receiving an ``R\&R'', you will improve it and submit a final draft. 
 
 ## Timeline
 \begin{table}[ht]
@@ -37,6 +37,7 @@ Broadly, you will identify an original and specific research question, explain w
 \textbf{Item} & \textbf{Deadline} \\ \hline
 First draft     & October 3rd     \\ \hline
 Referee report    & October 10th     \\ \hline
+Presentations    & October 15/17th     \\ \hline
 Final draft    & October 31st     \\ \hline
 \end{tabular}
 \end{table}
@@ -116,7 +117,7 @@ In writing this section, it is important to be honest about what your empirical 
 - Discuss implications for future research
 
 \clearpage
-# Grading Rubric
+# Grading Rubric: Written Proposal
 
 \begin{table}[h!]
 \centering
@@ -151,6 +152,32 @@ In writing this section, it is important to be honest about what your empirical 
 \end{tabular}
 \end{table}
 
+\clearpage
+
+# Grading Rubric: Proposal Presentation
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{4cm}|p{8cm}|r|}
+\hline
+\textbf{Category} & \textbf{Description} & \textbf{Points} \\ \hline
+\textbf{Content} &  &  \\ \hline
+Introduction \& Research Question & Clear presentation of the research question, its importance, and its relevance to environmental and development economics. & /10 \\ \hline
+Theoretical Framework & Presents a coherent theoretical framework. & /15 \\ \hline
+Data \& Measurement & Explanation of the data sources, measurements, and units of analysis. Discusses the suitability of data for the research. & /10 \\ \hline
+Empirical Strategy & Explains the research design and methodology, including causality and identification strategies. & /15 \\ \hline
+\textbf{Delivery} &  &  \\ \hline
+Clarity \& Organization & Well-organized presentation, logical flow, and easy to follow. & 10 \\ \hline
+Speaking Style \& Engagement & Speaker presents confidently, engages the audience, and maintains good eye contact. & /10 \\ \hline
+\textbf{Visual Aids} &  &  \\ \hline
+Use of Slides/Visuals & Visual aids are clear, well-designed, and enhance the presentation. & /10 \\ \hline
+\textbf{Q\&A Performance} &  &  \\ \hline
+Understanding \& Response to Questions & Demonstrates understanding by responding thoughtfully and clearly to questions. Engages respectfully with questions, explaining complex concepts well & /10 \\ \hline
+\textbf{Time Management} &  &  \\ \hline
+Adheres to Time Limits & Presentation fits within the 20-minute timeframe without rushing. & /10 \\ \hline
+\textbf{Total} &  & /100  \\ \hline
+\end{tabular}
+\end{table}
 
 
 
