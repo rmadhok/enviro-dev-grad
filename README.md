@@ -20,7 +20,7 @@ Since there is no textbook, I have organized the course around the central theme
 
 ## Syllabus
 
-The syllabus is linked [here](syllabus.pdf), and includes the grade breakdown, course policies, and the reading list
+The syllabus is linked [here](syllabus.docx), and includes the grade breakdown, course policies, and the reading list
 
 ## Lectures
 Lectures are split into modules. For the most part, each module will consist of two lectures.
