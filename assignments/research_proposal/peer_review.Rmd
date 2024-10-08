@@ -48,12 +48,11 @@ The major points should highlight the most critical issues in the proposal. Belo
 ## Minor Points (Minumum 5 items)
 The minor points are smaller issues that, while less critical than the major points, can still enhance the quality and clarity of the proposal. These might include:
 
-- Clarity of the writing (grammar, organization, and structure),
-- Minor inconsistencies in the theoretical argument,
-- Specific technical clarifications needed in the research design or data analysis,
-- Suggestions for additional literature that could strengthen the theoretical framework,
-- Formatting issues or citation inaccuracies.
-- For each minor point, include:
+- Clarity of the writing (grammar, organization, and structure)
+- Minor inconsistencies in the theoretical argument
+- Specific technical clarifications needed in the research design or data analysis
+- Suggestions for additional literature that could strengthen the theoretical framework
+- Formatting issues or citation inaccuracies
 
 # Writing Style
 When writing your peer review, keep in mind the following guidelines:
