@@ -31,7 +31,7 @@ Lectures are split into modules. For the most part, each module will consist of 
 - Module 4: Why is WTP for environmental quality so low in developing countries? ([slides](lectures/module4/module4.pdf))
 - Module 5: Environmental policy in developing countries ([slides](lectures/module5/module5.pdf))
 - Module 6: Political economy of the environment ([slides](lectures/module6/module6.pdf))
-- Module 7: Climate Migration
+- Module 7: Climate Migration ([slides](lectures/module7/module7.pdf))
 
 ## Assignments
 
