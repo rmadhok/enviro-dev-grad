@@ -1,0 +1,850 @@
+---
+title: "| Environmental and Development Economics\n| Module 5 - Environmental Policy Design
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Applied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Module 5 - Environmental Policy Design]{Environmental and Development
+  Economics \\\\ Module 5 - Environmental Policy Design in LMICs}}"
+- \input{header.tex}
+- \usepackage{gensymb}
+---
+
+
+## 
+\centering
+\Huge Lecture 8 (continued)
+
+\large Environmental Policy Design in LMICs: Monitoring and Enforcement
+
+## Housekeeping
+
+## Rich countries have resolved many environmental problems
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/regulation_fig1a.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Within-country: Richer countries effectively use environmental regulation
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "50%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/regulation_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Role of the state in improving environmental quality
+
+- With perfectly functioning markets, agent sets:
+
+$$MWTP_{e} = \frac{\partial c_{e}}{\partial \Delta e}$$
+
+- This yields **first-best outcome**
+\vfill
+- For policy design, social planner sets optimal $e$
+  - **Assumption 1:** Assume they know true $MWTP_{e}$ (last week)
+  - **Assumption 2:** Costless technology to raise revenue
+\vfill
+- **Assumption 2** fails in LMICs $\longleftrightarrow$ $\frac{\partial c_{e}}{\partial \Delta e}$ too high!
+
+## Optimal Environmental Policy Design 101
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+- LMICs on left of equilibrium
+\vspace{0.3cm}
+- Optimal to abate until MAC=MB
+\vspace{0.3cm}
+- Should be easy since MAC low
+\vspace{0.5cm}
+
+**puzzle:  $\frac{\partial c_{e}}{\partial \Delta e}$ is high!**
+
+- why?
+
+:::
+::: {.column width="45%"}
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/mac.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+:::
+::::::::::::::
+
+## Today
+
+- **Guiding question:** How do we design optimal environmental policy in LMICs?
+
+\vfill
+- Today's focus: challenges for designing low MAC policies
+  - Perverse incentives (Duflo et al., 2013)
+  - Spillovers and unintended consequences (Englander 2023)
+
+\vfill
+- Next time: other barriers to efficient policy design
+  - Trust
+  - Knowledge
+  
+## Background: Poor countries DO have environmental policies
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/regulation_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Background: India
+
+- Command-and-control regulation is the norm
+\vfill
+- "Command" is easy, "control" is costly
+\vfill
+- State Pollution Control Board (SPCB) enforces regulatons
+  - State capacity is weak
+  - Enforcement is very costly $\rightarrow$ less monitoring
+\vfill
+- **Role of third-party auditors**
+
+## Duflo et al. (2013): Truth-Telling by Third-party Auditors
+
+- **RQuestion:** How much do firms skirt environmental policy in developing countries?
+  - Can realigning incentives of auditors $\uparrow$ compliance with environmental norms?
+
+- **Setting:** Pollution audit system in Gujarat, India
+
+- **Data:** 473 firms; audits, backchecks, and pollution monitoring
+
+- **Research Design:** RCT
+  - Treatment: random auditor assignment with fixed payment
+
+- **Results:** 1) widespread corruption in status quo, 2) more truth-telling in treatment, 3) firms $\downarrow$ pollution 
+
+<!-- ## Background -->
+
+<!-- - Third party auditing used to monitor firm regulatory compliance -->
+<!--   - Financial sector: credit ratings -->
+<!--   - Auto: compliance with vehicle standards -->
+<!--   - Food retail: health inspector -->
+<!--   - **Environmental:** compliance with national/state laws -->
+
+<!-- - Feature: auditor chosen by, paid by, and reports to audited firm -->
+
+<!-- - **Incentive to shade/falsify reports!** -->
+<!--   - Corrupt information provision and undermine regulation -->
+
+## Context: Gujarat, India
+
+- One of India's fastest growing states
+  - Home to the two post polluted industrial clusters
+  
+- Pollution standards set nationally, enforcement is state-level
+  - GPCB responsible for enforcing Air Act
+
+- GPCB uses regulates 20,000 plants
+
+- Main regulatory instrument: plant-level inspections + third-party audits
+
+## Environmental Audits in Gujarat
+
+- Polluting firms submit yearly environmental audit
+
+- \textcolor{red}{Audit conducted by audit firm hired and paid by the plant}
+
+- Auditors visit plant three times/year to measure pollution
+  - Submit audit report to GPCB
+
+- (On paper) checks and balances on auditors
+  - Max 15 plants per year
+  - Can audit a plant at most 3 years in a row
+  - Auditors with inaccurate reports can be decertified
+
+## Environmental Audits in Gujarat
+
+- (On paper) checks and balances on plants
+  - Failure to submit report punishable by closure/disconnection
+  - Noncompliance audit report punishable by closure/disconnection
+\vfill  
+- Despite safeguards, system functions poorly
+  - GPCB believes inaccurate reporting renders audits useless for enforcement
+\vfill
+- Evidence of auditor shopping: Plants pay $\approx$ INR 24,000 (\$300)
+  - Significantly less than true costs of conducting audit
+
+## Experimental Design: N=473 plants
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## 
+\centering
+\Huge Lecture 9
+
+\large Environmental Policy Design in LMICs
+
+## Housekeeping
+
+- First draft due on Thursday
+  - Peer review due one week later (2 pages)
+\vfill
+- Proposal presentation (Oct 15th and 17th)
+  - Consider drafting it as you write your first draft
+  - Rubric added in github
+\vfill
+- Replication (3 pages, due Oct 21st)
+\vfill
+- Minor syllabus updates
+  - State capacity in-class presentation
+\vfill
+- Migration lecture readings will be posted this week
+
+## Model: Set Up
+
+- **Three Players**: plant, auditor, and  regulator.
+\vfill
+- Plants face the decision to:
+  - **Abate pollution**: Incurs a cost, but avoids penalties.
+  - **Falsify reports**: Pay auditor to underreport pollution and avoid abatement.
+\vfill
+- Auditors considers:
+  - Payment from plant
+  - Risk of disbarment by regulator if found cheating.
+\vfill
+- Regulator: reduce pollution by enforcing penalties and disbarring false auditors
+
+## Plant's Decision and Cost Function
+
+- The plant's goal is to minimize total costs:
+
+$$S - 1\{Abate\} \cdot c - w - 1\{\text{Fine Imposed}\} \cdot f $$
+
+- Where:
+  - S = Value of production
+  - c = Cost of abating pollution
+  - w = Payment to auditors for the report
+  - f = Fine imposed if non-compliance is detected
+  
+- **Abatement**: Reduces emissions from $p_{h}$ to $p_{l}$, at cost $c \sim G(\cdot)$
+
+- **Non-compliance**: Plant chooses $w(\hat{p}|p)$ to minimize costs
+  - where $\hat{p}$ is auditor report, and $p$ is true pollution
+
+## Auditor’s Payoff and Reporting Incentives
+
+- Auditor's payoff function is:
+
+$$w - a + E[V(\hat{p}|p)]$$
+
+- Where:
+  - $w$ is payment for performing audit
+  - a = Cost of performing the audit
+  - $E[V(\hat{p}|p)]$ = continuation value of future business
+  - Assume leniency increases EV: $V_{lh} = V(p_{l}|p_{h})>V_{hh} =V_{0}$
+\vfill
+- Auditors may have incentive to falsify reports to maintain business
+  - Higher \( V_{lh} \), more attractive for auditors to underreport
+  - $E[V(\hat{p}|p)]$ incorporates likelihood of disbarrment
+
+## Regulator Problem
+
+- Reviews reports $\hat{p}$ and may impose $f$ on plant or disbar auditor
+
+- Let $q$ = probability regulator observes true $p$ (backchecks)
+
+- Decide whether to impose $f$
+
+- Continuation value of disbarred auditor is zero
+
+- Regulator only goal: minimize pollution
+
+## Equilibrium: Proposition 1
+
+Unique subgame-perfect equilibrium with regulation:
+
+-  **Plants Abate**: If \( c \leq \min\{ f, qV_{lh} - \Delta V \} \).
+-  **Underreporting**: If \( qV_{lh} - \Delta V < \min\{ c, f \} \).
+-  **Defy Regulation**: If \( f < \min\{ c, qV_{lh} - \Delta V \} \).
+
+\vfill 
+
+**Intuition**
+
+- **Abatement**: when cheaper than paying fines or paying auditors to cheat
+
+- **Underreport**: when paying auditors to cheat cheaper than abatement and fines
+
+- **Defiance** when both abatement and bribing more expensive than risking fines
+
+## Equilibrium: Proposition 2 - Backchecks
+
+**Status Quo (control group)**
+
+- $q \rightarrow 0$ in status quo
+- Negative cost of false reports: $qV_{lh} - \Delta V$
+- Result: Widespread underreporting and no incentive for abatement
+
+\vfill
+
+**With Backchecks and Incentive Pay (Proposition 2)**
+
+- Backchecks: $\uparrow$ q s.t. $qV_{lh} - \Delta V > f$ induces fraction $G(f)$ of plants to abate
+- Incentive pay: Makes underreporting more costly than fine if $q(V_{lh}+B)-\Delta V > f$
+
+\vfill
+
+**Intuition**:
+
+- Backchecks increase $q$, raising expected cost of false reporting
+- When $qV_{lh} - \Delta V > f$, some plants prefer abatement over risking detection.
+<!-- - Higher $q$ makes underreporting less attractive, shifting plants towards compliance -->
+
+## Random Assignment of Auditors
+
+- **Flat fee:** Payment unconditional on report outcomes: $w({\hat{p}|p})=w(p)$
+  - Plant cannot bribe auditor, nor can they refuse to pay
+
+- Auditors only consider reputation $\rightarrow$ increase in $q$ for plants to abate is smaller
+
+- Reduces continuation value of notoreity, $\Delta V$
+
+\vfill
+
+**Proposition 3**: Rise in $q$ s.t. $qV_{lh}\geq \Delta V$ induces share $G(f)$ to abate
+
+\[
+\text{If } qV_{lh} \geq \Delta V \implies \text{Plants will abate if } c \leq f
+\]
+\vfill
+
+- **Intuition**: If treatments are strong enough s.t. $q(V_{lh}+B) > \Delta V$, then $G(f)$ plants will abate and rest will report higher $p$ and risk fine. 
+
+
+<!-- - Incentive Pay increases \( V_{lh} \) for accurate reporting s.t. false reporting less attractive -->
+
+## Model Summary
+
+- **Higher \( q \)** through backchecks increases risk of detection for false reporting
+
+- **Random assignment** and **centralized payment** $\downarrow$ auditors-plant dependency
+
+- **Incentive Pay** boosts auditors' continuation value for truthful reporting
+
+- Treatment makes false reporting costlier for auditors and plants
+
+- Plants either abate pollution or risk fines, depending on abatement costs
+
+- The equilibrium shifts towards increased compliance and truthful reporting
+
+## Data
+
+- **Audit Reports (2009 & 2010)**: water and air pollution
+   - Collected from auditors in both treatment and control groups
+\vfill
+- **Backchecks**: independent *unannounced* verification of pollution levels
+   - Conducted randomly on 20% of treatment plants in 2009 and 2010
+   - Midline backchecks in 2010 for both treatment and control groups.
+\vfill
+- **Endline Survey (2011)**:
+   - Measured actual pollution outcomes after the audit intervention
+\vfill
+- **Administrative Data from GPCB**:
+   - Regulatory actions, violations, and enforcement measures
+   - Fines, closures, and disconnections imposed on plants
+   
+## Results: Status Quo Pollution
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## In Regression Form
+$$ 1\{Compliant\}_{ij} = \beta_{1}1\{AuditReport\} + \alpha_{r} + \epsilon_{ij}$$
+\pause
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Treatment Effects: Truth Telling About Plant Compliance
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## In Regression Form
+\vspace{-0.5cm}
+$$ 1\{Compliant\}_{ij} = \beta_{1}1\{AuditReport\} \times T_{j} + \beta_{2}1\{AuditReport\} + \beta_{3}T_{j} + \alpha_{r} + \epsilon_{ij}$$
+\pause
+\vspace{-0.5cm}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "65%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Treatment increases truth-telling: 19pp less cheating in treatment
+
+## Which firms are getting told on?
+
+- Convert pollution readings to deviation from regulatory standard
+\vfill
+- Readings grouped into 40 different 0.05$\sigma$ width bins
+\vfill
+- 40 regressions: regress dummy for each bin on treatment indicator
+  - Negative coefficient: treatment auditors less likely to report values in that bin
+\vfill 
+- Result: treatment reduces the mass just beneath the standard
+  - **More likely** to report values above standard
+
+## Density of audit report pollution distribution
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "55%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Readings by treatment auditors 20\% less likely to be in bin just below standard compared to control readings
+
+## Do plants reduce emissions?
+- From model: treatment induces $G(f)$ plants abate by $\Delta$ incentives
+- Regress plant pollution on treatment + region FE in endline (cross section)
+\pause
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Treatment plants $\downarrow$ pollution by 0.21$\sigma$
+
+## Which plants are reducing pollution?
+- Quantile regression: $Q_{y_{ij}|X_{j}}(\tau) = \beta T_{j} + \alpha_{r} + \epsilon_{ij}$
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "45%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig9.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Clean-up driven by dirty plants (>80th pctile)
+- Driven by monotonic increase in severity of GPCB fines w/ non-compliance 
+
+## Policy 
+- Eliminating conflict of interest led to policy change
+- Scaled up to state level since 2015
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig10.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+
+## Thoughts?
+
+##
+
+\Large Other challenges for designing low MAC policies?
+
+## Barriers to Optimal Policy Design
+
+- Recall, goal of social planner is to internalize externalities
+\vfill
+- Objective is to set $MWTP_{e} = \frac{\partial c_{e}}{\partial \Delta e}$ using **regulation**
+\vfill
+- We saw that low state capacity creates a wedge by keeping $\frac{\partial c_{e}}{\partial \Delta e}$ high
+  - This is true even if market failures absent
+\vfill
+- **Top down:** $\uparrow$ state capacity **directly** has large benefits (more next week)
+\vfill
+- **Bottom up:** what if we instead change citizens' trust in the state?
+
+
+## Jack et al. (2013): Money not to Burn
+
+- **Research Question:** Can PES contracts curb crop burning?
+\vfill
+- **Setting:** North India; weak institutions for contract efficacy
+\vfill
+- **Data:** 171 villages in North India
+\vfill
+- **Design:** RCT with two treatments: 1) standard PES 2) partial payment upfront
+\vfill
+- **Results:** Upfront PES has 10pp higher compliance than standard PES
+  - Takeaway: trust is an important barrier for efficient environmental policy design
+
+## Textbook externality problem
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/jack2023_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+## Background
+
+- Crop  burning major source of pollution in Punjab
+\vfill
+- Burning rice stalks post-harvest $\rightarrow$ 40% of winter pollution in Delhi
+  - Severe health risks
+\vfill
+- Ban on burning since 2015, with fines for violations, but weak enforcement
+  - Fine: Rs. 2,500 to Rs. 15,000 based on landholding
+\vfill
+- Subsidies for residue management equipment exist
+  - insufficient to cover farmers' costs (still cheaper to burn)
+
+## PES Contracts
+
+- PES contracts pay farmers for environmentally friendly practices
+\vfill
+- Goal: increase the private costs of burning to incentivize ``good'' behavior
+\vfill
+- Advantage: targets outcome not inputs
+  - i.e. agnostic about technology, as long as abatement cost $<$ payment
+\vfill
+- Challenge: trust and liquidity constrain standard PES contracts in LMICs
+  - Treatment: pay 25\% or 50\% upfront
+
+## RCT Design
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/jack2023_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Data
+
+- Baseline survey: 1,668 farmers (N=171 villages) from two districts in Punjab
+\vfill
+- Data: Demographics, income, trust in institutions, and CRM equipent
+  - Farm plot shapefiles for linking with satellite imagery
+\vfill
+- Monitoring: field visits, random spot checks, satellite imagery
+
+## Estimation
+
+$$ y_{ij} = \alpha + \beta StandardPES_{j} + \gamma UpfrontPES_{j} + \psi X_{j} + \epsilon_{ij}$$
+
+- $y_{ij}$ = outcome for farmer $i$ in village $j$
+- $X_{ij}$ are strata fixed effects
+- Subtreatments are pooled
+- $\beta$: effect of standard PES relative to control
+- $\gamma$: effect of upfront PES relative to control
+
+## Results: Contract Compliance
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/jack2023_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Standard PES: 8.5\% complied with contract
+- Upfront PES: 18\% complied with control --- trust and liquidity important!
+
+## Other Results
+
+- Relative to control, upfront PES $\uparrow$ non-burning by 7pp (85\%)
+\vfill
+- Most farmers still burned...
+  - Cost of alternatives to burning still higher than PES payment
+\vfill
+- Standard PES insignificant in column 2 (inframarginal)
+  - farmers who complied would not have burned anyway
+
+## Mechanisms: Why do upfront PES increase compliance?
+
+- Hypothesis: 1) distrust in conditional payment, 2) limited cash to rent CRM
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/jack2023_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Upfront PES no better for farmers w/ liquidity constraints or distrust
+
+## Mechanisms: Why do upfront PES increase compliance?
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/jack2023_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Upfront farmers 7pp more likely to trust that payment will be made
+- CRM cash shortages not important for either upfront or standard farmers
+<!-- - Upfront amount may have been too low to ease constraint -->
+
+## Discussion
+
+- Limited short-term capital and distrust in institutions can limit effectiveness of standard PES contracts
+
+- May generalize to conditional CCTs more broadly
+
+- Thoughts?
+
+##
+\huge Other barriers to efficient policy design
+
+\large Unintended Consequences: Spillovers
+
+## Englander (2023): Information \& Spillovers in Conservation Policy
+
+- **Research Question:** What are the direct and spillover effects of targeted conservation policy?
+\vfill
+- **Setting:** Temporary closures in Peru's anchoveta fishery
+\vfill
+- **Data:** location, time, and \# of fish caught per boat
+\vfill
+- **Research Design:** ``Potential'' closure algorithm
+\vfill
+- **Results:** direct effect: lower catch in closed areas
+  - indirect effect: big positive spatial spillovers
+  - net effect: policy backfires and $\uparrow$ catch!
+
+## Targeted policies are common forms of incomplete regulation
+
+- Reduce externality by targeting highest MD places
+  - Road congestion pricing
+\vfill
+- Incomplete regulation $\rightarrow$ spillovers (impacts on non-targeted units)
+\vfill
+- Direction and magnitude of spillovers varies
+
+## Peru's Anchoveta Fishery
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+\vspace{1cm}
+- World's largest (tons caught)
+\vspace{0.3cm}
+- 8\% of global marine catch
+\vspace{0.3cm}
+- \$2 billion export revenue per year
+\vspace{0.5cm}
+- 730 active vessels per season
+
+:::
+::: {.column width="50%"}
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+:::
+::::::::::::::
+
+## Catching juveniles is higher marginal damage than adults
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "40%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spatial Closures
+
+- Regulator temporarily closes area of ocean when \% of juveniles $>$ 10\%
+
+- Regulator exercises discretion; sometimes no closure
+
+- Vessels report catch with electronic logbooks
+  - Time, tons, and \% juvenile from each set
+  - **Challenge:** fishermen underreport \% juvenile
+  - **Solution:** third-party inspection data
+
+- **Closure rule:** observe \% juvenile
+  - Draw rectangle around overfished sets
+  - Close area inside box
+  - Announce on website, email, whatsapp
+
+## Reported Size Distribution (example set)
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Corrected Size Distribution (example set)
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Counterfactual Closures
+
+- Mimic the closure rule (potential closures)
+
+- Intersect potential closures (N=973) w/ actual declared closures (N=410)
+
+- **Control for length distribution from which \% juveniles drawn**
+  - Comparable distribution of fish sizes
+
+- Similar potential closures, regulator believes different
+
+## Treatment and Control Groups
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Identifying variation
+
+- Comes from controlling for length distribution
+\vfill
+- Compare potential closures that by chance had higher \% juvenile draws (and were thus closed by regulator) to potential closures that by chance had lower \% juvenile draws (and were thus not closed by regulator)
+\vfill
+- Key to identification: fishers report \% juvenile catch from 200 anchoveta out of several million in a set
+
+## Empirical Strategy: Treatment Window for Spillovers
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig9.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Empirical Strategy
+
+$$ JuvenileCatch_{ist} = \alpha_{st} + \beta_{st}TreatFraction_{ist} + \sum_{l} \eta_{l}Prop_{il} + \Gamma X_{i} + \sigma_{wg} + \delta_{d} + \epsilon_{ist}$$
+
+- i = potential closure
+- s = spatial unit
+- l = half-cm length interval
+- w = two weeks 
+- g = grid cell
+- d = day
+
+## Event Study
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Main Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Mechanism: Information Signal
+
+- Game theoretic model
+- Vessel chooses where to fish to max. expected profits
+- Policy increases catch if:
+  - Closures are +'ve signal relative to congestion costs
+  - \% juvenile sufficiently high near closures
+\vfill
+
+- **Predictions:** 
+  - Ex-post value of information competed away in equilibrium
+  - Expected profit would be higher near closures if not for signal
+  - Vessels receiving bigger info shocks have larger treatment effects
+
+## Results: Value of positive signal is competed away
+
+$$Tons_{vjk} = \beta_{1}Near_{vjk} + \beta_{2}DistToShore_{vjk} + \delta_{vj} + \gamma_{d} + \alpha_{jg} + \epsilon_{vjk}$$
+
+where v=vessel, j=season, k=set, d=day, g=gridcell
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/gabe2023_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Thoughts?
+
+- Targeted policy backfires due to positive spillovers
+- Policy implicitly signals info about non-targeted units

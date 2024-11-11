@@ -1,0 +1,599 @@
+---
+title: "| Environmental and Development Economics\n| Module 7 - Climate and Migration
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Applied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Module 7 - Climate and Migration]{Environmental and Development
+  Economics \\\\ Module 7 - Climate and Migration}}"
+- \input{header.tex}
+- \usepackage{gensymb}
+---
+
+
+## 
+\centering
+\Huge Lecture 12
+
+\Large Climate and Migration
+
+## Housekeeping
+
+- APEC Seminar Tomorrow: Stephanie Onder
+\vfill
+- Peer review due at midnight
+  - I will return tomorrow
+\vfill
+- Proposal presentations start next week
+  - **Oct 15:** 1) Matt B 2) Jovin L 3) Ryan M
+  - **Oct 17:** 1) Gustavo M 2) Giang T 3) Sarah W
+\vfill
+- Office hours will continue until proposal deadline
+
+## Replication Assignment (Due Oct 21st)
+
+- Choose any envirodevonomics paper with data/code files
+  - Must be published in either 1) general econ or 2) enviro/dev field journal 
+  
+- Replicate at least 2 main tables/figures
+  - Output everything to latex
+
+- Write your own code and comment it!
+
+- Extension
+  - Must be "carefully thought out" and yield new insight
+  - e.g. heterogeneity, non-linearity, robustness check
+  
+- Write-up (6 pages doubled spaced) 
+  - summary, replication process, results, extension
+  - Compare your findings with original paper. Interpret.
+
+##
+\centering
+\huge Climate and Migration
+
+## Environmental disasters are unequal 
+
+- Cross-country heterogeneity
+  - Inequality in exposure (rich vs. poor countries)
+\vfill
+- Within-country heterogeneity
+  - Coastal regions hit harder by floods
+  - Agricultural regions hit harder by droughts
+  - Biodiverse regions hit harder by rainfall shocks
+\vfill
+- Sectoral heterogeneity
+  - Weather-dependent agriculture vs. services
+\vfill
+
+**Implication $\longrightarrow$ migration!**
+
+## Unequal Climate Impacts
+
+Historic average temperature (1986-2005)
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "95%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/climate_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## How do we study flows of people in response to climate change?
+
+- Impacted region (push factors)
+  - Direct effect: environmental extremes push people out
+  - Indirect effect: violence, famine, etc. push people out
+\vfill
+- Receiving region (pull factors)
+  - Direct effect: less exposure to environmental extremes draws migrants (wage impacts)
+  - Indirect effect: e.g. housing prices
+\vfill
+- Most research: environment $\leftrightarrow$ migration in partial equilibrium
+  - Elasticity of migration w.r.t. environmental quality
+  - Elasticity of wages w.r.t environmental quality
+\vfill
+- **New frontier: general equilibrium!**
+
+## Existing Evidence 
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/litreview.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spatial Models of Migration
+
+- Economists are recently thinking about spatial equilibrium
+\vfill
+- Migrants choose where to live based on costs and benefits
+  - Not only wage considerations
+  - Amenity values, **exposure to environmental extremes**
+\vfill
+- When there is an environmental shock to the system...
+  - Who moves?
+  - What adjustments take place? Housing, land, wages, etc.
+  - What is the new spatial equilibrium?
+  - What happens to inequality?
+\vfill
+- This sets the framework for studying environment and migration
+  
+## Model Set Up
+
+- Individual $i$ of wage group $j$ choose location $k$ to maximize utility:
+
+$$ \max_{k} \quad \underbrace{v_{jk}}_\text{observed} + \underbrace{\epsilon_{ijk}}_\text{unobserved}$$
+
+- The econometrician observes representative utility:
+
+$$ v_{jk} = \alpha_{j}p_{k} + \beta e_{k} + x_{k}\gamma + \delta_{jk}$$
+
+- housing price $p_{k}$
+- environmental "bad" $e_{k}$ (flood risk, extreme temperature)
+- observed amenities $x_{k}$, unobserved amenities $\delta_{jk}$
+- price elasticity can differ by wage group, $\alpha_{j}$
+
+## Model Set Up
+
+- Logit probability ($\epsilon_{ijk} \sim EV$) yields migration probability (see module 4 slides):
+
+$$ \pi_{ijk} = \pi_{jk} = \frac{e^{v_{jk}}}{\sum_{l}e^{v_{jl}}}$$
+
+- since individuals w/n wage group $j$ have common choice probabilities
+
+- In equilibrium, prices $p = p_{k}$ clear housing markets
+
+$$ n_{k}^{D}(p^{*}) = n_{k}^{S}(p^{*}) \quad \forall k \quad \text{where} \quad n_{k}^{D} = \sum_{i} \pi_{ijk}, \quad n_{k}^{S} = \bar{n}_{k} $$
+
+\vfill
+- **Migration arises from wage-specific price elasticities and endogenous prices**
+  - Environmental shocks $\uparrow$ inequality. Why?
+
+## Estimation
+
+- Goal: recover $\alpha_{j}$, $\beta$, $\gamma$
+  - Tells us equilibrium prices and choice probabilities for any pattern of $e_{k}$
+\vfill
+- Inverting migration probabilty yields:
+\begin{align*}
+ln \pi_{jk} - ln \pi_{jo} & = v_{jk} - v_{j0} \\
+  & = \alpha_{j} \Delta p_{k} + \beta \Delta e_{k} + \Delta x_{k} \gamma + \Delta \delta_{jk}
+\end{align*}
+\vfill
+
+- **Challenge:** prices are endogenous i.e. correlated with unobserved amenities!
+  - high-amenity places attract skilled migrants who bid up prices
+  - Solution: cost shifting instrument
+
+## Hisao (2024): Sea Level Rise and Urban Inequality in Indonesia
+
+- Flood exposure: grid cells $<$ sea level for 1,3, 5m sea level rise (hydrological model)
+\vfill
+- Price instrument: ruggedness (housing cost supply shifter)
+  - Exclusion restriction: terrain shifts housing supply but not demand
+\vfill
+- Define object of interest for simulation: flood exposure for wage group $j$: 
+$$F_{j} = \sum_{k} f_{k}\pi_{jk}$$
+- And price incidence by wage group $j$: 
+$$P_{j} = \sum_{k}p_{k}\pi_{jk}$$
+
+## Impact of flooding on inequality
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/hsiang2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+- Current flooding: poor people's flood exposure is 1.4x that of rich people
+- 5m sea level rise: inequality of exposure doubles
+- Prices: richer people move, lower prices compensate for higher flood exposure
+
+## Is inequality driven by prices or migration?
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/hsiang2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Evaluate $F_{j}$ with projected flooding and current $\pi_{jk}$ (no migration)
+- Evaluation $P_{j}$ with counterfactual prices and current $\pi_{jk}$ (no migration)
+- Reveals direct impact of floods on rich/poor **without migration**
+- No $\Delta$ in inequality in this scenario i.e. **migration drives unequal exposure!**
+
+## Reduced Form Literature
+
+- **Impact of Migration on Environment**
+  - \textcolor{red}{Brewer et al. (2022, Uganda)}; Hornbeck and Naidu (2014, USA); Rozelle et al. (1991, China); Salemi (2021, Africa)}
+\vfill
+- **Impact of Environment on Migration**
+  - Morten (2019, India); \textcolor{red}{Mueller et al. (many papers)}; Missrian and Schlenker (2017, dev countries); Chen et al. (2022, China)
+\vfill
+- **Migration as Adaptation to Environmental Extremes**
+  - \textcolor{red}{Cecato et al. (2024, Indonesia)}; Blakeslee et al. (2020, India)
+\vfill
+- **Migration and Environment in General Equilibrium**
+  - \textcolor{red}{Madhok et al. (2024, India)}; Asher et al. (2024, India); Blakeslee et al. (2022, India)
+
+## Impact of Migration on the Environment: Brewer et al. (2022)
+
+- **Research Question:** What is the impact of rural-urban migration on land use?
+  - What are the intensive vs. extensive margin impacts?
+\vfill
+- **Setting:** Uganda from 2005-2019 
+  - 70\% of land is agricultural
+\vfill
+- **Data:** Many rounds of the LSMS survey (3200 households)
+\vfill
+- **Research Design:** SSIV: urban consumption (shift) x migrant network (share)
+\vfill
+- **Results:** Migration causes agricultural contraction and specialization
+  - Leads to a reduction in tree cover loss
+
+## Conceptual Framework
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/brewer2022_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Estimation
+
+- 1st stage: $IHS(M_{ijt}) = \underbrace{\beta_{11}Z_{jt}M_{ij0}}_\text{shift-share IV} + \beta_{21}Z_{jt} + \beta_{31}W_{jst}+\alpha_{1i} + \psi_{1w} + \gamma_{1t} + \epsilon_{1ijt}$
+\vfill
+- 2nd stage: $IHS(Y_{ijt}) = \beta_{12}(\hat{M}_{ijt}) + \beta_{22}Z_{jt} + \beta_{32}W_{jst}+\alpha_{2i} + \psi_{2w} + \gamma_{2t} + \epsilon_{2ijt}$
+\vfill
+- Outcome: $M_{ijt}$ is number of months that hh member $i$ was absent in year $t$
+\vfill
+- Shift-share IV: 
+  - $Z_{jt} = \sum_{d=1}^{n}(\frac{C_{dt}}{dist_{jd}})$
+  - $C_{dt}$ is mean consumption in district d
+  - $Z_{jt}M_{ij0}$ is spatially weighted consumption shocks
+
+## Results: Agricultural extent
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/brewer2022_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- rural-urban migration leads to agricultural contraction (extensive margin)
+- rural-urban migration has no impact on area planted for annual vs. perennial crops
+
+## Results: Crop Specialization
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/brewer2022_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- migration causes households to specialize
+- 1) reduce number of different crops, 2) invest proportionally more in fewer crops
+
+## Results: higher district level tree cover
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/brewer2022_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Impact of Environment on Migration: Chen and Mueller (2018)
+
+- **Research Question:** How do farmers adapt to sea-level rise? 
+  - At what point do farmers migrate?
+
+\vfill
+- **Setting:** Coastal Bangladesh, 2003-2011
+\vfill
+- **Data:** Several sources
+  - Migration: Vital registration system
+  - Agriculture: Household Income and Expenditure Surveys
+  - Floods: NASA MODIS water index
+\vfill
+- **Research Design:** Fixed effects regression
+\vfill
+- **Results:** Indundation *does not* trigger migration
+  - Migration is driven by adverse effects of soil salinity on agriculture
+
+
+## Conceptual Framework
+
+- Recent studies show minimal migratory response to flooding
+  - Monsoons lead to temporary displacement, but people return
+  - Delayed yield benefits
+  - Many farmers have adapted ag practices to accommodate inundation
+\vfill
+- Inundation may not be the right ``push'' factor
+  - What exactly is triggering flood-related migration?
+\vfill
+- Hypothesis: gradual increases in salinity (not flooding) will bear modest effects on
+migration until less costly adaptation strategies in the agricultural
+sector have been exhausted
+
+## Empirical Strategy
+- Impact of salinity and flooding on agricultural incomes: 
+
+$$ Y_{hjt} = \theta_{F} F_{jt-1} + \theta_{S}S_{jt-1} + \beta Z_{hjt} + \delta X_{hjt-1} + \beta_{S}^{88}S_{j,1988} + \tau_{t} + \mu_{hjt} $$
+
+- $Y_{hjt}$ = annual crop revenue for household $h$ in subdistrict $j$ at time $t$
+- $F_{jt-1}$ = lagged flooding; $S_{jt-1}$ = lagged salinity
+- $Z_{hjt}$ = demographic and wealth covariates
+- $X_{hjt-1}$ = lagged environmental exposure (rain, temp, etc.)
+\vfill
+- Impact of salinity and flooding on migration
+
+$$M_{hjt} = \beta_{F} F_{jt-1} + \beta_{S}S_{jt-1} + \alpha Z_{hjt} + \gamma X_{hjt-1} + \beta_{S}^{88}S_{j,1988} + \rho_{t} + \epsilon_{hjt}$$
+
+## Results: Effect of flooding/salinity on farm revenue
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/mueller2018_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+- 1$\sigma$ increase in salinity reduces crop revenue by 0.1$\sigma$ (2500 taka)
+- No impact on total farm revenue
+- hh shift to aquaculture to mediate income risk as salinity compromises agriculture 
+
+## Results: Effect of flooding/salinity on migration
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/mueller2018_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- 1$\sigma$ increase in soil salinity increases internal migration by 0.43pp
+- 1$\sigma$ increase in soil salinity decreases international migration by 0.19pp
+- International migration and aquaculture may be substitutes
+
+## Migration as Adaptation: Cecato et al. (2024)
+
+- **Research Question:** Can migration mitigate weather damages?
+
+\vfill
+- **Setting:** Indonesia over 20 years
+\vfill
+- **Data:** 
+  - Migration: 32,000 individuals from IFLS survey
+  - Weather: Gridded rain/temperature 
+\vfill
+- **Research Design:** Shift-share IV
+  - Shift: rainfall shock
+  - Share: ethnic networks
+\vfill
+- **Results:** 1$\sigma$ $\downarrow$ in precipitation at origin $\downarrow$ non-migrant consumption 
+  - Ability to migrate leads to 14\% increase in consumption over medium run
+
+## Three facts
+
+- There is high migration in Indonesia
+  - 4.3\% percent of population per year migrates internally
+\vfill
+- Rainfall is an important determinant of migration in Indonesia
+  - Kleemans and Magruder (2018)
+\vfill
+- Mobility is associated with ethnicity 
+  - Propensity to migrate persists over time within groups (Auwalin 2020)
+
+## Estimation
+
+- **First stage regressions:**
+
+$$M_{ikt} = a_{0}M_{ikt} + a_{1}(Networks_{ik} \cdot R_{kt}) + a_{2}R_{kt} + \phi_{i} + \phi_{t} + X_{ikt} + \epsilon_{ikt}$$
+
+$$M_{ikt} \times R_{kt} = b_{0}M_{ikt} + b_{1}(Networks_{ik} \cdot R_{kt}) + b_{2}R_{kt} + \phi_{i} + \phi_{t} + X_{ikt} + \epsilon_{ikt}$$
+
+\vfill
+
+- **Second stage:**
+$$Y_{ikt} + \beta_{0}\hat{M}_{ikt} + \beta_{1}(\widehat{M_{ikt} \times R_{kt}}) + \alpha_{1}R_{kt} + \phi_{i} + \phi_{t} + X_{ikt} + \epsilon_{ikt}$$
+
+\vfill
+
+- $Y_{ikt}$: log consumption of hh $i$ in county $k$ in year $t$
+- $R_{kt}$: rainfall shock (z-score)
+- $Networks_{ik}$: share of ppl of same ethnicity in origin at age 12 who moved away
+
+## Results: Migration mitigates weather damage
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/cecato2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- 1$\sigma$ decrease in rainfall reduces consumption by 1.82\%
+- Ability to migrate more than offsets this
+
+## Migration and Agriculture in General Equilibrium: Madhok et al. (2024)
+
+- **Research Question:** How does agriculture unfold when labor exits?
+\vfill
+- **Challenge:** Two competing channels: labour (direct/PE) + prices (indirect/GE)
+\vfill
+- **Setting:** India --- very high labour misallocation
+\vfill
+- **Data:** IHDS-I and IHDS-II panel surveys (42,000 households)
+\vfill
+- **Research Design:** Shift-share IV
+  - Shift: destination income shocks
+  - Share: 1) inverse distance, 2) number of males at home
+\vfill
+- **Results:** migration $\downarrow$ agriculture near cities, but $\uparrow$ in remote areas
+  - i.e. spatial reorganization of agriculture
+
+## Partial Equilibrium
+
+- **Shift share IV:** 
+\begin{equation*}
+	z_{idt} = \underbrace{\varphi_{i}}_\text{productivity (share I)} \times \underbrace{\sum_{d' \in \Theta/ d} \frac{1}{\tau_{dd'}}}_\text{inverse distance (share II)} \times \quad \underbrace{(inc_{d't} \cdot pop_{d'})}_\text{shift}
+\end{equation*}
+
+- **2SLS Equations:**
+
+\begin{align*}
+   & M^{labor}_{idt}  = \mu_{1}z_{idt} + \mu_{2}s_{dt} + \mu_{3} inc_{dt} + \Gamma X'_{dt} + \alpha_{i} + \gamma_{t} + \varepsilon_{ijdt} \\
+    & Y_{idt}  = \beta_{1}\widehat{M^{labor}_{idt}}
++ \beta_{2}s_{dt} + \beta_{3}inc_{dt} + \Gamma X'_{dt} + \alpha_{i} + \gamma_{t} + \eta_{ijdt}
+\end{align*}
+
+## PE Results: No labor-capital substitution
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/madhok2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spatial Equilibrium: Visual Evidence
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/madhok2024_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Migration and Market Adjustments
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/madhok2024_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Mass migration from the crop market increases crop prices
+- Mass migration from the land market lowers land prices 
+
+## Migration and the Spatial Reorganization of Agriculture
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "75%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/madhok2024_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- PE (agricultural contraction) dominates in peri-urban areas
+- GE (agricultural expansion) dominates in remote areas
+- Result: food shortage induced by direct channel compensated by markets
+
+##
+\centering
+\huge New Directions for Environment and Development Economics 
+
+\Large Open Research Areas
+
+## Exciting Area for Research
+
+- **Main takeaway from course:**
+  - Many reasons for poor environmental quality in LMICs
+  - Evidence on many topics is very thin!
+
+\vfill
+- Barriers to research are falling
+  - Remote sensing (e.g. cashews in West Africa)
+  - Administrative data (e.g. Annual Survey of Industries)
+  - Poverty proxies (e.g. nightlights, other geospatial proxies)
+\vfill
+
+## Much Room for Methodological Innovations
+
+- I have tried to emphasize **applied theory**
+  - We can take existing models and adapt them to LMIC contexts
+  - E.g. add credit constraints, factor market constraints
+  - Many new insights we can take to the field!
+\vfill
+- Other methodological innovations
+  - Demand estimation (e.g. Ito and Zhang, 2020; Kremer et al., 2013)
+  - Field experiments (e.g. Saavedra, 2024; Duflo et al., 2013)
+  - Lab-in-the-field (e.g. Dean and Berkouwer, 2022)
+  - Reduced form quasi-experimental
+
+## Innovation in Theory
+
+1. Environmental and development econ study market failures
+    - New theory can help explain interactions
+    - e.g. Burgess et al. (2012), Jack et al. (2024), Madhok and Gulati (2024), Braganca and Dahis (2022)
+\vfill   
+2. IO and behavioural economics have clear intersections w/ envirodevonomics
+    - WTP elicitation (revealed pref, stated pref, etc.)
+    - e.g. Ito and Zhang (2020), Berkhouwer and Dean (2022), Kremer et al. (2013)
+    - See reading list for many other WTP for environment papers
+\vfill
+3. [New] Macro-structural and trade 
+
+## Research Frontiers: $MWTP_{e}$
+
+- What is $MWTP_{e}$ in poor countries?
+  - Lots of work on pollution (air/water)
+  - Less work on biodiversity/forests
+\vfill
+- What is the role of market failures in explaining low $MWTP_{e}$?
+  - Credit markets, labor markets, property rights, information access
+\vfill
+- Is low state capacity reflected in low MWTP?
+
+## Research Frontiers: Environmental policy design in LMICs
+ 
+- What determines successful environmental policy in LMICs?
+  - What is role of monitoring, enforcement, information asymmetries?
+  - New areas: e.g. trust (Jack et al., 2024)
+\vfill
+- Does information provision to public change exposure to environmental risk?
+\vfill
+- How can environmental policy be tailored to accommodate informal sector?
+
+## Research Frontiers: Political Economy
+
+- How do political structures lead to rent-seeking and overexploitation?
+  - Can conservation policy mitigate rent-seeking behavior?
+\vfill
+- How does leader identity influence environmental outcomes?
+  - Ethnic alignment (e.g. Madhok and Gulati, 2024)
+  - Gender (e.g. Jagnani and Mahadevan, 2024)
+  - Minority/majority: e.g. (Gulzaar et al, 2023)
+\vfill
+- Do extractive institutions cast a "long shadow" on the environment?
+
+##
+\centering
+\huge Thank you!
+
+\large Next week: Proposal Presentations

@@ -1,0 +1,999 @@
+---
+title: "| Environmental and Development Economics\n| Module 4 - WTP for Environmental Quality
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Applied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Module 4 - WTP for environment]{Environmental and Development
+  Economics \\\\ Module 4 - WTP for Environmental Quality in LMICs}}"
+- \input{header.tex}
+- \usepackage{gensymb}
+- \usepackage{cancel}
+---
+
+
+## 
+\centering
+\Huge Lecture 6
+
+\large WTP Estimation: Revealed Preference Models
+
+## Housekeeping
+
+- Research Proposal: you do NOT have to carry out analysis
+\vfill
+- First draft: Oct 3rd
+\vfill
+- Replication: Oct 21st
+  - Start soon
+
+## Today
+
+- **Guiding question:** what is the WTP for environmental quality in LMICs?
+\vfill
+- Today's focus: How do we even measure this?
+  - Behavioral models
+  - Choice probabilities
+  - Estimation
+  - Application to WTP
+
+\vfill
+- Next time: why is WTP so low in developing countries?
+
+## Estimating Non-market Value of Goods and Services
+
+- **Stated Preference:**
+  - Hypothetical data to estimate **ex-ante** WTP
+  - Contingent valuation, contingent behavior
+  - Respondents directly asked about WTP (phone, mail, etc.)
+  - Issue: hypothetical bias and strategic bias
+\vfill
+
+- **Revealed preferences**
+  - Behavioral data to estimate **ex-post** WTP
+  - Travel cost, averting behavior, hedonic price
+  - Pro: based on **actual** choices
+  - Con (?): need a **behavioral model** in which to analyze choices
+
+## Behavioral Models
+
+- Our goal is to define a behavioral process generating agent's choice
+
+- Let agent face choice among set of options (products, actions, etc.)
+  - What leads agent to choose one?
+  
+- Let some factors ($x$) be observed by researcher, and some not ($\epsilon$)
+
+- Factors relate to agent choice through a **behavioral process**:
+
+$$y = h(x, \epsilon)$$
+
+- \(h(x, \epsilon)\) determines the selected choice based on these factors
+
+## Probabilistic Choice
+- Since \(\epsilon\) unobserved, the outcome is probabilistic
+
+- **Choice probability** of choosing $y$ derived by assuming $\epsilon \sim f(\epsilon)$
+$$P(y | x) = \text{Prob}(\epsilon \quad \text{s.t.} \quad h(x, \epsilon) = y)$$
+
+- This probability is much more tractable i.e., fully characterized by $f(\epsilon)$
+
+- We can rewrite this as the expected value of an indicator function:
+$$P(y | x) = \int I[h(x, \epsilon) = y] f(\epsilon) d\epsilon$$
+
+- where $I[h(x, \epsilon) = y] =1$ when statement in brackets is true
+- Integral of behavioral process indicator over all possible values of unobservables
+
+## Evaluating the Choice Probability
+
+- Method 1: Closed-form solution
+  - For certain specifications of $h$ and $f$, $P(y|x)$ calculated via a formula
+  - Main example is Logit
+  
+\vfill
+- Method 2: Simulation
+  - Some specifications of $h$ and $f$ have no closed form solution
+  - We simulate $P(y|x)$ by taking random draws from $f$ and taking the average
+
+## Evaluating the Choice Probability: Closed Form
+
+**First, define the behavioral model**
+
+- Consider a binary model where agent considers whether to take an action
+- Agent gets utility (+/-) from the action:
+
+$$U= \beta'x + \epsilon$$
+
+  - $U$: Utility of taking an action; $\beta' x$: Observed component of utility.
+  - $\epsilon$: Unobserved component; lets assume **logistic distribution**.
+
+- Take action if utility is positive:
+$$P = \int I[\beta' x + \epsilon > 0] f(\epsilon) d\epsilon$$
+ 
+## Closed Form Solution
+\begin{align*}
+P & = \int I[\beta' x + \epsilon > 0] f(\epsilon) d\epsilon \\
+ & = \int_{\epsilon > -\beta' x} f(\epsilon) d\epsilon \\
+ & = 1 - F(-\beta' x) \\
+ & = 1 - \frac{1}{1 + e^{\beta' x}} \\
+ & = \frac{e^{\beta' x}}{1 + e^{\beta' x}} \\
+\end{align*}
+
+## Evaluating the Choice Probability: Simulation
+
+Recall: $P(y | x) = \int I[h(x, \epsilon) = y] f(\epsilon) d\epsilon$
+
+\vfill
+
+- **Step 1:** Take draw of $\epsilon$ from $f(\epsilon)$
+  - Label it $\epsilon^{1}$, denoting first draw
+\vfill
+- **Step 2:** Check whether $h(x, \epsilon^1)=y$
+  - If so, create $I^{1}=1$, otherwise $I^{1}=0$
+\vfill
+- **Step 3:** Repeat this R times and collect $I^{r}$ for $r=1,...,R$
+\vfill
+- **Step 4:** Average **simulated** probability: $P(i | x) = \frac{1}{R}\sum_{r=1}^{R} I^{r}$
+  - Proportion of times that draws of $\epsilon$, when combined with $x$, yield $y$
+  
+## 
+\huge Lets define a realistic behavioural model
+
+\large Grounded in economic theory
+
+## Random Utility Model
+
+**Behavioural model:**
+
+- Agent, $n$ faces choice among $J$ alternatives
+  - Choice set must be 1) mutually exclusive, 2) exhaustive, 3) finite
+
+- Utility from $j$ is: $U_{nj}$ for $j=1,...,J$
+
+- Utility known to agent but not the researcher
+
+- Agent chooses $j$ that maximizes utility:
+
+$$ \text{Choose i iff} \quad U_{ni} > U_{nj} \quad \forall j\neq i$$
+
+## Random Utility Model
+
+**The Researcher**
+
+- Observes attributes of alternatives, $x_{nj} \quad \forall j$
+
+- Observed attributes of agent, $s_{n}$
+
+- Let $V_{nj} = V(x_{nj}, s_{n}) \quad \forall j$ (representative utility)
+
+- **V can depend on parameters unknown to researcher**
+  - But can be structurally estimated...
+
+## Random Utility Model
+
+- Since $V_{nj} \neq U_{nj}$, we can write:
+$$U_{nj} = V_{nj} + \epsilon_{nj}$$
+
+  - where joint density of random vector $\epsilon_{n} = (\epsilon_{n1},...,\epsilon_{nJ}) = f(\epsilon_{n})$
+
+- Then the probability than agent $n$ chooses alternative $i$ is:
+\begin{align*}
+P_{ni} & = P(U_{ni} > U_{nj}, \forall j \neq i) \\
+ & = P(V_{ni} + \epsilon_{ni} > V_{nj} + \epsilon_{nj}, \forall j \neq i) \\
+& = P(\epsilon_{nj} - \epsilon_{ni} < V_{ni} - V_{nj}, \forall j \neq i) \leftarrow \text{{\color{blue} CDF!}} \\
+ & = \int I(\epsilon_{nj} - \epsilon_{ni} < V_{ni} - V_{nj}) f(\epsilon) d\epsilon
+\end{align*}
+- Different DCMs obtained from different choices of $f(\epsilon)$
+
+## Logit
+
+- Assumes $\epsilon_{nj}$ distributed iid extreme value
+$$ \text{PDF:} \quad f(\epsilon_{nj}) = e^{-\epsilon_{nj}} e^{-e^{-\epsilon_{nj}}}, \quad \text{CDF:} \quad F(\epsilon_{nj}) = 1 - e^{-e^{\epsilon_{nj}}}$$
+- Note: if $\epsilon$'s are iid EV, then $\epsilon_{nji}^{*} = \epsilon_{nj} - \epsilon_{ni}$ is distributed logistic:
+$$F(\epsilon_{nji}^{*}) = \frac{e^{\epsilon_{nji}^{*}}}{1+{\epsilon_{nji}^{*}}}$$
+
+## Aside: Extreme Value Distribution
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+**Useful Properties**
+
+\vspace{0.3cm}
+
+1. Mathematical tractability
+    - Closed form choice probability
+    
+\vspace{0.3cm}
+2. Long right tail
+    - Unobservables can drive unexpected choices
+    
+\vspace{0.3cm}    
+
+3. IIA property
+
+\vspace{0.3cm}
+
+4. Connection to logistic regression
+
+\vspace{0.3cm}
+
+5. Easy to (structurally) estimate 
+
+:::
+::: {.column width="45%"}
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ev_pdf.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+:::
+::::::::::::::
+
+## Logit
+
+- The probability that agent $n$ chooses alternative $i$:
+\begin{align*}
+P_{ni} & = P(V_{ni} + \epsilon_{ni} > V_{nj} + \epsilon_{nj} \quad \forall j\neq i) \\
+&= P(\epsilon_{nj} < \epsilon_{ni} + V_{ni} - V_{nj} \quad \forall j\neq i) \leftarrow \text{{\color{blue} invoke iid assumption!}} \\
+ &= \int \left( \prod_{j \neq i} e^{-e^{-(\epsilon_{ni} + V_{ni} - V_{nj})}} \right) e^{-\epsilon_{ni}}e^{-e^{-\epsilon_{ni}}}d\epsilon_{ni} \\
+&= \frac{e^{V_{ni}}}{\sum_{j}e^{V_{nj}}}
+\end{align*}
+\vfill
+- **Preview:** If V is linear in parameters, $V_{nj} = \beta'x_{nj}$, then: $P_{ni} = \frac{e^{\beta'x_{ni}}}{\sum_{j}e^{\beta'x_{nj}}}$
+
+## Independence of Irrelevant Alternatives
+
+- Crucial assumption in logit model
+
+- Relative odds of choosing b/w 2 $i$ and $k$ does not change when $j$ introduced
+
+- For any two alternatives $i$ and $k$, the ratio of logit probabilities is:
+\begin{align*}
+\frac{P_{ni}}{P_{nk}} &= \frac{e^{V_{ni}}/ \sum_{j}e^{V_{nj}}}{e^{V_{nk}}/ \sum_{j}e^{V_{nj}}} \\
+&= \frac{e^{V_{ni}}}{e^{V_{nk}}} = e^{V_{ni}-V_{nk}}
+\end{align*}
+
+- Ratio does not depend on any alternatives other than $i$ and $k$!
+  - Denominators cancel
+
+## Discussion of IIA Assumption
+
+- Advantages
+\vfill
+
+- Disadvantages
+
+##
+\centering
+\huge 5 minute break
+
+## Estimation: Maximum Likelihood Structural Estimation
+
+- Suppose we have have data on $N$ agent's choices
+- The likelihood of observing the choices made by each individual is:
+
+$$L(\beta) = \prod_{n=1}^{N} \prod_{i} (P_{ni})^{y_{ni}}$$
+
+- where \(y_{ni} = 1\) if alternative \(i\) is chosen, and 0 otherwise
+- Log-likelihood is easier to maximize:
+$$LL(\beta) = \sum_{n=1}^{N} \sum_{i} y_{ni} \log(P_{ni})$$
+
+- ML estimator is the $\beta$ that maximizes this function
+
+## Method of Moments
+
+- FOC of $LL(\beta)$ $\leftrightarrow$ $\frac{\partial LL(\beta)}{\partial \beta}=0$
+- This can be rewritten as:
+$$\frac{1}{N} \sum_{n=1}^{N} \sum_{i} y_{ni} x_{ni} = \frac{1}{N} \sum_{n=1}^{N} \sum_{i} P_{ni} x_{ni}$$
+
+- LHS: mean $x$ over choices by sampled agents
+- RHS: mean $x$ over **predicted** choices by sampled agents
+
+- $\beta$ found s.t. predicted mean of each explanatory variable equals observed mean
+  - Model reproduces observed averages in the data
+  - Also known as **matching on the first moment**
+
+## Limitations
+
+- Cannot represent random taste variation
+
+- Implies proportional substitution across alternatives (IIA)
+
+##
+\Large What if we want to estimate more moments of $\beta$?
+
+## Specifying Taste Variation
+
+- Supposed agent now has the utility: $U_{nj} = {\color{red} \beta_{n}}'x_{nj} + \epsilon_{nj}$
+  - where $\beta_{n}\sim f_{n}(\beta|\Theta)$ and  $\epsilon_{nj}$ still iid EV
+
+- If we observed $\beta_{n}$, then we are back to logit: $P_{ni}(\beta_{n})=\frac{e^{\beta_{n}'x_{ni}}}{\sum_{j}e^{\beta_{n}'x_{nj}}}$
+
+- Instead, we integrate logit over all possible parameters of $\beta_{n}$:
+
+$$P_{ni} = \int \underbrace{\left(\frac{e^{\beta_{n}'x_{ni}}}{\sum_{j}e^{\beta_{n}'x_{nj}}}\right)}_\text{logit probability} \underbrace{f(\beta | \Theta)d(\beta)}_\text{mixing distribution} \quad \leftarrow \text{{\color{blue} no closed form solution!}}$$ 
+
+- Mixing distribution usually normal: $f(\beta|\Theta) = f(\beta|\mu,\sigma)$
+- Note: $P_{ni}$ is a function of $\Theta$, not $\beta$! ($\beta$ is integrated out)
+
+## Aside: Properties of Mixed Logit
+
+- Relaxes IIA assumption!
+\vfill
+- Ratio of mixed logit probabilities, $P_{ni}/P_{nj}$ depends on all data
+  - Denominators are inside the integral and do not cancel
+\vfill
+- Enables correlation in unobserved factors across alternatives
+  - Flexible substitution patterns
+
+## Estimation: Simulation
+
+**Steps for Simulating Mixed Logit Probability**
+
+1. Draw a value $\beta^r$ from $f(\beta | \Theta)$, where $r$ is which draw
+2. Calculate the logit formula $P_{ni}(\beta^r)$ using the drawn value
+3. Repeat steps 1 and 2 for *R* draws.
+4. Average the results to obtain the simulated probability:
+
+$$ \hat{P}_{ni}= \frac{1}{R} \sum_{r=1}^{R} P_{ni}(\beta^r)$$
+
+## Simulated Log-Likelihood Estimation
+
+- As before, insert simulated $\hat{P}_{ni}$ into log-likelihood:
+
+$$SLL = \sum_{n=1}^{N} \sum_{j=1}^{J} y_{nj} \ln \hat{P}_{ni}$$
+
+- where $y_{nj} = 1$ if $n$ chose $j$ and zero otherwise
+
+- Maximum simulated likelihood estimator (MSLE) is the $\Theta$ that maximizes SLL
+\vfill
+**This recovers taste distribution $(\mu, \sigma)$ that matches observed choices to predicted choice probabilities as close as possible** 
+
+##
+\centering
+\huge Lets do a simple application
+
+\large What is the WTP for biodiversity?
+
+## WTP for Species Diversity in India
+
+- **Context:** people travel to ``hotspots'' to see pretty birds
+  - Birds are a good proxy for overall biodiversity
+\vfill
+- **Data:** individual level data from citizen science app (eBird)
+  - location, alternative sites, income, **travel cost**, **species richness**
+\vfill
+- **Behavioral model:** choose site that maximizes utility
+\vfill
+- **Question:** what cost will you incur to $\uparrow$ utility from biodiversity?
+  - How does your ``price'' change for an additional unit of biodiversity? (MWTP)
+
+## Deriving WTP in Practice
+
+- Agent $i$'s utility from site $j$ at time $t$ is:
+\begin{align*}
+U_{ijt} & = V_{ijt} + \epsilon_{ijt} \\
+& = \underbrace{\beta_{1}}_{\text{MU Income}}(y_{i} - c_{ijt}) + \underbrace{(\beta_{2} + \eta_{i})}_{\text{MU EQ}} e_{jt} + ... + \epsilon_{ijt}
+\end{align*}
+
+- If stay home: $U_{i0t}=\beta_{1}y_{i} + \epsilon_{i0t}$
+- Cost s.t. $i$ indifferent b/w travelling and avoiding cost:
+$$c_{ijt}* = \frac{1}{\beta_{1}} [(\beta_{2} + \eta_{i})e_{jt} + \beta_{3} x_{ijt} + ... + (\epsilon_{ijt}-\epsilon_{i0t})]$$
+- MWTP for one more species, assuming $\eta_{i}\sim N(0,\sigma)$: 
+$$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial d_{jt}} = \frac{\hat{\beta_{2}}}{\hat{\beta_{1}}} + \xcancel{\frac{\hat{\eta_{i}}}{\hat{\beta_{1}}}}}$$
+
+## Implementation
+
+- Data
+  - attributes of choice and alternatives for each **choice occasion**
+  - Variable *choice=1* if chosen, otherwise 0
+  - Data can get huge, and simulation takes forever
+  - solution: restrict choice set
+\vfill
+- Stata
+  - clogit: conditional logit (fast)
+  - mixlogit: mixed logit estimation (slow)
+\vfill
+- R
+  - *mlogit* library
+  - Exercises and applications: https://cran.r-project.org/web/packages/mlogit/vignettes/c5.mxl.html 
+  
+## Aside
+
+- **If you want to get involved in this project, let me know**
+
+- Goal: estimate WTP for species diversity in India
+
+##
+\centering
+\huge Lecture 7
+
+\large Why is WTP for Environmental Quality Low in Developing Countries?
+
+## Housekeeping
+
+- Free lecture (Oct 10)
+  - Choose one: 1) firms, 2) migration, 3) policy (guest lecture)
+\vfill
+- Research Proposal: first draft due one week from Thursday
+\vfill
+- All assignments have detailed instructions and rubric
+\vfill
+- Start selecting replication paper
+
+## WTP for Environment Quality in LMICs
+
+- Crucial for policy design (Greenstone and Jack, 2013)
+\vfill
+- Most papers estimate $MWTP_{s}$
+  - and assume market failures do not bias valuation
+\vfill
+- Examples of $MWTP_{s}$
+  - MWTP for water filter in Ghana: \$1.80-2.40 (Berry et al. 2011)
+  - MWTP for clean cookstoves in Kenya: \$12 (Berkouwer and Dean, 2022)
+  - MWTP for sanitation in Cambodia: \$30 (Ben-Yishay et al., 2017)
+\vfill
+- Revealed Preferences: very few!
+  - WTP for clean water: Kremer et al. (2011) ${\color{red} \leftarrow today}$
+  - WTP for clean air: Ito and Zhang (2020)
+  - \textcolor{red}{WTP for biodiversity: ???}
+
+## Kremer et al. (2011): WTP for Clean Water in Kenya
+
+- **Research Question:** What is household WTP for clean water in LICs?
+  - What are health impacts of water quality improvements?
+\vfill
+- **Setting:** 1,354 households in Kenya
+\vfill
+- **Intervention:** Improve water quality at source for 184 natural springs
+\vfill
+- **Empirical Strategy:** RCT + Revealed preference valuation
+\vfill
+- **Results:** Clean water valued at \$USD 2.96 per hh (\$800 VSL)
+
+## Spring Protection
+
+- Spring water is crucial drinking water source in Africa
+  - But vulnerable to contamination when people dip vessels
+  - Runoff introduces animal/human waste
+\vfill
+- Spring protection common in Africa to improve water quality at source
+\vfill
+- Seal off spring at source by encasing in concrete
+  - Water flows out of pipe rather than ground, avoiding contamination
+\vfill
+- Nothing can ``break'' $\rightarrow$ less maintenance than wells/pumps
+\vfill
+- How much are hh WTP for spring protection?
+
+## Spring Protection
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "68%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/spring_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spring Protection
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "75%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/spring_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spring Protection
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/spring_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Spring Protection
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "65%", fig.align = "center", fig.cap="Source: USAID"}
+
+knitr::include_graphics(
+                        path = "assets/spring_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Study Sample
+- Sample frame: list of all unprotected springs in Busia and Butere-Mumias districts
+\vfill
+- Treatment: 184 randomly selected for protection
+  - 1,345 households selected that use springs
+\vfill
+- 7-8 households from each spring select from ``user list''
+\vfill
+- Phased design: all springs eventually protected
+  - Round I (Jan-Apr 2005); 47 springs, 350 households
+  - Round II (Apr-Nov 2005); 46 springs; 349 households
+  - Round III (2005-2006); 91 springs; 685 households
+
+## Data Collection
+
+- Water quality measured at each spring based on EPA protocols
+  - Measure: E.Coli (log of \# bacteria per 100ml)
+\vfill
+- Household survey
+  - Diarrhea
+  - Anthopometrics
+  - Water collection behvavior
+  - Socioeconomic data
+\vfill
+- No difference in baseline water quality between treatment/control springs
+
+## Water Quality and Health
+- Impact of spring protection on water quality:
+$$W_{jt'}^{SP} = \alpha_{t} + \phi_{1}T_{jt} + X_{j}^{SP'}\phi_{2} + (T_{jt} \cdot X_{j}^{SP})'\phi_{3} + \epsilon_{jt}$$
+  - where $W_{jt}$ is water quality for spring $j$ at time $t\in {0,1,2,3}$
+  - $T_{jt}$ is treatment status (=1 after protection)
+  - $\phi$ = impact of spring protection on water quality
+\vfill
+- Impact on health
+$$Y_{ijt} = \alpha_{i} + \alpha_{t} + \phi_{1} T_{jt} + X_{ij}'\phi_{2} + (T_{jt} \cdot X_{ij})'\phi_{3} + u_{ij} + \epsilon_{ijt}$$
+
+  -  where $Y_{ijt}$ is whether child $i$ had diarrhea in the past week
+
+## Results: Impact of Spring Protection on Water Quality and Health
+
+**Water Quality**
+
+- Huge improvement in water quality: 66\% $\downarrow$ in E.coli
+- No heterogeneity by baseline hygiene knowledge or education
+  - Hypothesis: educated hh may maintain spring better
+- Improvement in home water quality: 24\% $\downarrow$ in E.coli
+  - Why is the effect smaller?
+
+\vfill
+**Health**
+
+- Diarrhea incidence $\downarrow$ by 4.7pp (20\% reduction compared to control)
+- No impact on child weight
+- Positive effect on BMI
+\vfill
+
+**What if control households choose to use treatment springs?**
+
+## Revealed Preference: Valuing Clean Water in Kenya
+
+- Let valuation of water from source $j$ be $Z_{j}$
+  - reflects health and non-health attributes (e.g. ease of collection)
+\vfill
+- $\beta_{i}$: indirect utility from protection ($T_{jt}$) at $j$ at time $t$
+\vfill
+- $C_{i}>0$ is time cost per minute of household $i$
+\vfill
+- $C_{i}D_{ij}$: Travel cost for additional trip to $j$ where $D_{i}$ is round-trip distance
+\vfill
+- Each trip affected by unobserved factors (weather, queue, errands, mood)
+
+## Revealed Preference Approach
+- Household indirect utility from one trip to $j$ at time $t$ is:
+$$ u_{ijt} = \beta_{i}T_{jt}+Z_{j}-C_{i}D_{ij} + e_{ijt}$$
+  - where $e_{ijt}$ is iid type I extreme value distributed
+\vfill
+- $i$ chooses $j$ over $k$ if:
+$$\beta_{i}(T_{jt}-T_{kt})+(Z_{j}-Z_{k})-C_{i}(D_{ij}-D_{ik})+(e_{ijt}-e_{ikt}) \geq 0$$
+- Using CDF of EV Type I error, prob. of choosing $j$ over alternatives $h$:
+$$P(y_{ijt}|X) = \frac{exp(X_{ijt}^{'}\beta)}{\sum_{h}exp(X_{iht}^{'}\beta)} \equiv \rho_{ijt}$$
+
+## Mixed Logit
+
+- Add preference heterogeneity with mixed logit:
+$$P(y_{ijt}|X) = \int_{\beta} \rho_{ijt}f(\beta)d\beta$$
+  - where $f(\cdot)$ is the mixing distribution
+- Maximize SLL to estimate mean and s.d. of these distributions
+
+- **What is the object of interest?**
+  <!-- - ratio of$\beta_{i}$ to coeff. on travel cost -->
+  <!-- - Value of spring protection in terms of minutes spent walking -->
+
+## WTP results
+- Conditional logit estimates: how do we interpret these?
+  - Coefficient on walking distance ($C_{i}D_{ij}$) = -0.055
+  - Coefficient on spring protection ($\beta_{i}$) = 0.51
+\vfill
+- **Can $\beta_{i}$ entangle other amenity values?**
+
+  <!-- - reduced need to bend down, lower collection times -->
+  <!-- - yes, but when include perceived water quality, $\beta_{i}=0$, meaning the greater value placed on protected springs is due to impact on water quality, not other factors -->
+
+\vfill
+- Coeff. on ($T_{jt}$ $\times$ under-3 child) is positive (insignificant)
+  - Households with kids value water quality more
+
+## WTP for spring protection
+
+- Ratio of **mixed logit** coefficients: 2.95/0.21=14 minutes
+
+- Households value clean water by willing to walk 14 extra minutes
+
+- Average hh takes 48 trips per week (see Descriptive Stats)
+- Total extra minutes per year = 14 x 48 x 52 = 35,078 minutes
+- Assuming 8-hour workday $\rightarrow$ **mean value of clean water is 73 workdays**
+  - Note: in paper, it is 32.4 workdays!
+
+## Converting WTP to dollars
+
+**Survey evidence**
+
+- Subset of 104 respondents
+- Contingent valuation: are you WTP \$5 to walk 1 less minute? \$10?, etc
+- Divide WTP (in terms of time) by money value of time
+- Regress time value on household characteristics, and predict on full sample
+- Mean value of time = \$USD 0.088 for 8-hr workday
+
+\vfill
+
+**Wages**
+
+- \$USD 1.26 for 8-hour day (Suri, 2009)
+- Time cost = 25\% of average workday wage
+
+## Comparison with Contingent Valuation
+
+- Households in protected spring communities asked:
+  - **How much are you WTP per year to keep the spring protected?**
+\vfill
+- In follow up survey:
+  - First: are you willing to pay 500 shillings (\$7.14)?
+  - Second: are you willing to pay 1000 shillings (\$14.29)?
+  - Then emphasize tradeoff (opportunity cost) and ask again
+\vfill
+- Almost all WTP \$7.14
+  - Majority WTP \$14.29 even after learning about tradeoff
+  - Starting value matters!
+
+<!-- ## Distribution of Household Values of Clean Water (Mixed Logit) -->
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"} -->
+
+<!-- knitr::include_graphics( -->
+<!--                         path = "assets/kremer2011_fig1.png", -->
+<!--                         auto_pdf = TRUE -->
+<!--                         ) -->
+
+<!-- ``` -->
+<!-- - Why is stated preference values larger? Why is CV distribution wider? -->
+
+## Health Valuation and VSL
+
+- Spring protection averts **3.2 diarrhea cases per household-year**
+  - (0.047 cases/child-week) * (1.3 children under 3 per hh) * (52 weeks/year)
+\vfill
+- Annual WTP for spring protection = 32.4 workdays/year
+  - Assume this value captures benefits from averted diarrhea
+\vfill
+- If protection prevents 3.2 cases/yr, valued at 32.4 workdays/yr, then
+\vfill
+$\text{WTP/case averted} = \frac{\text{Total Workdays}}{\text{Diarrhea Cases Averted}} = \frac{\text{32.4 workdays}}{\text{3.2 cases}} = \text{10.1 workdays/case}$
+
+## Health Valuation and VSL
+
+- Assume spring protection $\downarrow$ diarrhea morbidity \& mortality proportionally
+
+- Using fact that 862 diarrhea cases $\rightarrow$ 1 death (literature):
+
+- WTP to prevent 862 diarrhea cases (1 death) i.e. VSL:
+$$ \text{Total WTP/death averted}= \text{10.1 workdays} \times \text{862 cases} \approx \text{8,700 workdays}$$
+
+**VSL = \$0.088 $\times$ 8700 $\approx$ \$USD 770**
+
+**In USA 2013: VSL $\approx$ \$USD 8.5 million (EPA)**
+
+## Discussion
+
+- What do you think about approach?
+- What do you think about time valuation?
+
+
+## 
+\centering
+\Huge Lecture 8
+
+\large Why is WTP for Environmental Quality Low in LMICs?
+
+## Housekeeping
+
+- First draft due one week from today
+
+- Select your replication paper
+
+<!-- ## Today's lecture -->
+
+<!-- - Why is willingness to pay so low in developing countries? -->
+
+<!-- - One reason: **Revealed $MWTP_{e} \neq MWTP_{e}$ from first best** -->
+
+<!-- - Market failures create a wedge -->
+
+<!-- - Today: experiments to alleviate frictions -->
+
+## Energy efficiency uptake in LMICs
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Market Failures in Development Economics
+
+- Market failures can shape observed $MWTP_{e}$
+  - And, therefore, environmental policy
+
+\vfill
+- Main frictions: information, credit, risk, or property right imperfections
+  - Frictions warp $MWTP_{e}$, resulting in lower EQ
+
+\vfill
+- **Revealed preference** $MWTP_{e}$ assumes agent knows payoffs
+  - Misinformation common in developing countries
+  - Due to literacy, education, information access, state capacity, etc.
+
+## Credit Market Failures
+
+- Stem from difficulty writing/enforcing contracts in developing countries
+\vfill
+- Costs of monitoring borrowers + enforcing repayment leads to high interest rates and credit rationing (Conning and Udry, 2007)
+\vfill
+- Agents cannot pay upfront for clean technology that has future payoffs
+  - Forego future improvements in EQ, income, and health
+\vfill
+- **Determinants of liquidity therefore confound measured $MWTP_{e}$**
+
+## Missing Risk Markets
+
+- Lower $MWTP_{e}$ if payoffs are uncertain and insurance unavailable
+\vfill
+- Worse EQ can increase var(Y)
+\vfill
+- Missing risk markets $\uparrow$ exposure to risk and $\downarrow$ measured $MWTP_{e}$
+  - Liquidity: prioritize income for emergencies, instead of clean water
+  - Discounting: undervalue investment in EQ because uncertain about whether will be able to enjoy benefits (discount future more heavily)
+
+## Evidence on the effect of market failures on MWTP
+
+- What is the ideal experiment?
+
+- How do you distinguish between measured and actual $MWTP_{e}$?
+
+- Would random variation help?
+
+##
+
+\begin{quote}
+`` there is hardly a more important topic
+for future study than developing revealed
+preference measures of $MWTP_{e}$ that capture
+the aesthetic, health, and/or income gains
+from environmental quality''
+\vspace{0.5cm}\\
+- Envirodevonomics (Greenstone and Jack, 2013)
+\end{quote}
+
+## Berkouwer and Dean (2022): Frictions in WTP for Clean Air
+
+- **Research Question:** What are the barriers to adopting clean cookstoves?
+
+- **Setting:** Nairobi, Kenya
+  - Test whether credit constraints and inattention to cost-savings lead to underadoption
+
+- **Data:** 1000 households
+  - Measure WTP with BDM mechanism
+
+- **Research Design:** RCT with 1000 households to quantify WTP drivers
+  - Three-by-three experimental design
+  - Cross-randomize two credit and two attention treatments
+
+- **Results:** 1) Stove generates \$237 in charcoal savings, 2) yet only \$12 WTP, 3) credit constraints are the main friction preventing takeup
+
+## Key Idea
+
+WTP for enviromental quality $\rightarrow$ WTP for improved stove
+
+## Experimental Setting
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Model of Adoption
+- Consider agent evaluating an energy efficient technology (costs $P_{E}$)
+- Adopt iff sum of savings ${\color{blue} S_{t}}$ exceed costs today:
+$$\underbrace{u(c_0) - u(c_0 - P_E)}_{\text{cost of adoption today}} < \underbrace{\sum_{t=1}^{T} \delta^t [u(c_t + {\color{blue} S_t}) - u(c_t)]}_{\text{future benefits}}$$
+- Agent can take loan ${\color{red} L}$ and pay back in payments ${\color{red} r_{t}}$:
+$$\underbrace{u(c_0) - u(c_0 - P_E+{\color{red} L})}_{\text{cost of adoption today}} < \underbrace{\sum_{t=1}^{T} \delta^t [u(c_t + {\color{blue} S_t} - {\color{red} r_{t}}) - u(c_t)]}_{\text{future benefits}}$$
+- WTP $P^{*}$ is when agent is indifferent
+$$u(c_0) - u(c_0 - P^{*}+{\color{red} L}) = \sum_{t=1}^{T} \delta^t [u(c_t + {\color{blue} S_t} - {\color{red} r_{t}}) - u(c_t)]$$
+
+## Model of Adoption
+
+**Market Failure Tests**
+
+- Agent may be **inattentive** to energy savings by ${\color{blue} \theta_{s}} \in [0,1]$
+  - concentration bias: less attentive to small payments ${\color{red} r_{t}}$
+  - Time inconsistency: inattentive to future loan payments ${\color{red} \theta_{c}} \in [0,1]$
+\vfill
+- Agent may be **credit constrained** ${\color{red} L \leq \bar{C}}$
+
+## Empirical Tests
+
+Main outcome variable: WTP $P^{*}$
+$$u(c_0) - u(c_0 - P^* + {\color{red} L}) = \sum_{t=1}^{T} \delta^t \left[ u(c_t + {\color{blue} \theta_s S_t} - {\color{red} \theta_c r_t}) - u(c_t) \right] \quad \text{s.t.} \quad {\color{red} L \leq \overline{C}}$$
+
+1. Randomize attention to energy savings $\theta_s$ \hfill $\frac{\partial P^*}{\partial \theta_s} > 0$
+
+2. Randomize access to credit $\overline{C}$ \hfill $\frac{\partial P^*}{\partial \overline{C}} > 0$
+    - Randomize into \( N \) payments of size \( r_t \) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial r_t} < 0$
+
+    - Randomize attention to costs \( \theta_c \) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial \theta_c} < 0$
+
+    - Measure time-inconsistency (TI) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial TI} > 0$
+
+
+## Research Design: Cross-Randomize Credit and Attention
+- Each cell contains number of respondents
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Credit: Control and Treatment Groups
+
+- **Control:** pay (subsidized) price today, receive stove today
+
+- **Treatment:** receive stove today, pay w/n 3 months
+  1. Pay by 12 weekly deadlines
+  2. Pay by 3 monthly deadlines
+  
+- SMS reminders if miss deadlines
+
+- Interest rate of 1.16\% per month, 14.8\% per year
+
+## Attention: Control and Treatment
+
+- **Control:** Informed that stove reduces charcoal use by 50\%
+  - Informed of \$ equivalent of savings
+\vfill
+- **Treatment 1:** Attention to energy savings
+  - Respondent writes how much they think they'll save
+  - Writes down how they will use the savings
+\vfill
+- **Treatment 2:** Attention to energy savings minus costs
+
+## Attention to Savings
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Attention to Savings minus Costs
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Elicit WTP in Each Group
+
+- **Becker-DeGroot-Marschak (BDM) Mechanism**
+  - Field worker puts random price $P_{i} \in (0.01-29.99)$ in envelope
+  - Elicit max $WTP_{i}$ from respondent using binary search
+  - Open envelope
+  - WTP is binding: pay $P_{i}$ iff $P_{i} \leq WTP_{i}$
+\vfill
+- Benefits
+  - Generates **incentive-compatible** behavior! Why?
+  - Adoption is random, conditional on WTP
+
+\vfill
+**BDM mechanism elecits WTP AND generates random stove adoption**
+
+## Stove reduces charcoal spending by \$2.28 per week!
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+- Large effects: \$120 savings per year
+- Given \$40 cost of stove, this is **300\% rate of return!**
+
+## Yet, demand is low
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## No evidence of inattention to energy savings!
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Information frictions may not be attenuating WTP
+
+## Access to credit doubles WTP!
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/bd2022_fig9.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- credit increases WTP by \$13 (104\% relative to control)
+<!-- - credit push demand curve to breakeven point (i.e. use savings to pay for stove) -->
+
+## Other Reasons why WTP is low
+
+- Information access: Baylis et al. (2024), Jalan and Somanathan (2008), Bennear et al. (2013)
+\vfill
+- Credit: Ben-Yishay et al. (2017)
+\vfill
+- Property rights: Ali et al. (2014), Abman and Carney (2020), Bellemare et al. (2018), Noack and Costello (2024)
+
+## Discussion
+
+- Market frictions affects many things $\rightarrow$ endogeneity
+
+- Partial vs. general equilibrium 
+
+- Cannot separate measurement from actual distortions
+  - Compare across methods more/less affected by frictions?
+
+

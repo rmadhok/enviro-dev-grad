@@ -4,6 +4,9 @@
 1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad) [All course material posted here]
 2. [Canvas Website](https://canvas.umn.edu/courses/459511) [UMN students only; assignments uploaded here]
 
+## Credits
+I am grateful to Louis Preonas, Kelsey Jack, and Jennifer Alix-Garcia for providing reference material.
+
 ## Course description
 
 This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development and read papers at the research frontier. At the end, you will be able to answer the following questions:
@@ -40,9 +43,4 @@ Assignments are posted in the [assignments folder](assignments/).
 - Assignment 2: [Replication Exercise](assignments/replication_exercise/replication_exercise.pdf)
 - Assignment 3: [Research Proposal](assignments/research_proposal/research_proposal.pdf)
 - Assignment 4: [Peer Review](assignments/research_proposal/peer_review.pdf)
-
-
-## Credits
-I am grateful to Louis Preonas, Kelsey Jack, and Jennifer Alix-Garcia for providing reference material.
-
 

@@ -1,0 +1,738 @@
+---
+title: "| Environmental and Development Economics\n| Module 6 - Political Economy and the Environment
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Applied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Module 6 - Political Economy and the Environment]{Environmental and Development
+  Economics \\\\ Module 6 - Political Economy and the Environment}}"
+- \input{header.tex}
+- \usepackage{gensymb}
+---
+
+
+## 
+\centering
+\Huge Lecture 10
+
+\Large Political Economy and the Environment in LMICs
+
+## Housekeeping
+
+- **Tuesday Oct. 8th class in Ruttan 230**
+\vfill
+- Reviewers will be assigned tonight
+  - Referee report due next Thursday
+
+\vfill
+- Next: work on presentation
+  - You will present in alphabetical order
+\vfill
+- Replication due Oct. 21st
+  - You can choose **any** env/dev paper, not just ones on syllabus
+\vfill
+- Migration readings posted
+
+## Why political economy?
+
+- There is a wedge between private and social value
+  - Agents unlikely to volunteer conservation when benefits accrue elsewhere
+  - Landowners cut forest for private value, ignore social value (e.g. biodiversity)
+\vfill
+- **Government intervenes** to correct externality (regulation or prices)
+\vfill
+- Weak governance: De Jure $\neq$ De facto deforestation
+  - What drives actual deforestation?
+  - Last time: weak monitoring, weak enforcement, spillovers
+  - **Today:** political economy (i.e. ``non-benevolant'' social planner)
+
+## Political economy of the environment
+
+- In first-best, low $e$ means low $MWTP_{e}$ or high $MC_{e}$ 
+
+$$MWTP_{e} = \frac{\partial c_{e}}{\partial \Delta e}$$
+
+
+- Social planner sets $e^{*}$ by aggregating over agents
+  - Assumption: **no preferences of own**
+\vfill
+
+**Recent Work**
+
+- **Corruption:** \small Burgess et al. (2012), Oliva (2013)
+
+- **Political cycles:** \small Balboni et al. (2021), Mahadevan (2024), Mahadevan and Shenoy (2023)
+
+- **\textcolor{red}{Favoritism:}** \small Madhok and Gulati (2024), Abman and Carney (2020), Gordon et al. (2024)
+
+## Burgess et al. (2013): Political Economy of Deforestation
+
+- **Question:** How do political incentives affect environmental quality?
+  - What is the role of bureaucrates in natural resource extraction? 
+\vfill
+- **Setting:** Deforestation over eight years of institutional change in Indonesia
+  - Local bureaucrats can facilitate illegal logging
+\vfill
+- **Research Design:** Asynchronous district splits
+  - changes in election timing and budget allocations
+\vfill
+- **Results:** new jurisdictions $\uparrow$ deforestation and $\downarrow$ wood price
+  - Deforestation increases even in places where logging is banned
+
+## Setting: Indonesia
+
+- National government sets de jure forest rules
+  - Rely on local bureaucrats for enforcement
+\vfill
+- Central monitoring of local officials is costly
+  - Local officials can allow deforestation above sanctioned amount
+\vfill
+- This generates competition between districts:
+  - **Idea:** district heads can sell "permits" to deforest in exchange for bribe
+  - **Demand:** more permits sold, lower $P$ per permit
+  - **Market:** district heads engage in Cournot Competition
+  - **Strategy:** one official in area means high price, few permits, less deforestation
+  - **District split:** many heads, lower price, many permits, more deforestation
+
+## Aside: Cournot Market Structure
+
+- **Oligopoly Setting**: Few firms produce homogeneous goods
+\vfill
+- **Quantity Competition**: Firms choose q *simultaneously* to max. profits
+\vfill
+- **Market Price**: Determined by total Q produced; firms account for rivals' output
+\vfill
+- **Nash Equilibrium**: Each firm’s output is optimal, given competitors' output
+\vfill
+- **Strategic Substitution**: Firms'q are substitutes; increasing output lowers price
+\vfill
+- **Key Outcome**: Q and P are between monopoly and perfect competition levels
+  - Firms have *market power*, leading to P>MC
+  
+## Model of Bureaucrat Behavior
+
+- Logging firms choose where to log
+  - Must obtain (legal or illegal) permit from district
+\vfill
+- Districts choose number of permits to sell
+  - Take \# of permits issued by other districts as given
+\vfill
+- Bribe is price for permit beyond legal limit
+\vfill
+- Generates Cournot competition
+  - More districts $\rightarrow$ more deforestation $\rightarrow$ lower wood price
+
+## Model Setup: Firms
+
+- Downward sloping inverse demand for wood, $p(Q)$
+
+- Firms' profit maximization problem:
+
+$$\max_{q_{fd}} \left[ p(Q)q_{fd} - cq_{fd} - b_d q_{fd} \right]$$
+
+- $q_{fd}$: Quantity of wood logged by firm $f$ in district $d$
+- $p(Q)$: Price of wood, depends on total quantity $Q$ in the province
+- $c$: Constant marginal cost per unit of wood
+- $b_{d}$: Permit cost per unit of wood in district $d$
+
+- FOC [q]: WTP for permits: \( b_d = p(Q) - c \)
+
+## Model Setup: District Government
+
+- Districts sell permits but risk being caught for exceeding legal quotas:
+
+$$\max_{q_d} \left[ b(q_d)q_d - \phi(q_d, \bar{q})r_d \right]$$
+
+- $q_{d}$: Total logging permits issued by district $d$
+- \( \phi(q_d, \bar{q}) \): Prob. of being caught, increasing in illegal logging, \( q_d - \bar{q} \)
+- \( r_d \): Rent lost if detected
+
+- Substitute firms' marginal bribe: \( b_d = p(Q) - c \)
+
+## Cournot Equilibrium
+
+- FOC for optimal logging permits:
+$$q_d p' + p - c - \phi'(q_d, \bar{q}) r_d = 0$$
+
+- With $n$ districts in wood market s.t. $Q=nq_{d}$ yields Cournot equilibrium:
+
+$$\frac{p - c}{p} = \frac{1}{n\epsilon} + \frac{\phi'(Q/n, \bar{q}) r}{p}$$
+
+- \( \epsilon \): Price elasticity of demand for wood
+- \( n \): Number of districts
+- \( Q \): Total quantity of wood logged in the province
+
+## Model Implications
+
+$$\frac{p - c}{p} = \frac{1}{n\epsilon} + \frac{\phi'(Q/n, \bar{q}) r}{p}$$
+
+1) More districts ($\uparrow$ n) leads to $\uparrow$ deforestation, $\downarrow$ wood prices
+\vfill
+2) Substitution b/w illegal logging and other forms of rents $r$
+    - If $\phi'>0$ i.e. $q_{d}>\bar{q}$, then $\uparrow r$ leads to $\downarrow q_{d}$
+
+\vfill
+**Empirical Analog**
+
+- Let $p=\frac{\alpha}{q^{\lambda}}$ (CES demand), where $\epsilon=\frac{1}{\lambda}$, then effect of districts splits is:
+
+$$\frac{1}{Q} \frac{dQ}{dn} = \frac{1}{n^{2}-n\lambda}$$
+
+## Background: Indonesia
+
+- In 1998, Suharto's regime ends, leading to rapid decentralization of power 
+  - Number of districts increased from 292 in 1998 to 483 by 2008
+\vfill
+- Natural resource rich regions demand greater control over revenue
+  - Forest management shifted to district governments
+\vfill
+- District forest offices became the key players in both legal and illegal logging
+\vfill
+- Illegal logging, facilitated by district officials, accounts for 60-80% of total logging
+
+## Background Continued
+
+- District splits determined by: 1) geography, 2) ethnicity, 3) public sector size
+\vfill
+- Timing of splits determined by: lots of bureaucracy and red tape...
+  - Not determined by pre-trends in deforestation
+\vfill
+- Wood markets are localized
+  - Raw log exports are banned
+  - Timber first transported to local mills
+  - **Prices vary across regions**
+  
+## Political Economy Data
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/burgess2012_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Empirical Strategy
+
+**Deforestation Effects**
+
+- Fixed effects Poisson quasi-maximum likelihood count model:
+$$E(deforest_{pit}) = \mu_{pi} exp(\beta NumDistrictsinProv_{pit} + \eta_{it})$$
+
+- $deforest_{pit}$: number of deforested pixels in province $p$, island $i$, time $t$
+\vfill
+**Price Effects**
+$$ln(y_{pt}) = \beta NumDistrictsinProv_{pit} + \mu_{wpi}+\eta_{wit}+\epsilon_{wpit}$$
+
+- $y_{wpit}$: price of wood type $w$
+- $\mu_{wpi}, \eta_{wit}$: wood-by-province and wood-by-island-year FEs
+
+## Results: Deforestation
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/burgess2012_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- District split increases deforestation rate by 3.85\%
+- Similar impacts where logging is legal (production) or illegal (conservation)!
+- Large medium run effects
+
+## Results: Prices
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/burgess2012_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- district split decreases prices by 1.7\% (not significant)
+- after three years, prices $\downarrow$ by 3.4\%
+- slope of demand curve = $\frac{dLnQ}{dlnP}$ = -2.27 (elastic)
+
+## Alternative Explanation: Enforcement
+
+- **New district has less enforcement as it sets up**
+  - Initial increase in deforestation, then decline over time
+\vfill
+- But, we see initial $\uparrow$ in deforestation sustained over three years
+\vfill
+- Also, if enforcement driving results, should see $\uparrow$ deforestation in new half of district
+  - If Cournot competition, no differential effects b/w old and new part
+  - **Result: no differential effects!**
+
+## Are oil and gas revenues substitutes for logging revenue?
+
+- If detection removes both corruption opportunities, then they are substitutes
+  - If corruption has fixed costs, then they are complements
+\vfill
+- Share of central oil/gas revenue rebated back to districts
+  - Half goes to producing districts, other half split equally w/n province
+
+\vfill
+- Since, district splits influence oil/gas prices through the sharing formula, control for splits directly and estimate:
+
+$$E(deforest_{dit}) = \mu_{di}exp(\beta PCOilandGas_{dit} + \gamma NumDistricts_{dit} + \eta_{it})$$
+
+- $PCOilandGas_{dit}$: per capita oil revenue received by district
+- Could there be other explanations for a significant $\beta$?
+
+## Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "67%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/burgess2012_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Evidence of substitution: each \$ 1 of oil/gas rents reduce logging by 0.3\%
+- Medium-run effect positive! Explanation: illegal rents attract ``bad'' politicians
+
+## Negative Selection into Office
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "67%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/burgess2012_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- negative effect of oil/gas rents attenuates once election is held
+- 35\% of substitution effect disappears after election
+- Takeaway: change in political equilibrium reverses substitution effect
+
+## Takeaway
+
+- **Decentralization Increases Deforestation**:
+  - district splits increase competition, $\uparrow$ deforestation, $\downarrow$ timber prices.
+\vfill
+  
+- **Substitution of Corruption Opportunities**: 
+  - Illegal logging and oil/gas rents act as substitutes. 
+  - When alternative rents available, reduce illegal logging, though weakens over time
+\vfill
+- **Cournot Competition Explains Deforestation Behavior**: 
+  - The Cournot model explains how bureaucrats incentives drive deforestation. 
+\vfill
+
+## Discussion
+ 
+- Do you buy this story?
+
+- Model extensions?
+
+- Alternative story?
+
+## 
+\centering
+\huge Lecture 11
+
+\Large Political Economy of the Environment (continued)
+
+## Housekeeping
+
+- Presentation order next week (30 mins)
+  - **Oct 15:** 1) Matt B 2) Jovin L 3) Ryan M
+  - **Oct 17:** 1) Gustavo M 2) Giang T 3) Sarah W
+\vfill
+- Peer review due Thursday at midnight
+  - Remember to give **constructive** criticism + **suggestions**
+  - Look at instructions in assignment folder on github!
+  - Submit through Canvas (not email)
+  - I will send it to authors by Friday afternoon
+
+\vfill
+- Thursday: migration (1 hour), future research directions (30 mins)
+  - Migration readings posted on syllabus (no presentation)
+
+## Back to Political Economy
+
+- Recall, inefficiency comes from social planner not being ``benevolent''
+  - Include own utility weights in social welfare function
+\vfill  
+- In Indonesia, this comes in the form of taking bribes
+  - Fuels competition b/w bureaucrats for (illegal) logging permits
+\vfill
+- In Amazon, this comes in the form of rents from supporting ag. lobby
+  - Incentives: monetary returns, electoral returns
+  - See Katovich and Moffette (2024)
+\vfill
+- Test: will removing potential rents curb deforestation?
+  - We saw this already with pollution (Duflo et al., 2013)
+
+## Braganca and Dahis (2022): Cutting Special Interests by the Roots
+
+- **Research Question:** Does conservation policy change political incentives?
+\vfill
+- **Setting:** Deforestation policy in Amazon
+  - Test effect of policy on ``special interest'' farmer politican groups
+\vfill
+- **Data:** politician characteristics, elections, deforestation
+\vfill
+- **Design:** 1) Difference-in-differences, 2) close election RDD
+\vfill
+- **Results:** Corrupt municipalities deforest more before but not after policy
+  - **mechanism:** policy reduces rents from illegal deforestation, reducing incentives for farmer politicians to cater to special-interest farmer groups
+
+## Background: Brazil Deforestation
+
+- De jure: unauthorized deforestation is punishable crime
+  - De facto: Lack of coordination + high regulatory costs $\rightarrow$ limited effectiveness
+\vfill
+- Environmental enforcement is a **federal** responsibility
+  - In practice: mayors can indirectly influence deforestation
+  - e.g. mayor consent needed for land grabbing or illegal logging
+\vfill
+- 2004: PPCDAM deforestation policy enacted
+  - Satellite based monitoring to identify deforestation hotspots
+  - See Moffette et al. (2021)
+  
+## Background: Political Economy
+
+- Bribes/lobbying used to reduce environmental enforcement
+\vfill
+- Strong farmer lobby: 1/4 of Congress are members of rural caucus
+\vfill
+- Incentives of ``farmer'' politicians depends on conservation policy
+  - w/o policy, high returns to deforestation $\rightarrow$ pro-deforestation lobbying by farmers
+  - with policy, low returns from deforestation $\rightarrow$ less incentive to allow deforestation
+  
+## Conceptual framework
+
+- Farmer politicians promote deforestation through three mechanisms: 
+\vfill
+- **Preferences**: pro-deforestation preferences
+  - prediction: electing farmer mayor raises local deforestation
+  - policy: will not affect politician preferences
+\vfill
+- **Monetary Returns**: benefit financially from deforestation
+  - prediction: electing farmer mayor raises local deforestation
+  - policy: increases cost of deforestation, mitigating negative mayor effect
+\vfill
+- **Electoral Returns**: gain votes by supporting pro-deforestation policy
+  - prediction: electing farmer mayor increases local deforestation
+  - policy: unclear, but expect it to decrease electoral returns
+\vfill
+**See model in paper**
+
+## Data (2001-2016)
+
+- **Elections:** party, gender, age, occupation, education
+  - **farmer politician** = agriculture occuption (18\% of sample)
+\vfill
+- **Deforestation:** Global forest change
+  - Number of deforestation pixels in municipality-year
+\vfill
+- **Land use:** MapBiomas
+  - forest, pasture, crops, non-forest
+\vfill
+- **Public finance:** revenue and expenditures by type and source
+\vfill
+- **Land conflict:** conflicts, murders, and settlements
+
+## Empirical Strategy
+
+- Term-specific differences in outcomes b/w farmer and non-farmer places:
+
+$$Y_{it} = \beta_{t}P_{it} + \gamma_{t}'X_{it} + \delta_{t} + \epsilon_{it}$$
+
+- $Y_{it}$ = environmental outcome in municipality $i$ during term $t$
+- $P_{it}$ = 1 if $i$ is governed by a farmer politician during term $t$
+- Four terms: 2001-04, 2005-08, 2009-12, 2013-16
+\vfill
+- Predictions: $\beta_{t}>0$, $\beta_{t}-\beta_{01-04}<0$
+- **Question:** Why is there no municipality FEs?
+  <!-- - $\beta_{t}$ is a weighted mean of effects on places where mayor type changes between periods (switchers) and where mayor type constant (stayers) -->
+
+## Identification assumptions
+
+- How does this differ from difference-in-differences?
+
+<!--   - similar to DiD, except $P_{it}$ changes over time. Different $\beta_{t}$ come from comparing different groups of municipalities, and therefore the diff b/w coefficients over time might reflect not only effects of policy on politican behavior, but also change in composition of what municipalities were affected. -->
+<!-- - electing farmer politician not correlated with other determinants of environmental outcomes -->
+<!-- - difference between beta_t before and after policy identified under assumption that, if not for differences in type of politician holding office, changes in enviro outcomes after implementation would have been identical in farmer and non-farmer municipalities -->
+
+<!-- - unobserved determinants of deforestation might influence election of farmers into office.  -->
+<!--   - solution: close election RDD -->
+
+
+## Event Study
+
+- Year specific changes in deforesation in farmer vs. non-farmer municipalities:
+
+$$Y_{it}-Y_{i2004} = \sum_{\tau=2001}^{\tau=2016}\beta_{\tau}P_{it} + \sum_{\tau=2001}^{\tau=2016}\gamma'_{\tau}X_{it} + \delta_{t} + \epsilon_{it}$$
+
+- $\beta_{\tau}$: change in environment b/w $t$ and 2004 in farmer vs. non-farmer places
+- Prediction: $\beta_{t}=0 \quad \forall \tau<2004$, $\beta_{t}<0 \quad \forall \tau>2004$
+
+## Results: Event Study
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results: Farmer Politicians and Deforestation
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Deforestation was 95$km^2$ higher in farmer politician places pre-policy
+- Sharp drop in deforestation post-policy $\Delta (2005-08) - (2001-04)$
+
+## Close Election RDD Estimates
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## How do politicians influence deforestation?
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Differences b/w farmer and non-farmer area driven by successful PA policy
+- Cleared land is converted to (low productivity) pastureland, not cropland
+
+## Results: Violence and Conflict
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Violent deaths larger in farmer politician places pre-policy, but not after
+- Similar (but weaker) for land conflict
+
+## Mechanisms: Electoral Outcomes
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/dahis2022_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- No evidence evidence that electoral incentives affected farmer politician behavior
+
+## Discussion
+
+- Limiting illegal rents from helping special interest groups can break the link between local politics and environmental degradation
+
+- But, Moffette et al. (2021) find no effect of deforestation alert technology
+
+- Alternative stories?
+
+## Back to Political Economy
+
+- $MC_{e}$ needed to solve first-best social planner problem
+\vfill
+- Idea: ``too'' low $e$ in LMICs implies $MB<MC$
+  - Which means, we should be able to abate until:
+
+$$MWTP_{e} = \frac{\partial c_{e}}{\partial \Delta e}$$
+
+- BUT, $\frac{\partial c_{e}}{\partial \Delta e}$ may be inflated due to **low state capacity**
+  - Empirical estimates of $MAC_{e}$ is not enough
+\vfill
+- Political economy (state capacity) keeps $\frac{\partial c_{e}}{\partial \Delta e}$ high and explains low $e$ in LMICs
+\vfill
+- Test: improve state capacity and see what happens (e.g. Duflo et al., 2013)
+
+## Saavedra (2024): State Capacity and Illegal Mining
+
+- **Research Question:** Can $\uparrow$ state capacity reduce illegal mining?
+\vfill
+- **Setting:** Colombia: New technology to disclose illegal mines to government
+\vfill
+- **Design:** Randomly provide technology to different groups
+  - 2x2 RCT: 1) local authority (mayor), 2) enforcer (national gov't), 3) both, 4) none
+\vfill
+- **Results:** improving state capacity $\downarrow$ illegal mining
+  - Similar effects across treatments
+  - But, some negative spillovers
+  - No effects on deforestation
+
+## Illegal Mining in Colombia
+
+- **82% of mined areas are illegal**, mostly gold and coal
+\vfill
+- **Criminal vs. Informal Mining**: Criminal mining funds armed groups; informal mining is done by locals evading the law
+\vfill
+- **Severe environmental impact**, including deforestation and pollution.
+\vfill
+- **Enforcement challenges**: Local authorities handle soft enforcement, while national authorities manage punitive actions
+\vfill
+- **Monitoring technology** like satellite imagery crucial for detecting illegal mining
+
+## Treatment: Detecting illegal mines
+
+- Machine learning algorithm using satellite images to detect illegal mining
+
+- After finding mining activity, assess legality with geotagged mining permits
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## State capacity intervention
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+\vspace{1cm}
+- 2x2 RCT design
+\vspace{0.5cm}
+- 200 municipalities in each group
+\vspace{0.5cm}
+- Treatment: send letters disclosing five *predicted* mining locations
+  - Letters sent in 2017, 2019, 2021
+  - 40\% of local mayors field-verified disclosed location
+
+:::
+::: {.column width="45%"}
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+:::
+::::::::::::::
+
+## Treatment: Information Letter
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Determinants of Mayor Verification
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Empirical Strategy
+
+- Three locations within treated groups: 1) locations disclosed in letters, 2) neighbors of disclosed points, 3) locations further away from disclosed point
+
+- Grid cell level equation:
+
+\begin{align*}
+y_{gmdt} &= \beta_{D}(After_{t} \times Disclosed_{gm}) + \beta_{S}(After_{t} \times Neighbor_{gm}) \\  &+
+\beta_{T}(After_{t} \times MuniTreated_{gm}) + \gamma_{m} + \gamma_{dt} + \epsilon_{m,dt}
+\end{align*}
+
+- where $y_{gmdt}$ is \% illegally mined area in cell $g$ of municipality $m$ (UNODC)
+- $\beta_{D}$: effect of disclosing gridcell on illegal mining in that gridcell
+- $\beta_{S}$: effect of disclosing gridcell on illegal mining in neighbor cell
+- $\beta_{T}$: effect of disclosing gridcell on illegal mining far away
+
+## Coefficient Interpretation
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results: Reduction in illegal mining
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "65%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results: No impact on other outcomes
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- No impact on deforestation. Why?
+
+## Mechanisms: endline survey
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/saavedra2024_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Increase in illegal mining investigations w/ National mining authority (col 2)
+- Increase in hard enforcement (col 3-6)
+
+## Discussion
+
+- Improved state capacity $\downarrow$ illegal activity
+
+- Thoughts?
+
+## Political Economy of the Environment
+
+- Politician incentives for rent-seeking leads to over-extraction
+  - Burgess et al. (2012),  Baranca and Dahis (2024), Katovich and Moffette (2024), Pailer (2018), Mahadevan (2024)
+\vfill
+- Institutions and the environment
+  - Kuusela and Amacher (2016), Burgess et al. (2024),  Lipscomb and Mobarak (2016), Gulzaar et al. (2023)
+\vfill
+- State capacity and the environment
+  - Saavedra (2024), Moffette et al. (2023), Duflo et al. (2013)
+\vfill
+- Leader identity and the environment
+  - Gender: Jagnani and Mahadevan (2024)
+  - Ethnicity: Madhok and Gulati (2024), Gulzaar et al. (2023), Abman and Carney (2020)
