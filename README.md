@@ -44,3 +44,17 @@ Assignments are posted in the [assignments folder](assignments/).
 - Assignment 3: [Research Proposal](assignments/research_proposal/research_proposal.pdf)
 - Assignment 4: [Peer Review](assignments/research_proposal/peer_review.pdf)
 
+## FAQ
+
+### How do I keep up to date with this material?
+
+This course repository is a work in progress and will be updated each time I teach the course (every two years). 
+
+### How do I download the material? 
+
+If you just want to read the material, you can click the [lectures](lectures/) folder. All slide decks are available as pdf files. If you want to run the code and generate the slides yourself, you will need to clone the repo and run the R markdown files on your local machine. 
+
+### Can I use your material for my own teaching?
+
+Yes! Since this is a (relatively) new field, I believe it is important to make material publicly available so that environment/development economics can be taught more effectively. If you do use the material, I kindly request that you: 1) let me know by email that you did so, and 2) provide an acknowledgment in your syllabus somewhere.  
+
