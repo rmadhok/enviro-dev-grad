@@ -3,7 +3,7 @@ title: |
         | Assignment: Referee Report
 subtitle: |
         | Ph.D. Environmental and Development Economics
-        | UMN Applied Economics 2024
+        | UMN Applied Economics
         | Instructor: Raahil Madhok
 # Output type and options (no TOC and yes fig captions)
 output:
@@ -19,12 +19,12 @@ header-includes:
 
 ---
 
-**Due Date: October 10th, 2024**
+**Due Date: October 14th, 2026**
 
 # Overview
 In this assignment, you will conduct a peer review of a classmate's research proposal. Peer reviewing is a critical skill in the academic community, where you assess the quality, clarity, and originality of others' work while providing constructive feedback.
 
-On the evening that you submit your first draft (Oct. 3rd), you will receive a classmate's proposal to review. This will be a double-blind process so that neither of you will know who's proposal you are reviewing.  
+On the evening that you submit your first draft (Oct. 5th), you will receive a classmate's proposal to review. This will be a double-blind process so that neither of you will know who's proposal you are reviewing.  
 
 Your peer review should be divided into two sections: major points and minor points. Major points will address significant issues that need more attention in the research question, conceptual framework, or research design. Minor points will address more detailed aspects that can improve the proposal, such as writing style or even suggestions for better data.
 
@@ -80,34 +80,58 @@ When writing your peer review, keep in mind the following guidelines:
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|l|p{8cm}|c|c|}
+\begin{tabular}{|p{3.5cm}|p{8cm}|c|c|}
 \hline
 \textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Score} \\
 \hline
-\multirow{2}{*}{\textbf{Understanding of the Proposal}} & Demonstrates a clear understanding of the peer's research question, theoretical framework, and research design. & 10 & \\
+
+\textbf{Understanding of the Proposal} 
+& Demonstrates a clear understanding of the peer's research question, theoretical framework, and research design. 
+& 10 & \\
 \hline
-\multirow{3}{*}{\textbf{Major Points}} & Each of the major points identifies key issues in the proposal, explains their importance, and provides constructive suggestions for improvement. & 30 & \\
+
+\multirow{3}{3.5cm}{\textbf{Major Points}\\ \textbf{(40 Points)}} 
+& \textbf{Relevance and Depth:} Major points identify important issues related to the research question, theoretical framework, data, empirical design, interpretation, or policy implications. 
+& 15 & \\
 \cline{2-4}
-& Relevance and Depth: The major points address significant elements like research question, theoretical framework, data, design, or policy implications. & 10 & \\
+
+& \textbf{Explanation of Issues:} Clearly explains what needs improvement and why these issues matter for the overall proposal. 
+& 15 & \\
 \cline{2-4}
-& Explanation of Issues: Major points clearly explain what needs improvement and why these issues matter to the overall proposal. & 10 & \\
+
+& \textbf{Constructive Suggestions:} Provides specific, feasible, and constructive suggestions for addressing the major issues identified. 
+& 10 & \\
+\hline
+
+\multirow{2}{3.5cm}{\textbf{Minor Points}\\ \textbf{(15 Points)}} 
+& \textbf{Identification of Minor Issues:} Identifies relevant smaller issues involving clarity, presentation, technical details, terminology, grammar, or organization. 
+& 8 & \\
 \cline{2-4}
-& Constructive Suggestions: Provides specific and constructive suggestions to improve the proposal. & 10 & \\
+
+& \textbf{Clarity and Constructiveness:} Provides clear and specific suggestions for addressing the minor issues identified. 
+& 7 & \\
 \hline
-\multirow{3}{*}{\textbf{Minor Points}} & Each of the minor points identifies smaller issues (clarity, grammar, technical details) and suggests minor improvements. & 20 & \\
-\cline{2-4}
-& Identification of Minor Issues: The minor points identify relevant and helpful smaller issues. & 10 & \\
-\cline{2-4}
-& Clarity and Constructiveness: Provides clear, specific feedback on how to address the minor issues. & 10 & \\
+
+\textbf{Tone and Constructiveness} 
+& The review is respectful, professional, and balanced. Critiques are framed constructively and with the goal of improving the proposal. 
+& 15 & \\
 \hline
-\multirow{2}{*}{\textbf{Tone and Constructiveness}} & The review is respectful, professional, and balanced. The reviewer frames critiques in a positive and constructive manner. & 20 & \\
+
+\textbf{Specificity of Feedback} 
+& Feedback is specific, well-supported, and refers directly to relevant parts of the proposal. Avoids vague or generic comments. 
+& 10 & \\
 \hline
-\multirow{2}{*}{\textbf{Specificity of Feedback}} & Feedback is specific, well-documented, and refers directly to the text of the proposal. Avoids vague comments. & 10 & \\
+
+\textbf{Writing Quality} 
+& The peer review is clear, concise, well-organized, and professionally written, with correct grammar and syntax. 
+& 10 & \\
 \hline
-\multirow{2}{*}{\textbf{Writing Quality}} & The peer review is well-written, clear, and organized. Grammar and syntax are correct. & 10 & \\
+
+\multicolumn{2}{|r|}{\textbf{Total Points Possible:}} 
+& \textbf{100} 
+& \textbf{/100} \\
 \hline
-\multicolumn{3}{|r|}{\textbf{Total Points Possible:}} & \textbf{150} \\
-\hline
+
 \end{tabular}
 \end{table}
 

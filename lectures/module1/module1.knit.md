@@ -6,7 +6,7 @@ author:
   |
     | Raahil Madhok
     | UMN Applied Economics
-date: "`r Sys.Date()`"
+date: "2026-08-31"
 
 # Output type and options (no TOC and yes fig captions)
 output: 
@@ -21,9 +21,7 @@ header-includes:
 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead of pdf to decrease size of the resulting pdf
-```
+
 
 ## Introduce yourself
 
@@ -81,26 +79,14 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
 
 ## Environmental quality worse in LMICs
 
-```{r rstudio1, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
 
-knitr::include_graphics(
-                        path = "assets/pm_lmic.png",
-                        auto_pdf = TRUE
-                        )
-
-```
+\begin{center}\includegraphics[width=0.85\linewidth]{assets/pm_lmic} \end{center}
 
 
 ## Disease burden higher in LMICs
 
-```{r rstudio2, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
 
-knitr::include_graphics(
-                        path = "assets/disease_lmic.png",
-                        auto_pdf = TRUE
-                        )
-
-```
+\begin{center}\includegraphics[width=0.85\linewidth]{assets/disease_lmic} \end{center}
 
 ## Is environmental economics different in LMICs?
 
@@ -338,25 +324,13 @@ Proposal Presentation & 10\% & Oct 21/26  &  &  \\
 
 ## Remember from last time
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
 
-knitr::include_graphics(
-                        path = "assets/pm_lmic.png",
-                        auto_pdf = TRUE
-                        )
-
-```
+\begin{center}\includegraphics[width=0.85\linewidth]{assets/pm_lmic} \end{center}
 
 ## Remember from last time
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
 
-knitr::include_graphics(
-                        path = "assets/disease_lmic.png",
-                        auto_pdf = TRUE
-                        )
-
-```
+\begin{center}\includegraphics[width=0.85\linewidth]{assets/disease_lmic} \end{center}
 
 ## Why is environmental quality low in LMICs?
 

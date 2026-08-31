@@ -65,6 +65,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \input{header.tex}
+\usepackage{multirow}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -91,7 +92,7 @@ Instructor: Raahil Madhok}
 \begin{document}
 \maketitle
 
-\textbf{Due Date: October 21st, 2024}
+\textbf{Due Date: October 19th, 2026}
 
 \hypertarget{overview}{%
 \section{Overview}\label{overview}}
@@ -124,7 +125,7 @@ You will select an empirical paper of your choice, replicate and extend it, and 
 \begin{itemize}
 \tightlist
 \item
-  Replicate \textbf{2-3 of the main tables or figures}. These should represent the core empirical findings
+  Replicate \textbf{2 of the main tables or figures}. These should represent the core empirical findings
 \item
   You can use Stata or R
 \item
@@ -132,7 +133,7 @@ You will select an empirical paper of your choice, replicate and extend it, and 
 \item
   Extensively comment your code to explain exactly what each part does
 \item
-  Output all tables to LaTeX. If you do not know how, use ChatGPT to help you.
+  Output all tables to LaTeX. If you do not know how, use AI to help you.
 \end{itemize}
 
 \hypertarget{extension}{%
@@ -226,46 +227,100 @@ You will be evaluated based on:
   \textbf{Code}: Organization, clarity, and documentation of the code, including reproducibility of results.
 \end{itemize}
 
+\newpage
+
+\hypertarget{rubric}{%
+\section{Rubric}\label{rubric}}
+
 \begin{table}[ht]
 \centering
-\begin{tabular}{|p{4cm}|p{6cm}|p{1.5cm}|p{4cm}|}
+\begin{tabular}{|p{3.2cm}|p{4.2cm}|p{1.3cm}|p{6.5cm}|}
 \hline
-\textbf{Category} & \textbf{Criteria} & \textbf{Points} & \textbf{Description} \\
+\textbf{Category} & \textbf{Subcriterion} & \textbf{Points} & \textbf{Description} \\
 \hline
-\textbf{Written Report (60 Points)} & \textbf{Replication Process (15 Points)} & & \\
+
+\multirow{2}{3.2cm}{\textbf{Replication Process}\\ \textbf{(15 Points)}} 
+& Description of Methods and Process 
+& 10 
+& Clear explanation of replication steps, including data cleaning, variable construction, and empirical methodology. \\
+\cline{2-4}
+
+& Data and Documentation Review 
+& 5 
+& Thoughtful review of the data, documentation, and any issues encountered during replication. \\
 \hline
-& Description of Methods and Process & 10 & Clear explanation of replication steps, including data cleaning and methodology. \\
+
+\multirow{2}{3.2cm}{\textbf{Replication Results}\\ \textbf{(15 Points)}} 
+& Presentation of Results 
+& 10 
+& Clear and accurate presentation of replicated tables and/or figures. \\
+\cline{2-4}
+
+& Comparison with Original 
+& 5 
+& Detailed comparison of replicated results with the original paper, including discussion of any differences. \\
 \hline
-& Data and Documentation Review & 5 & Thoughtful review of data quality and documentation. \\
+
+\multirow{2}{3.2cm}{\textbf{Extension}\\ \textbf{(20 Points)}} 
+& Description and Justification 
+& 10 
+& Clear explanation of the extension and a convincing rationale for how it builds on the original paper. \\
+\cline{2-4}
+
+& Results of the Extension 
+& 10 
+& Clear presentation and interpretation of the extension results, including new tables and/or figures. \\
 \hline
-\textbf{Replication Results (15 Points)} & Presentation of Results & 10 & Clear presentation and formatting of replicated tables/figures. \\
+
+\multirow{2}{3.2cm}{\textbf{Writing Quality}\\ \textbf{(10 Points)}} 
+& Clarity and Structure 
+& 5 
+& Report is logically organized, concise, and easy to follow. \\
+\cline{2-4}
+
+& Grammar and Style 
+& 5 
+& Writing is polished and follows appropriate academic conventions. \\
 \hline
-& Comparison with Original & 5 & Detailed comparison of replicated results with original findings. \\
+
+\multirow{2}{3.2cm}{\textbf{Code Quality and Organization}\\ \textbf{(15 Points)}} 
+& Clarity and Commenting 
+& 10 
+& Code is clearly written and sufficiently commented to explain each major step. \\
+\cline{2-4}
+
+& Organization 
+& 5 
+& Code is well-organized, logically structured, and consistently formatted. \\
 \hline
-\textbf{Extension (20 Points)} & Description and Justification & 10 & Clear explanation of extension and rationale for its connection to the original paper. \\
+
+\multirow{2}{3.2cm}{\textbf{Correctness and Functionality}\\ \textbf{(15 Points)}} 
+& Accuracy of Replication 
+& 10 
+& Code accurately reproduces the main results from the original paper. \\
+\cline{2-4}
+
+& Extension Implementation 
+& 5 
+& Extension is implemented correctly and consistently with the stated methodology. \\
 \hline
-& Results of the Extension & 10 & Presentation of findings from the extension, including new tables/figures. \\
+
+\multirow{2}{3.2cm}{\textbf{Reproducibility and Efficiency}\\ \textbf{(10 Points)}} 
+& Reproducibility 
+& 5 
+& Code can be reproduced easily using the submitted files and instructions. \\
+\cline{2-4}
+
+& Efficiency 
+& 5 
+& Code avoids unnecessary complexity and uses an efficient workflow. \\
 \hline
-\textbf{Writing Quality (10 Points)} & Clarity and Structure & 5 & Report is logically structured and clearly written. \\
+
+\multicolumn{2}{|r|}{\textbf{Total}} 
+& \textbf{100} 
+& \\
 \hline
-& Grammar and Style & 5 & Proper grammar, spelling, and adherence to scientific writing conventions. \\
-\hline
-\textbf{Code (40 Points)} & \textbf{Code Quality and Organization (15 Points)} & & \\
-\hline
-& Clarity and Commenting & 10 & Code is clearly written with sufficient comments. \\
-\hline
-& Organization & 5 & Code is well-organized with logical structure and consistent formatting. \\
-\hline
-\textbf{Correctness and Functionality (15 Points)} & Accuracy of Replication & 10 & Code accurately replicates the main results. \\
-\hline
-& Extension Implementation & 5 & Correct implementation of the extension in the code. \\
-\hline
-\textbf{Reproducibility and Efficiency (10 Points)} & Reproducibility & 5 & Code can be easily reproduced with clear instructions. \\
-\hline
-& Efficiency & 5 & Code is efficient, avoiding unnecessary complexity or overhead. \\
-\hline
-& & \textbf{Total} & \textbf{100 Points} \\
-\hline
+
 \end{tabular}
 \end{table}
 

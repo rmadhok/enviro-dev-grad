@@ -2,7 +2,7 @@
 
 ## Course websites
 1. [GitHub Website](https://github.com/rmadhok/enviro-dev-grad) [All course material posted here]
-2. [Canvas Website](https://canvas.umn.edu/courses/459511) [UMN students only; assignments uploaded here]
+2. [Canvas Website](https://canvas.umn.edu/courses/577986) [UMN students only; assignments uploaded here]
 
 ## Credits
 I am grateful to Louis Preonas, Kelsey Jack, and Jennifer Alix-Garcia for providing reference material.
@@ -29,13 +29,14 @@ The syllabus is linked [here](syllabus.docx), and includes the grade breakdown, 
 Lectures are split into modules. For the most part, each module will consist of two lectures.
 
 - Module 1: Introduction ([slides](lectures/module1/module1.pdf))
-- Module 2: Impact of economic development on the environment ([slides](lectures/module2/module2.pdf))
-- Module 3: Impact of the environment on economic development ([slides](lectures/module3/module3.pdf))
-- Module 4: Why is WTP for environmental quality so low in developing countries? ([slides](lectures/module4/module4.pdf))
-- Module 5: Environmental policy in developing countries ([slides](lectures/module5/module5.pdf))
-- Module 6: Political economy of the environment ([slides](lectures/module6/module6.pdf))
-- Module 7: Climate Migration ([slides](lectures/module7/module7.pdf))
-
+<!--
+# - Module 2: Impact of economic development on the environment ([slides](lectures/module2/module2.pdf))
+# - Module 3: Impact of the environment on economic development ([slides](lectures/module3/module3.pdf))
+# - Module 4: Why is WTP for environmental quality so low in developing countries? ([slides](lectures/module4/module4.pdf))
+# - Module 5: Environmental policy in developing countries ([slides](lectures/module5/module5.pdf))
+# - Module 6: Political economy of the environment ([slides](lectures/module6/module6.pdf))
+# - Module 7: Climate Migration ([slides](lectures/module7/module7.pdf))
+-->
 ## Assignments
 
 Assignments are posted in the [assignments folder](assignments/).
