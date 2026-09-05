@@ -25,6 +25,24 @@ header-includes:
 knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead of pdf to decrease size of the resulting pdf
 ```
 
+## Who am I?
+
+- Raahil Madhok
+  - Assistant Professor of Applied Economics
+  - Started in 2023
+\vfill
+
+- From Toronto, Canada
+\vfill
+
+- Education
+  - BA in Economics and Environmental Studies at McGill University (Montreal)
+  - MA and PhD at University of British Columbia (Vancouver)
+\vfill
+
+- Research interests: 
+  - environmental economics, development economics, political economy
+
 ## Introduce yourself
 
 - First, lets do introductions
@@ -41,7 +59,7 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
   - Last class: Oct 26th
   
 \vfill
-- **Office Hours:** Tues/Thurs 12:00pm-1:00pm, Ruttan 337D
+- **Office Hours:** Tues/Thurs 11:30am-12:30pm, Ruttan 337D
 \vfill
 - **Course website:** https://github.com/rmadhok/enviro-dev-grad
   - lectures, assignments, syllabus
@@ -70,6 +88,7 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
 
 - Environmental quality is worse and has worse consequences in LMICs
   - Highest pollution, highest deforestation
+  - Pressing need for conservation policy as LMICs grow/urbanize
 
 - New field: room for applied theory, empirical innovation
 
@@ -282,6 +301,11 @@ Participation                     & 10\%     &  &  &
 
 - You will use R or Stata
 
+- Last time student's published their paper!
+
+McWay, Ryan, and Matthew Braaksma. "The political consequences of resource scarcity: Targeted spending in a water-stressed democracy. A replication study[...]" \textit{World Development Perspectives} 39 (2025): 100707.
+
+
 ## Research Proposal (60%)
 
 \begin{table}[]
@@ -308,13 +332,29 @@ Proposal Presentation & 10\% & Oct 21/26  &  &  \\
 
 ## Participation (10%)
 
-- I take this seriously
+- 7 points for attendance, 3 points for engagement
+  - in class engagement, office hrs, emails
 
-- Not enough to just show up to class
+- Attendance based on tiered schedule:
 
-- Quality of questions/discussion count
-  - Office hours/emails also count
-
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Classes Attended} & \textbf{Classes Missed} & \textbf{Attendance Points} \\
+\hline
+12--14 & 0--2   & 7/7 \\
+9--11  & 3--5   & 5/7 \\
+6--8   & 6--8   & 3/7 \\
+3--5   & 9--11  & 1/7 \\
+0--2   & 12--14 & 0/7 \\
+\hline
+\textbf{Engagement} & -- & \textbf{+ 0--3} \\
+\hline
+\textbf{Total} & & \textbf{10/10} \\
+\hline
+\end{tabular}
+\end{table}
 
 ##
 
@@ -336,27 +376,27 @@ Proposal Presentation & 10\% & Oct 21/26  &  &  \\
   
 \vfill
 
-## Remember from last time
+<!-- ## Remember from last time -->
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"} -->
 
-knitr::include_graphics(
-                        path = "assets/pm_lmic.png",
-                        auto_pdf = TRUE
-                        )
+<!-- knitr::include_graphics( -->
+<!--                         path = "assets/pm_lmic.png", -->
+<!--                         auto_pdf = TRUE -->
+<!--                         ) -->
 
-```
+<!-- ``` -->
 
-## Remember from last time
+<!-- ## Remember from last time -->
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"}
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"} -->
 
-knitr::include_graphics(
-                        path = "assets/disease_lmic.png",
-                        auto_pdf = TRUE
-                        )
+<!-- knitr::include_graphics( -->
+<!--                         path = "assets/disease_lmic.png", -->
+<!--                         auto_pdf = TRUE -->
+<!--                         ) -->
 
-```
+<!-- ``` -->
 
 ## Why is environmental quality low in LMICs?
 
@@ -446,23 +486,25 @@ MWTP_{e} = \frac{\lambda_{e}}{\lambda_{y}}
 \vfill
 **Note: if $U''(c)<0$, low $y \rightarrow$ high MUC ($\lambda_{y}$) and low $MWTP_{e}$**
 
-## MWTP for self-protection
 
-- Set up lagrangian and solve for $MWTP_{s}$
+<!-- ## MWTP for self-protection -->
 
-\begin{align}
-MWTP_{s} & = \frac{\lambda_{s}}{\lambda_{y}} \notag \\ & = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e}\frac{\partial a}{\partial s} + \frac{\partial u}{\partial h} \left(\frac{\partial h}{\partial s} + \frac{\partial h}{\partial e}\frac{\partial a}{\partial s} \right)\right) + \frac{\partial \Delta y}{\partial e}\frac{\partial a}{\partial s} + \frac{\partial \Delta y}{\partial h}\left(\frac{\partial h}{\partial s} + \frac{\partial h}{\partial e}\frac{\partial a}{\partial s}\right) \notag
-\end{align}
+<!-- - Set up lagrangian and solve for $MWTP_{s}$ -->
 
-- indirect effect of $s$ on EQ and health (converted to dollars)
-- indirect effect of $s$ on income via productivity and health
-\vfill
-**Note: if $U''(c)<0$, high $y \rightarrow$ low MUC ($\lambda_{y}$) and high $MWTP_{s}$**
+<!-- \begin{align} -->
+<!-- MWTP_{s} & = \frac{\lambda_{s}}{\lambda_{y}} \notag \\ & = \frac{1}{\lambda_{y}} \left(\frac{\partial u}{\partial e}\frac{\partial a}{\partial s} + \frac{\partial u}{\partial h} \left(\frac{\partial h}{\partial s} + \frac{\partial h}{\partial e}\frac{\partial a}{\partial s} \right)\right) + \frac{\partial \Delta y}{\partial e}\frac{\partial a}{\partial s} + \frac{\partial \Delta y}{\partial h}\left(\frac{\partial h}{\partial s} + \frac{\partial h}{\partial e}\frac{\partial a}{\partial s}\right) \notag -->
+<!-- \end{align} -->
+
+<!-- - indirect effect of $s$ on EQ and health (converted to dollars) -->
+<!-- - indirect effect of $s$ on income via productivity and health -->
+<!-- \vfill -->
+<!-- **Note: if $U''(c)<0$, high $y \rightarrow$ low MUC ($\lambda_{y}$) and high $MWTP_{s}$** -->
+
 
 ## The Fist Best Outcome
 
 - Agent sets ratio of marginal costs = ratio of marginal benefits
-$$\frac{MWTP_{e}}{MWTP_{s}}=\frac{\frac{\partial c_{e}}{\partial \Delta e}}{\frac{\partial c_{s}}{\partial \Delta s}}$$
+$$ MWTP_{e}=\frac{\partial c_{e}}{\partial \Delta e}$$
 
 \vfill
 - For social planner to aggregate over $n$, we must assume:
@@ -495,13 +537,13 @@ $$\frac{MWTP_{e}}{MWTP_{s}}=\frac{\frac{\partial c_{e}}{\partial \Delta e}}{\fra
 ## Why is environmental quality so low in LMICs?
 Four explanations informed by the model:
 
-1. High marginal utility of consumption
+1. High marginal utility of consumption \textcolor{red}{(efficient markets)}
   
-2. High marginal abatement costs -- includes state capacity
+2. High marginal abatement costs \textcolor{red}{(efficient markets)}
 
-3. Political economy distortions (first best violation)
+3. Political economy distortions \textcolor{red}{(first best violation)}
 
-4. Market failures (first best violation)
+4. Market failures \textcolor{red}{(first best violation)}
     - frictions cause revealed MWTP $\neq$ true MWTP 
 
 ##
@@ -520,6 +562,7 @@ Four explanations informed by the model:
 - **Very** few revealed preference studies on $MWTP_{e}$
   - Kremer et al. (2013) randomly clean up springs in Kenya
   - WTP USD 11/year for clean water; VSL of USD 860
+  - In progress: MWTP for biodiversity (Braaksma, Lasway, Madhok and McWay, 2026)
 \vfill
 - Larger literature on $u'(h)$ also suggests low valuation (Berkouwer and Dean, 2022)
 \vfill
@@ -533,8 +576,7 @@ Four explanations informed by the model:
 
 - MC not only driven by MAC; also reflects weak state capacity
   - Enforcement (Duflo et al., 2013)
-  - Incentives (Jagnani and Mahadevan, 2024; Gulzaar and Dipoppa, 2024)
-  - Spillovers (Viera et al. 2024)
+  - Incentives (Gulzaar and Dipoppa, 2024)
 
 \vfill
 - High MC **does not** mean deviation from first best 
@@ -547,7 +589,7 @@ Four explanations informed by the model:
 - Many examples from LMICs
   - pollution (Duflo et al., 2013)
   - deforestation (Burgess et al., 2012)
-  - human-wildlife conflict (Madhok et al., 2024)
+  - human-wildlife conflict (Madhok et al., 2026)
 \vfill
 - Leads to second best policy (inefficient)
 \vfill
