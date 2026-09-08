@@ -6,7 +6,7 @@
 
 ## Course description
 
-This is a graduate field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development and read papers at the research frontier. At the end, you will be able to answer the following questions:
+This is a PhD-level field course on the intersection of Environmental Economics and Development Economics. New research in applied microeconomics is bringing together these two fields. We will explore key themes underpinning environment and development and read papers at the research frontier. At the end, you will be able to answer the following questions:
 
 * How does economic development affect the environment, and vice versa?
 * Why is environmental quality low in developing countries?
