@@ -48,10 +48,10 @@ knitr::opts_chunk$set(echo = FALSE, dev = "png") # NOTE: switched to png instead
 - First, lets do introductions
 \vfill
 
-- Name, year, memorable summer activity, **research interests**
+- Name, year, memorable summer activity
 \vfill
 
-- Why are you taking this class?
+- **research interests**?
 
 ## Housekeeping
 
@@ -226,7 +226,7 @@ I will NOT:
 
 **Module 4: Why is WTP low in developing countries?**
 
-- Lecture 6: Revealed preference approaches
+- Lecture 6: Revealed preference approaches (structural)
 - Lecture 7: Incentive compatible approaches
 
 ## Course Outline
@@ -302,9 +302,18 @@ Participation                     & 10\%     &  &  &
 - You will use R or Stata
 
 - Last time student's published their paper!
+  - JCRE special issue on PES (open through Jan 2027)
 
-McWay, Ryan, and Matthew Braaksma. "The political consequences of resource scarcity: Targeted spending in a water-stressed democracy. A replication study[...]" \textit{World Development Perspectives} 39 (2025): 100707.
+## Mcway and Braaksma (2025)
 
+```{r replication, echo = FALSE, message = FALSE, warning = FALSE, out.width = "65%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/replication_example.png",
+                        auto_pdf = TRUE
+                        )
+
+```
 
 ## Research Proposal (60%)
 
@@ -402,6 +411,7 @@ Proposal Presentation & 10\% & Oct 21/26  &  &  \\
 
 - MWTP is low (paradox)
   - Berkouwer and Dean (2022): $12 for clean air
+  - Braaksma, Mcway, Madhok, and Lasway (2026): 11 Rs. for biodiversity
   - Kremer et al. (2013): ~ $4 for clean water
     - Imply VSL \$USD 860 vs \$USD 8.6 million for USA
 
@@ -570,7 +580,7 @@ Four explanations informed by the model:
 ## 2. High MC
 
 - High MAC suggests sub-optimal environmental quality. Why?
-    - Upward sloping MAC suggests low MC in poor countries
+    - Downward sloping MAC suggests low MC in poor countries
 
 \vfill 
 
