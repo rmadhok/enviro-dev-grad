@@ -26,7 +26,7 @@ The syllabus is linked [here](syllabus.docx), and includes the grade breakdown, 
 Lectures are split into modules. For the most part, each module will consist of two lectures.
 
 - Module 1: Introduction ([slides](lectures/module1/module1.pdf))
-- Module 2: Impact of economic development on the environment
+- Module 2: Impact of economic development on the environment ([slides](lectures/module2/module2.pdf))
 - Module 3: Impact of the environment on economic development
 - Module 4: Why is WTP for environmental quality so low in developing countries?
 - Module 5: Environmental policy in developing countries

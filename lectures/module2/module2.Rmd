@@ -1,0 +1,837 @@
+---
+title: "| Environmental and Development Economics\n| Module 2 - How does development affect the environment?
+  \n"
+author: |
+  | Raahil Madhok
+  | UMN Applied Economics
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Montpellier
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption: aspectratio=169
+header-includes:
+- "\\AtBeginDocument{\\title[Module 2 - development and environment]{Environmental and Development
+  Economics \\\\ Module 2 - How does development affect the environment?}}"
+- \input{header.tex}
+---
+
+## 
+\centering
+\Huge Lecture 2
+
+\large How does development affect the environment?
+
+## Housekeeping
+
+- Paper summaries are random **without** replacement (sorry!)
+\vfill
+- Assignment instructions + rubrics posted
+\vfill
+- Replication project
+  - Due Oct 19th
+\vfill
+- Research proposal
+  - Start thinking about idea + come talk to me
+  - DO NOT re-use paper from another class
+  - First draft: Oct 5th (pass/fail)
+\vfill
+- See VoxDevLit on Deforestation
+
+## Today
+
+- **Guiding question:** how does economic development affect the environment?
+\vfill
+- Descriptive overview: EKC
+\vfill
+- Channel I: Income effects (today)
+  - **Changes in consumption**
+  - Diet
+\vfill
+- Channel II: Technology and Infrastructure (next week)
+  - Agricultural productivity
+  - Infrastructure
+
+\vfill
+- Channel III: Institutions
+  - Later in the course
+
+\vfill
+
+## How does economic development affect the environment?
+
+- There is no one answer
+
+- Choices that maximize economic growth often degrade environment
+
+- But development expands our choice set (e.g. clean energy)
+
+- Development also lowers $u'(c)$ (model from last week)
+
+- Hence: the Environmental Kuznets Curve (EKC)
+
+## Environmental Kuznets Curve
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "95%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ekc.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Discussion: Do you believe EKC?
+
+- Mechanisms?
+\vfill
+
+- Causality?
+\vfill
+- Robustness?
+\vfill
+
+## GDP and Lead in Gasoline
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "80%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ekc_lead.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## GDP and CO2
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "49%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = c("assets/ekc_co2.png","assets/ekc_legend.png"),
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## GDP and PM2.5
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "49%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = c("assets/ekc_pm.png","assets/ekc_legend.png"),
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## GDP and Ozone
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "49%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = c("assets/ekc_ozone.png","assets/ekc_legend.png"),
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## My view
+
+- Macro correlations give limited answer
+  - At best, we can learn about cross-country relationships
+  
+\vfill
+- Not the right question
+  - What do we mean by development?
+  - e.g. manufacturing $\uparrow$ pollution, but services may not
+  - Goal: understand what processes lead development to improve environment
+  
+\vfill
+- Narrow, micro/empirical papers more helpful
+  - even if they don't find consensus
+
+## Discussion: What is the ideal (quasi-) experiment?
+
+- Can we randomize GDP?
+
+- What variation in "development" can approximate the experiment?
+  - what proxies development? (see \href{https://github.com/teamookla/ookla-open-data}{ookla speed test})
+  - what does the proxy miss?
+  - what (non-random) variation isolates causal relationship?
+  
+## Discussion: What about mechanisms?
+
+- **Why and how** does economic development affect the environment?
+
+- Theory is your friend: especially total derivatives...
+  - Sometimes enough to rationalize mechanisms
+  - Otherwise generate testable predictions
+
+- Heterogeneity is your friend
+  - But have a reason **why** you choose one channel over another
+  
+## Alix-Garcia et al. (2013): Ecological footprint of poverty alleviation
+
+**Question:** What is the effect of income on environmental  quality?
+\vfill
+
+- Poverty alleviation may $\uparrow$ demand for resource-intensive good
+\vfill
+- Or, it may $\uparrow$ demand for conservation
+\vfill
+- **This paper:** Exploit RDD eligibility to study impact of CCT on forests
+
+## Why can't we regress forests on income?
+
+- Income correlated with other things that affect environment
+
+\vfill
+- Like what?
+  <!-- population agricultural returns, forest product prices, capital -->
+
+\vfill
+- If we control for OVB, will panel fixed effects work? 
+  <!-- - No: small year-to-year income changes do not reflect ``development'' -->
+  <!-- - Predictable short-term income fluctuations different than permanent change -->
+
+## Mexico's Oportunidades Program
+
+- **Goal:** Ambitious program to build human capital
+
+\vfill
+- **Scope:** \$2.6 billion/year (half of anti-poverty budget)
+  - Transfers are 1/3 of total income
+  - Represents shift to new income path
+  
+\vfill
+- **Size:** 4 million households treated
+\vfill
+
+- **Design:** Randomized rollout from 1998-2000
+  - Afterwards, enrollment is non-random and based on **marginality index**
+  - Two step: 1) village selected on index; 2) households selected in eligible villages
+
+**Results Preview:** conditional cash transfer increases deforestation
+
+## Data 
+
+- **Main variables:** village lat/lon, eligibility index, forest cover (satellite)
+  - Enrollment by village until 2003
+\vfill
+- **Sample size:** 105,749 villages
+\vfill
+- **Unit of analysis:** only village centroids provided
+  - How do we estimate village-level impacts? Thiessen polygons
+  - Area around a point where every location closer to the point than to all others
+  - Problems?
+
+## Thiessen/Voronoi Polygons
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Data Visualization
+Eligibility cutoff: -1.2
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "49%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = c("assets/ag2013_fig2.png","assets/ag2013_fig3.png"),
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Empirical Strategy: OLS Equation
+
+$$\Delta f_{i} = \alpha + \delta T_{i} + \beta'X_{i} + \epsilon_{i}$$
+ 
+  - where $\Delta f_{i}$ is \% deforestation in polygon i over 2000-2003
+  - $T_{i}=1$ if the locality enrolled by 2003
+  - $X_{i}$ includes poverty
+
+- But $T_{i}$ is not random!
+
+\vfill
+
+- If discontinuity is sharp, replace $T_{i}$ with $1[E_{i}>-1.2]$
+- RDD: Sample window $-2 < I < -0.2$
+
+## RDD Equation
+
+- Discontinuity is fuzzy, not sharp
+  - How do we know? Two reasons
+
+- Solution: Use cutoff to instrument treatment probability
+  
+- Fuzzy RDD/IV:
+$$\Delta f_{i} = \alpha + \delta T_{i} + \gamma I_{i} + \beta'X_{i} + \epsilon_{i}$$
+$$\Delta T_{i} = \omega + \tau_{1}E_{i} + \tau_{2}E_{i}I_{i} + \tau_{3}M_{i} + \tau_{4}M_{i}I_{i} + \mu I_{i} + \Gamma' X_{i} + \epsilon_{i} $$ 
+where $T_{i}$ is enrollment dummy, $E_{i}$ is eligibility cutoff dummy, $I_{i}$ is index, $M_{i}$ is dummy for region where enrollment increases rapidly
+
+## Identification Assumptions
+
+## Results: OLS and Sharp RDD
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results: Fuzzy RDD / Instrumental Variables
+- Very strong first stage: eligiblity $\uparrow$ probability of enrollment ($\tau_{1}=0.8$)
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Mechanisms
+
+- RD results show that CCT increases deforestation
+\vfill
+- Why? What changes at the household level?
+\vfill
+- Approach 1: Use experimental sample (Progresa) with household survey data
+  - Progresa had randomized rollout at village level for first 3 yrs
+  
+\vfill
+- Approach 2: Heterogeneity by road density to study role of market access
+
+## Mechanisms: Consumption channel
+- Before (1997-1998) and after (2000) data on consumption
+- 506 villages, 320 treated, 186 control (not-yet-treated)
+- Treatment at the village level
+
+Difference in differences:
+$$ y_{it} = \gamma_{0} + \gamma_{1}Treat_{i} + \gamma_{2}Post_{t} + \gamma_{3} Treat_{i} \times Post_{t} + \epsilon_{it}$$
+
+- $y_{it}$ = consumption
+- $Treat_{i}=1$ if household $i$ in treated locality
+- cluster at locality level bc randomization was at locality level
+- How do we interpret $\gamma_{3}$?
+\vfill
+**Hypothesis: $\gamma_{3}>0$**
+
+## Mechanisms: Market channel
+- Demand shock must be met by supply, which drives land use change
+  - e.g. $\uparrow$ consumption of milk met by $\uparrow$ in grazing land
+\vfill
+
+- But $\gamma_{3}$ captures partial equilibrium
+  - Part of demand shock supplied locally. What about rest?
+\vfill
+
+- Hypothesis: If consumption is driving deforestation
+  - Then effect should be larger when infrastructure quality is low
+  - Low market access: demand met by local supply
+  - High market access: demand shock propagates across markets
+  
+\vfill
+
+## Triple Differences:
+
+Heterogeneity by infrastructure quality:
+\begin{align*} 
+y_{it} & = \beta_{0} + \beta_{1}Treat_{i} + \beta_{2}Post_{t} + \beta_{3}(Treat_{i} \times Post_{t}) \\ & + \beta_{4}Road_{i} + \beta_{5} (Road_{i} \times Treat_{i}) + \beta_{6} (Road_{i} \times Post_{t}) \\ & + \beta_{7} (Road_{i} \times Treat_{i} \times Post_{t}) + \epsilon_{it}
+\end{align*}
+
+- $Road_{i}$ = inverse road density (km of road w/n 10km of village/polygon)
+
+\vfill
+
+**Hypothesis: $\beta_{7} > 0$**
+\vfill
+
+## Results: Increase in consumption of land intensive goods
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Higher beef and milk demand (land intensive products)
+
+Demand-side impacts do not vary with market access (we did't expect it to)
+
+## Results: No increase in local production
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig7.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+Supply-side impacts do not vary with market access
+
+## Results: Deforestation higher in places with poor market access
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/ag2013_fig8.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+\vfill
+More deforestation in places with less market access (low road density)
+
+Supports mechanism of increased demand for land-intensive goods
+
+## Thoughts?
+
+- Do we believe the story about increased demand for land-intensive goods?
+  - Less market access means less access to inputs
+  - Underinvest in technology, leading to higher deforestation
+  - Maybe this is a story about technology, not consumption
+
+- Can you think of an alternate explanation?
+
+- Other concerns?
+
+- This all points to shortcomings of RCTs in general
+  - we cannot answer why
+
+## Next week
+
+- How does development affect the environment?
+  - **Technology and Infrastructure**
+
+
+##
+
+\centering
+\Huge Lecture 3
+
+\large How does development affect the environment?
+
+## Housekeeping
+
+- Research proposal first draft: Oct 5th
+  - If you find idea w/n 10 days, gives 2 weeks to write
+\vfill
+- Class presentations: separate Canvas upload each week
+\vfill
+- Replication project: start choosing a paper 
+\vfill
+- 9/25: Envirodevonomics Seminar with Sheetal Sekhri (UVA)
+  - Cash Transfers and Adaptation to Extreme Heat: Evidence from Gig Workers in India
+
+## Today
+
+- Development increases access to **productive** capital
+  - How do we think about environmental implications?
+\vfill
+- Case I: Development increases agricultural productivity
+  - Abman et al. (2023)
+\vfill
+- Case II: Development spurs infrastructure development
+  - Garg et al. (2023)
+
+## Technology and infrastructure
+
+- As economies develop, technology and infrastructure improve
+\vfill
+- Productivity boost means firms produce at lower cost
+  - Outward shift in supply curve $\rightarrow$ \textcolor{brown}{bad for environment}
+  - But, technological progress reduces resource intensity $\rightarrow$ \textcolor{green}{good for environment}
+\vfill
+- Most active areas of research:
+  - agricultural productivity
+  - infrastructure
+
+## Agricultural productivity and the environment
+
+- **Boserup's hypothesis **: extensive margin
+  - improvements in land productivity $\uparrow$ ag land value
+  - leads to pressure on forests to clear land for ag
+\vfill
+- **Borluag's hypothesis**: intensive margin
+  - *Under factor market constraints*, $\rightarrow$ productivity spurs intensification
+  - ``spares'' land for nature and puts less pressure on forests
+\vfill
+- **Jevon's paradox**: general equilibrium
+  - technology for increasing yield also lowers MC of producing given amount
+  - Ag supply curve shifts out and may dominate gains in yield
+  - Leads to net increase in land demand
+
+**Takeaway: this is an empirical question!**
+
+## Conceptual framework
+
+- Continuum of agents with heterogeneous outside options
+  <!-- - Changes in returns to ag affect number of agents who select into farming -->
+
+- Farmers allocate labor b/w farming on existing land, or cultivate new land
+
+- Let $\gamma$ denote household labor allocated to new land
+
+- Production function for new and existing land are $f(\cdot)$ and $g(\cdot)$
+
+- Exogenous productivity shock, $\Omega$, improves productivity of existing land more
+
+$$ \frac{\partial g(l)}{\partial \Omega} \geq \frac{\partial f(l)}{\partial \Omega} \geq 0 \quad \quad \forall l$$
+
+## Conceptual framework
+
+- Farmers are factor market constrained (Conning and Udry, 2007)
+  - Cannot hire labor from market
+
+- Total deforestation given by new land cleared for agriculture:
+$$ D^{*} = n^{*} \cdot \gamma^{*} $$
+
+- Differentiating with respect to $\Omega$ gives:
+$$\frac{\partial D^{*}}{\partial \Omega} = \underbrace{n^{*}\frac{\partial \gamma^{*}}{\partial \Omega}}_\text{$\lessgtr 0$} + \underbrace{\gamma^{*}\frac{\partial n^{*}}{\partial \Omega}}_\text{$\lessgtr 0$}$$
+
+- What does each term represent and what is the sign?
+
+## Abman et al. (2023): Agricultural Productivity and Deforestation
+
+- **Goal:** To test $\frac{\partial D^{*}}{\partial \Omega}$, we need random variation in $\Omega$
+
+- **Question:** what is the impact of ag productivity on deforestation?
+
+- **Context:** Large scale ag extension program in Uganda (2008-2013)
+
+- **Design:** Leverage Spatial discontinuity in village eligibility
+
+- **Results:** improvement in agricultural productivity; reduction in deforestation
+
+## Background: Why Uganda?
+
+- Forest cover shrunk from 24\% to 9\% from 1990-2015
+
+- Most forest land is **privately owned**
+  - Land owners allowed to covert forest (Land Act, 2010)
+  - Cannot use state powers to limit deforestation
+
+- Need an indirect mechanism to incentivize conservation
+
+## Background: BRAC Extension Program
+
+- Launched in 2008
+
+- Aims to extend modern cultivation techniques to smallholders
+
+- Two step treatment:
+  - Training: ``model farmers'' trained in modern cropping, irrigation, weeding, pest control. Then, set up demo plot and train others
+  - Extension: Promoters selected to sell subsidized HYV seeds in their villages
+
+- **Key feature: Program limited to villages within 6km of each BRAC branch**
+
+## Data
+
+- Deforestation from GFC (Hansen et al., 2013)
+  - Pro: high resolution (30m)
+  - Con: 1) only captures loss not gain, 2) everything relative to 2000
+
+- Lat/lon of villages within 12km of BRAC office (N=807 villages)
+
+- Attribute forest pixel to village if w/n 400m of village centroid
+  - Rationale: median household distance to village center = 400m
+  - Problems?
+
+- BRAC agricultural survey on 7,781 households (451 villages) in 2011
+  - Detailed cropping practices from last two seasons
+
+## Empirical Design: Spatial Regression Discontinuity
+
+- Estimate IIT since we do not know true treatment designation
+\vfill
+- Local linear regression to estimate left and right side of discontinuity
+
+$$ \beta = lim_{z \uparrow 0} E[Y|z_{i} = z] - lim_{z \downarrow 0} E[Y|z_{i} = z]$$
+
+- where running variable, $z_{i}$, is distance of village from 6km cutoff
+  - $z \leq 0$ means village had access to extension
+\vfill
+- For estimation, use 2km bandwidth
+  - Higher regression weights on points nearer to cutoff (triangle kernel)
+
+## Aside: RD with local linear regressions
+
+- Left side of cutoff
+$$ Y_{i} = \alpha_{L} + \beta_{L}(z_{i}-c), \quad \quad \text{for $z_{i} \leq$ c} $$
+- Right side of cutoff
+$$ Y_{i} = \alpha_{R} + \beta_{R}(z_{i}-c), \quad \quad \text{for $z_{i} \geq$ c} $$
+- Treatment effect at threshold:
+$$ \beta = \alpha_{R} - \alpha_{L}$$
+since $\alpha$ are the intercepts on each side of cutoff
+
+## Identification Assumptions?
+
+<!-- eligibility uncorrelated with unobserved factors that drive deforestation and vary at the cutoff -->
+
+<!-- what if baseline forest cover increases around 6km, and more degraded areas selected for program? -->
+
+## Identification Assumptions
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/abman2020_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Identification Assumptions
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/abman2020_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results: 14\% less deforestation in treated villages
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "70%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/abman2020_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Mechanisms: Intensification
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "97%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/abman2020_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Techniques to address nutrient depletion **on existing land**
+- No evidence of increased fertilizer, pesticides, or HYV seed adoption
+
+## Intensification vs. Extensification
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/abman2020_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Revenue/acre is a proxy for yields
+- No extensification $\rightarrow$ binding constraint on land clearing
+
+## Discussion
+
+- Empirical issues
+- Alternative explanations
+- External validity
+
+## Back to the Question
+How does development affect the environment?
+\vfill
+
+- Income
+  - Land intensive consumption
+  - Energy
+
+\vfill
+- Access to capital
+  - Technology
+  - **Infrastructure**
+
+## Infrastructure and the Environment
+- Roads can increase deforestation by:
+  - $\downarrow$ MC (transport costs) of forest products, increasing supply
+  - $\uparrow$ market access for agricultural products, causing extensification
+  - $\uparrow$ land value, leading to agglomeration effects
+\vfill
+- Roads can increase forest cover by:
+  - $\uparrow$ access to forest product substitutes (i.e. clean fuel vs. firewood)
+  - $\uparrow$ access to external labor/capital markets, lowering need for land-clearing
+\vfill
+- Net effect is ambiguous
+
+## What about Infrastructure and Air Pollution?
+
+- Lets build a conceptual framework
+- Talk to your neighbor for 10 mins
+
+## Garg et al. (2023): Rural Roads, Labor Exits, and Crop Fires
+
+- **Question:** what is the impact of roads on air quality?
+  - what is the role of labor reallocation as a mechanism?
+
+- **Context:** India builds last-mile roads using population cutoff
+
+- **Design:** Regression discontinuity with crop fires as outcome
+
+- **Results:** Roads $\uparrow$ crop fires and PM2.5 levels in a village
+
+- **Mechanism:** Roads $\rightarrow$ labor exit $\rightarrow$ higher wages $\rightarrow$ labor-saving technology
+
+## Background
+
+- Labor is misallocated in agriculture in developing countries
+  - $MP_{labor}$ lower in agriculture than other sectors
+
+- Sources of misallocation is a big question in dev econ
+
+- Many policies aimed at reducing misallocation
+  - e.g. road-building (improve market access)
+
+- Do these have externalities?
+  - **innovation**: where do the externalities come from?
+
+## Context: India
+
+- 14 of the 20 most polluted cities in the world are in India
+
+- Important pollution source: crop burning
+
+- Pros:
+  - Clear rice straw residue \& undergrowth b/w cropping seasons
+  - Cheaper than labor/capital alternative
+
+- Cons:
+  - Carries civil/criminal penalty (weakly enforced)
+  - Reduces soil nutrients and decreases ag productivity
+  - Damages human health
+
+- Roads may facilitate agricultural labor loss
+  - Will farmers turn to crop burning, despite the costs?
+
+## Research Design
+
+- PMGSY aims to provide all-weather roads to all unconnected villages in India
+\vfill
+- Prioritize larger villages first
+  - Connect villages with population > 1000 by 2003
+  - Connect villages with population > 500 by 2007
+  - Connect villages with population > 250 afterwards
+\vfill
+- State-by-state basis
+  - If connected all large villages, can proceed to smaller ones immediately
+
+## Data
+- Roads: SHRUG database 
+  - N=11,151 villages w/o paved road at baseline (2001)
+  - Main variable: road construction date in village
+\vfill
+- Fires: NASA EODIS
+  - \# fires w/n 10km of village polygon
+\vfill
+- Pollution: Van donkelaar et al. (2016) measure PM2.5 at 10km resolution
+  - Black Carbon and Organic Carbon from biomass/non-biomass sources
+\vfill
+- Infant mortality: NFHS-IV (2015-16)
+  - child-birthyear panel from 2001-2013
+  - Identify survey clusters (villages) within 50km of each PMGSY village
+
+## Empirical Strategy: Fuzzy RDD
+First Stage:
+\begin{align*}
+  Road_{vdst} & = \gamma_{0} + \gamma_{1} 1(pop_{vds} \geq T) + \gamma_{2}(pop_{vds} - T) \\ & + \gamma_{3}(pop_{vds}-T) \times 1(pop_{vds} \geq T) + \theta X_{vds} + \mu_{d,h} + \rho_{t} + \epsilon_{vdst}
+\end{align*}
+
+Second Stage:
+\begin{align*}
+  Y_{vdst} & = \beta_{0} + \beta_{1} Roads_{vdst} + \beta_{2}(pop_{vds} - T) \\ & + \beta_{3}(pop_{vds}-T) \times 1(pop_{vds} \geq T) + \delta X_{vds} + \eta_{d,h} + \omega_{t} + \epsilon_{vdst}
+\end{align*}
+
+- $Road_{vdst}=1$ if village $v$ received road by 2013
+- $Y_{vdst}$ is outcome (fires, pollution, mortality)
+- $pop_{vds}$ is village population in 2001
+- $T$ is treatment threshold (500 or 1000, depending on state)
+
+## Covariate Balance
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig1.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "100%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig2.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Note: optimal bandwidth = +/- 84 around population threshold
+- Road access increases annual crop fires by 60\%
+- Road access increase PM2.5 level by 0.5 $\mu g/m^{3}$ (1.1\%)
+
+## Does pollution result also capture increased driving on new roads?
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "85%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig3.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Mechanism: Roads increase ag wage rate
+- Data: REDS Survey (1999 and 2006)
+- Design: Diff-in-Diff (221 villages, 100 districts, 17 states)
+  - Treat $=1$ if $v$ received road b/w 1999-2006; Post=1 in 2006
+$$ Y_{vt} = \alpha + \beta_{1}(Treat_{v} \times Post_{t}) + \gamma_{v} + \theta_{t} + \epsilon_{vt}$$
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "85%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig4.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
+## Mechanism: Roads induce labor exit
+- Back to RDD design
+- Data from Socioeconomic and Caste Census (2013), provided in SHRUG
+- Outcome: ag. labor share in districts with high/low ag wage
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "85%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig6.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- More labor exit in districts with lower baseline ag wages
+
+## Mechanism: places with more labor exit burn more biomass
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.show='hold',  out.width = "85%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/garg2023_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+- Fire/pollution impact greater in places with lower baseline ag wage
+- Road generates more labor exit in these places
+
+## Discussion
+
+- Do you believe the story?
+- Alternative explanations
+
+## Next Time
+
+- Presentations
+- How does the environment affect development?
+  - **Health**
+  - Productivity

@@ -385,28 +385,6 @@ Proposal Presentation & 10\% & Oct 21/26  &  &  \\
   
 \vfill
 
-<!-- ## Remember from last time -->
-
-<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"} -->
-
-<!-- knitr::include_graphics( -->
-<!--                         path = "assets/pm_lmic.png", -->
-<!--                         auto_pdf = TRUE -->
-<!--                         ) -->
-
-<!-- ``` -->
-
-<!-- ## Remember from last time -->
-
-<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "85%", fig.align = "center"} -->
-
-<!-- knitr::include_graphics( -->
-<!--                         path = "assets/disease_lmic.png", -->
-<!--                         auto_pdf = TRUE -->
-<!--                         ) -->
-
-<!-- ``` -->
-
 ## Why is environmental quality low in LMICs?
 
 - MWTP is low (paradox)
@@ -725,7 +703,6 @@ Aside: Best Practice for Short Presentations
 - Avoid pacing around room
 
 - Stick to your time limit
-
 
 
 
