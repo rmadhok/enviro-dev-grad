@@ -507,8 +507,8 @@ $$ MWTP_{e}=\frac{\partial c_{e}}{\partial \Delta e}$$
 ## Course Structure
 
 - Set the stage: 
-  - how does environment affect development ($\frac{\partial h}{\partial e}$) (module 2)
-  - how does development affect the environment (module 3)
+  - how does development affect the environment (module 2)
+  - how does environment affect development ($\frac{\partial h}{\partial e}$) (module 3)
   
 \vfill 
 
@@ -521,23 +521,10 @@ $$ MWTP_{e}=\frac{\partial c_{e}}{\partial \Delta e}$$
 - Goal: where can you make a contribution?
   - E.g. Lots of work on $\frac{\partial h}{\partial e}$, but very little on $\frac{\partial \Delta y}{\partial e}$
 
-
-## Why is environmental quality so low in LMICs?
-Four explanations informed by the model:
-
-1. High marginal utility of consumption \textcolor{red}{(efficient markets)}
-  
-2. High marginal abatement costs \textcolor{red}{(efficient markets)}
-
-3. Political economy distortions \textcolor{red}{(first best violation)}
-
-4. Market failures \textcolor{red}{(first best violation)}
-    - frictions cause revealed MWTP $\neq$ true MWTP 
-
-##
+## Why is environmental quality low in LMICs?
 
 \centering
-\huge Preview of Answers
+\huge Preview of (four) answers
 
 ## 1. High marginal utility of consumption
 
@@ -554,6 +541,7 @@ Four explanations informed by the model:
 \vfill
 - Larger literature on $u'(h)$ also suggests low valuation (Berkouwer and Dean, 2022)
 \vfill
+- High MUC **does not** mean deviation from first best 
 
 ## 2. High MC
 

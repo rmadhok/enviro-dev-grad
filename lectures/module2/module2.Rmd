@@ -27,17 +27,16 @@ header-includes:
 
 - Paper summaries are random **without** replacement (sorry!)
 \vfill
-- Assignment instructions + rubrics posted
+- All assignment instructions + rubrics posted
 \vfill
-- Replication project
-  - Due Oct 19th
-\vfill
-- Research proposal
+- Research proposal (first draft Oct 5th)
   - Start thinking about idea + come talk to me
   - DO NOT re-use paper from another class
-  - First draft: Oct 5th (pass/fail)
 \vfill
-- See VoxDevLit on Deforestation
+- First draft expectations
+    - **AT LEAST** 1 page on each section
+\vfill
+- See [VoxDevLit](https://voxdev.org/voxdevlit/deforestation) on Deforestation
 
 ## Today
 
@@ -47,9 +46,8 @@ header-includes:
 \vfill
 - Channel I: Income effects (today)
   - **Changes in consumption**
-  - Diet
 \vfill
-- Channel II: Technology and Infrastructure (next week)
+- Channel II: Technology and Infrastructure (next time)
   - Agricultural productivity
   - Infrastructure
 
@@ -84,12 +82,11 @@ knitr::include_graphics(
 
 ## Discussion: Do you believe EKC?
 
-- Mechanisms?
+- Is it true for all pollutants?
 \vfill
-
 - Causality?
 \vfill
-- Robustness?
+- How to find the tipping point?
 \vfill
 
 ## GDP and Lead in Gasoline
@@ -139,9 +136,11 @@ knitr::include_graphics(
   
 \vfill
 - Not the right question
-  - What do we mean by development?
+  - if we want to know how development affects environment, we need: 1) causality, 2) micro data, and 3) **a better definition of development**
   - e.g. manufacturing $\uparrow$ pollution, but services may not
-  - Goal: understand what processes lead development to improve environment
+\vfill
+- A better question:
+  - Which component of dev't affects which enviro outcome, through what mechanism?
   
 \vfill
 - Narrow, micro/empirical papers more helpful
@@ -159,11 +158,11 @@ knitr::include_graphics(
 ## Discussion: What about mechanisms?
 
 - **Why and how** does economic development affect the environment?
-
+  - Ex: energy, diet, self-protection, capital, institutions
+\vfill
 - Theory is your friend: especially total derivatives...
-  - Sometimes enough to rationalize mechanisms
   - Otherwise generate testable predictions
-
+\vfill
 - Heterogeneity is your friend
   - But have a reason **why** you choose one channel over another
   
@@ -196,24 +195,22 @@ knitr::include_graphics(
 - **Goal:** Ambitious program to build human capital
 
 \vfill
-- **Scope:** \$2.6 billion/year (half of anti-poverty budget)
+- **Scope:** 4 million households treated
+  - \$2.6 billion/year (half of anti-poverty budget)
   - Transfers are 1/3 of total income
   - Represents shift to new income path
-  
-\vfill
-- **Size:** 4 million households treated
-\vfill
-
-- **Design:** Randomized rollout from 1998-2000
-  - Afterwards, enrollment is non-random and based on **marginality index**
-  - Two step: 1) village selected on index; 2) households selected in eligible villages
+\vfill 
+- **Design:** Randomized pilot + non-randomized rollout
+  - 1997: randomized pilot at village level
+  - 1998-2000: rapid rural rollout based on **marginality** (not random)
+  - Post-2000: new villages enroll, but slower
+  - Within villages, household selected based on marginality index
 
 **Results Preview:** conditional cash transfer increases deforestation
 
 ## Data 
 
 - **Main variables:** village lat/lon, eligibility index, forest cover (satellite)
-  - Enrollment by village until 2003
 \vfill
 - **Sample size:** 105,749 villages
 \vfill
@@ -247,14 +244,14 @@ knitr::include_graphics(
 
 $$\Delta f_{i} = \alpha + \delta T_{i} + \beta'X_{i} + \epsilon_{i}$$
  
-  - where $\Delta f_{i}$ is \% deforestation in polygon i over 2000-2003
+  - where $\Delta f_{i}$ is \% deforested in polygon i over 2000-2003
   - $T_{i}=1$ if the locality enrolled by 2003
-  - $X_{i}$ includes poverty
+  - $X_{i}$ are covariates, including poverty
 
 - But $T_{i}$ is not random!
 
 \vfill
-
+- **Solution:** Regression Discontinuity Design
 - If discontinuity is sharp, replace $T_{i}$ with $1[E_{i}>-1.2]$
 - RDD: Sample window $-2 < I < -0.2$
 
@@ -307,7 +304,7 @@ knitr::include_graphics(
 
 ## Mechanisms: Consumption channel
 - Before (1997-1998) and after (2000) data on consumption
-- 506 villages, 320 treated, 186 control (not-yet-treated)
+- 506 villages, 320 treated (early intervention), 186 control (delayed intervention)
 - Treatment at the village level
 
 Difference in differences:
