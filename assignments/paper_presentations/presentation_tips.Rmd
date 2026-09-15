@@ -31,11 +31,9 @@ One randomly-selected student will present a pre-assigned paper at the beginning
 
 2. **The hat:** At the beginning of each lecture, I will put all your names in a hat.
 
-3. **Randomization:** I will select a student to present randomly **with replacement**. This means that your name goes back into the hat each week. Thus, you may present more than once, **or not at all**.
+3. **Randomization:** I will select a student to present randomly **without replacement**. This means that once you present, you are taken out of the pool. But you still need to submit summary slides even after you present
 
 4. **Presentation:** You will give a 10-minute presentation of the paper, with 5 minutes for Q\&A. Presentation tips can be found below.
-
-5. **Grades:** If you are never chosen to present, your grade will be based upon your slide submissions.
 
 # Presentation Tips
 

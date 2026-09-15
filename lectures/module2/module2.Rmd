@@ -414,19 +414,21 @@ Supports mechanism of increased demand for land-intensive goods
 
 ## Housekeeping
 
+- I posted examples of assignments
+\vfill
 - Research proposal first draft: Oct 5th
-  - If you find idea w/n 10 days, gives 2 weeks to write
+  - If you find idea this week, gives 2 weeks to write
 \vfill
 - Class presentations: separate Canvas upload each week
 \vfill
-- Replication project: start choosing a paper 
+- Replication project: start choosing a paper
 \vfill
 - 9/25: Envirodevonomics Seminar with Sheetal Sekhri (UVA)
   - Cash Transfers and Adaptation to Extreme Heat: Evidence from Gig Workers in India
 
 ## Today
 
-- Development increases access to **productive** capital
+- Development increases access to capital
   - How do we think about environmental implications?
 \vfill
 - Case I: Development increases agricultural productivity
@@ -466,12 +468,12 @@ Supports mechanism of increased demand for land-intensive goods
 
 ## Conceptual framework
 
-- Continuum of agents with heterogeneous outside options
-  <!-- - Changes in returns to ag affect number of agents who select into farming -->
+- Continuum of agents with heterogeneous outside (non-ag) options
+  - Changes in returns to ag affect number of agents who select into farming
 
-- Farmers allocate labor b/w farming on existing land, or cultivate new land
+- Farmers allocate labor and capital b/w existing land, or cultivate new land
 
-- Let $\gamma$ denote household labor allocated to new land
+- Let $\gamma$ denote input share allocated to cultivating new land
 
 - Production function for new and existing land are $f(\cdot)$ and $g(\cdot)$
 
@@ -482,7 +484,7 @@ $$ \frac{\partial g(l)}{\partial \Omega} \geq \frac{\partial f(l)}{\partial \Ome
 ## Conceptual framework
 
 - Farmers are factor market constrained (Conning and Udry, 2007)
-  - Cannot hire labor from market
+  - Cannot hire inputs beyond initial endowment
 
 - Total deforestation given by new land cleared for agriculture:
 $$ D^{*} = n^{*} \cdot \gamma^{*} $$
@@ -530,7 +532,7 @@ $$\frac{\partial D^{*}}{\partial \Omega} = \underbrace{n^{*}\frac{\partial \gamm
 
 - Deforestation from GFC (Hansen et al., 2013)
   - Pro: high resolution (30m)
-  - Con: 1) only captures loss not gain, 2) everything relative to 2000
+  - Con: only captures loss not gain
 
 - Lat/lon of villages within 12km of BRAC office (N=807 villages)
 
@@ -543,7 +545,7 @@ $$\frac{\partial D^{*}}{\partial \Omega} = \underbrace{n^{*}\frac{\partial \gamm
 
 ## Empirical Design: Spatial Regression Discontinuity
 
-- Estimate IIT since we do not know true treatment designation
+- Estimate ITT since we do not know true treatment designation
 \vfill
 - Local linear regression to estimate left and right side of discontinuity
 
@@ -554,16 +556,6 @@ $$ \beta = lim_{z \uparrow 0} E[Y|z_{i} = z] - lim_{z \downarrow 0} E[Y|z_{i} = 
 \vfill
 - For estimation, use 2km bandwidth
   - Higher regression weights on points nearer to cutoff (triangle kernel)
-
-## Aside: RD with local linear regressions
-
-- Left side of cutoff
-$$ Y_{i} = \alpha_{L} + \beta_{L}(z_{i}-c), \quad \quad \text{for $z_{i} \leq$ c} $$
-- Right side of cutoff
-$$ Y_{i} = \alpha_{R} + \beta_{R}(z_{i}-c), \quad \quad \text{for $z_{i} \geq$ c} $$
-- Treatment effect at threshold:
-$$ \beta = \alpha_{R} - \alpha_{L}$$
-since $\alpha$ are the intercepts on each side of cutoff
 
 ## Identification Assumptions?
 
