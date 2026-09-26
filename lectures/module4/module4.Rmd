@@ -40,7 +40,7 @@ header-includes:
 - **Guiding question:** what is the WTP for environmental quality in LMICs?
 \vfill
 - Today's focus: How do we even measure this?
-  - Behavioral models
+  - Behavioural models
   - Choice probabilities
   - Estimation
   - Application to WTP
@@ -61,18 +61,18 @@ header-includes:
   - Behavioral data to estimate **ex-post** WTP
   - Travel cost, averting behavior, hedonic price
   - Pro: based on **actual** choices
-  - Con (?): need a **behavioral model** in which to analyze choices
+  - Con (?): need a **behavioural model** in which to analyze choices
 
-## Behavioral Models
+## Behavioural Models
 
-- Our goal is to define a behavioral process generating agent's choice
+- Our goal is to define a behavioural process generating agent's choice
 
 - Let agent face choice among set of options (products, actions, etc.)
   - What leads agent to choose one?
   
 - Let some factors ($x$) be observed by researcher, and some not ($\epsilon$)
 
-- Factors relate to agent choice through a **behavioral process**:
+- Factors relate to agent choice through a **behavioural process**:
 
 $$y = h(x, \epsilon)$$
 
@@ -90,7 +90,7 @@ $$P(y | x) = \text{Prob}(\epsilon \quad \text{s.t.} \quad h(x, \epsilon) = y)$$
 $$P(y | x) = \int I[h(x, \epsilon) = y] f(\epsilon) d\epsilon$$
 
 - where $I[h(x, \epsilon) = y] =1$ when statement in brackets is true
-- Integral of behavioral process indicator over all possible values of unobservables
+- Integral of behavioural process indicator over all possible values of unobservables
 
 ## Evaluating the Choice Probability
 
@@ -196,7 +196,7 @@ P_{ni} & = P(U_{ni} > U_{nj}, \forall j \neq i) \\
 ## Logit
 
 - Assumes $\epsilon_{nj}$ distributed iid extreme value
-$$ \text{PDF:} \quad f(\epsilon_{nj}) = e^{-\epsilon_{nj}} e^{-e^{-\epsilon_{nj}}}, \quad \text{CDF:} \quad F(\epsilon_{nj}) = 1 - e^{-e^{\epsilon_{nj}}}$$
+$$ \text{PDF:} \quad f(\epsilon_{nj}) = e^{-\epsilon_{nj}} e^{-e^{-\epsilon_{nj}}}, \quad \text{CDF:} \quad F(\epsilon_{nj}) = e^{-e^{-\epsilon_{nj}}}$$
 - Note: if $\epsilon$'s are iid EV, then $\epsilon_{nji}^{*} = \epsilon_{nj} - \epsilon_{ni}$ is distributed logistic:
 $$F(\epsilon_{nji}^{*}) = \frac{e^{\epsilon_{nji}^{*}}}{1+{\epsilon_{nji}^{*}}}$$
 
@@ -353,7 +353,7 @@ $$ \hat{P}_{ni}= \frac{1}{R} \sum_{r=1}^{R} P_{ni}(\beta^r)$$
 
 - As before, insert simulated $\hat{P}_{ni}$ into log-likelihood:
 
-$$SLL = \sum_{n=1}^{N} \sum_{j=1}^{J} y_{nj} \ln \hat{P}_{ni}$$
+$$SLL(\Theta) = \sum_{n=1}^{N} \sum_{j=1}^{J} y_{nj} \ln \hat{P}_{ni}$$
 
 - where $y_{nj} = 1$ if $n$ chose $j$ and zero otherwise
 
@@ -394,7 +394,7 @@ U_{ijt} & = V_{ijt} + \epsilon_{ijt} \\
 - Cost s.t. $i$ indifferent b/w travelling and avoiding cost:
 $$c_{ijt}* = \frac{1}{\beta_{1}} [(\beta_{2} + \eta_{i})e_{jt} + \beta_{3} x_{ijt} + ... + (\epsilon_{ijt}-\epsilon_{i0t})]$$
 - MWTP for one more species, assuming $\eta_{i}\sim N(0,\sigma)$: 
-$$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial d_{jt}} = \frac{\hat{\beta_{2}}}{\hat{\beta_{1}}} + \xcancel{\frac{\hat{\eta_{i}}}{\hat{\beta_{1}}}}}$$
+$$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial e_{jt}} = \frac{\hat{\beta_{2}}}{\hat{\beta_{1}}} + \xcancel{\frac{\hat{\eta_{i}}}{\hat{\beta_{1}}}}}$$
 
 ## Implementation
 
