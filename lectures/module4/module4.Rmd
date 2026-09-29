@@ -59,7 +59,7 @@ header-includes:
 
 - **Revealed preferences**
   - Behavioral data to estimate **ex-post** WTP
-  - Travel cost, averting behavior, hedonic price
+  - Travel cost, averting behavior
   - Pro: based on **actual** choices
   - Con (?): need a **behavioural model** in which to analyze choices
 
@@ -419,11 +419,9 @@ $$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial e_{jt}} = \frac{\hat{\beta_{2}}}
 \large Why is WTP for Environmental Quality Low in Developing Countries?
 
 ## Housekeeping
-
-- Free lecture (Oct 10)
-  - Choose one: 1) firms, 2) migration, 3) policy (guest lecture)
+- Research Proposal: first draft due on Monday
 \vfill
-- Research Proposal: first draft due one week from Thursday
+- I will assign your peer reviews on Monday night
 \vfill
 - All assignments have detailed instructions and rubric
 \vfill
@@ -443,7 +441,6 @@ $$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial e_{jt}} = \frac{\hat{\beta_{2}}}
 \vfill
 - Revealed Preferences: very few!
   - WTP for clean water: Kremer et al. (2011) ${\color{red} \leftarrow today}$
-  - WTP for clean air: Ito and Zhang (2020)
   - \textcolor{red}{WTP for biodiversity: ???}
 
 ## Kremer et al. (2011): WTP for Clean Water in Kenya
@@ -627,7 +624,9 @@ $$P(y_{ijt}|X) = \int_{\beta} \rho_{ijt}f(\beta)d\beta$$
 - Households value clean water by willing to walk 14 extra minutes
 
 - Average hh takes 48 trips per week (see Descriptive Stats)
+
 - Total extra minutes per year = 14 x 48 x 52 = 35,078 minutes
+
 - Assuming 8-hour workday $\rightarrow$ **mean value of clean water is 73 workdays**
   - Note: in paper, it is 32.4 workdays!
 
@@ -636,10 +635,12 @@ $$P(y_{ijt}|X) = \int_{\beta} \rho_{ijt}f(\beta)d\beta$$
 **Survey evidence**
 
 - Subset of 104 respondents
-- Contingent valuation: are you WTP \$5 to walk 1 less minute? \$10?, etc
+- Contingent valuation: would you pay 500 shillings/year for spring protection?
+- Time value: would you walk 1 extra minute for protection? 2 minutes?, etc.
 - Divide WTP (in terms of time) by money value of time
 - Regress time value on household characteristics, and predict on full sample
 - Mean value of time = \$USD 0.088 for 8-hr workday
+- Limitations?
 
 \vfill
 
