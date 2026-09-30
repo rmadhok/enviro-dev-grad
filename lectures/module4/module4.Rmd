@@ -426,6 +426,8 @@ $$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial e_{jt}} = \frac{\hat{\beta_{2}}}
 - All assignments have detailed instructions and rubric
 \vfill
 - Start selecting replication paper
+\vfill 
+- JEEP Seminar on Oct 5th at 12:30pm in Ruttan 119
 
 ## WTP for Environment Quality in LMICs
 
@@ -458,7 +460,7 @@ $$MWTP=\boxed{\frac{\partial c_{ijt}*}{\partial e_{jt}} = \frac{\hat{\beta_{2}}}
 
 ## Spring Protection
 
-- Spring water is crucial drinking water source in Africa
+- Spring water is crucial drinking water source in Africa (43\% of population)
   - But vulnerable to contamination when people dip vessels
   - Runoff introduces animal/human waste
 \vfill
@@ -517,11 +519,11 @@ knitr::include_graphics(
 - Treatment: 184 randomly selected for protection
   - 1,345 households selected that use springs
 \vfill
-- 7-8 households from each spring select from ``user list''
+- 7-8 households from each spring selected from ``user list''
 \vfill
 - Phased design: all springs eventually protected
   - Round I (Jan-Apr 2005); 47 springs, 350 households
-  - Round II (Apr-Nov 2005); 46 springs; 349 households
+  - Round II (Aug-Nov 2005); 46 springs; 349 households
   - Round III (2005-2006); 91 springs; 685 households
 
 ## Data Collection
@@ -542,7 +544,7 @@ knitr::include_graphics(
 $$W_{jt'}^{SP} = \alpha_{t} + \phi_{1}T_{jt} + X_{j}^{SP'}\phi_{2} + (T_{jt} \cdot X_{j}^{SP})'\phi_{3} + \epsilon_{jt}$$
   - where $W_{jt}$ is water quality for spring $j$ at time $t\in {0,1,2,3}$
   - $T_{jt}$ is treatment status (=1 after protection)
-  - $\phi$ = impact of spring protection on water quality
+  - $\phi_1$ = impact of spring protection on water quality
 \vfill
 - Impact on health
 $$Y_{ijt} = \alpha_{i} + \alpha_{t} + \phi_{1} T_{jt} + X_{ij}'\phi_{2} + (T_{jt} \cdot X_{ij})'\phi_{3} + u_{ij} + \epsilon_{ijt}$$
