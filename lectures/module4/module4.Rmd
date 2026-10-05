@@ -715,9 +715,11 @@ $$ \text{Total WTP/death averted}= \text{10.1 workdays} \times \text{862 cas
 
 ## Housekeeping
 
-- First draft due one week from today
+- First draft due at midnight
 
-- Select your replication paper
+- I will assign peer reviews tomorrow
+
+- See instructions on github
 
 <!-- ## Today's lecture -->
 
@@ -751,7 +753,7 @@ knitr::include_graphics(
 \vfill
 - **Revealed preference** $MWTP_{e}$ assumes agent knows payoffs
   - Misinformation common in developing countries
-  - Due to literacy, education, information access, state capacity, etc.
+  - Due to literacy, education, information access, etc.
 
 ## Credit Market Failures
 
@@ -764,23 +766,15 @@ knitr::include_graphics(
 \vfill
 - **Determinants of liquidity therefore confound measured $MWTP_{e}$**
 
-## Missing Risk Markets
+<!-- ## Missing Risk Markets -->
 
-- Lower $MWTP_{e}$ if payoffs are uncertain and insurance unavailable
-\vfill
-- Worse EQ can increase var(Y)
-\vfill
-- Missing risk markets $\uparrow$ exposure to risk and $\downarrow$ measured $MWTP_{e}$
-  - Liquidity: prioritize income for emergencies, instead of clean water
-  - Discounting: undervalue investment in EQ because uncertain about whether will be able to enjoy benefits (discount future more heavily)
-
-## Evidence on the effect of market failures on MWTP
-
-- What is the ideal experiment?
-
-- How do you distinguish between measured and actual $MWTP_{e}$?
-
-- Would random variation help?
+<!-- - Lower $MWTP_{e}$ if payoffs are uncertain and insurance unavailable -->
+<!-- \vfill -->
+<!-- - Worse EQ can increase var(Y) -->
+<!-- \vfill -->
+<!-- - Missing risk markets $\uparrow$ exposure to risk and $\downarrow$ measured $MWTP_{e}$ -->
+<!--   - Liquidity: prioritize income for emergencies, instead of clean water -->
+<!--   - Discounting: undervalue investment in EQ because uncertain about whether will be able to enjoy benefits (discount future more heavily) -->
 
 ##
 
@@ -853,9 +847,8 @@ $$u(c_0) - u(c_0 - P^* + {\color{red} L}) = \sum_{t=1}^{T} \delta^t \left[ u(c_t
 2. Randomize access to credit $\overline{C}$ \hfill $\frac{\partial P^*}{\partial \overline{C}} > 0$
     - Randomize into \( N \) payments of size \( r_t \) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial r_t} < 0$
 
-    - Randomize attention to costs \( \theta_c \) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial \theta_c} < 0$
+    - Randomize attention to future costs \( \theta_c \) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial \theta_c} < 0$
 
-    - Measure time-inconsistency (TI) \hfill $\frac{\partial^2 P^*}{\partial \overline{C} \partial TI} > 0$
 
 
 ## Research Design: Cross-Randomize Credit and Attention
@@ -878,7 +871,7 @@ knitr::include_graphics(
   1. Pay by 12 weekly deadlines
   2. Pay by 3 monthly deadlines
   
-- SMS reminders if miss deadlines
+- SMS reminders if miss deadlines. Field staff takes back stove
 
 - Interest rate of 1.16\% per month, 14.8\% per year
 
@@ -926,6 +919,7 @@ knitr::include_graphics(
 - Benefits
   - Generates **incentive-compatible** behavior! Why?
   - Adoption is random, conditional on WTP
+  - Implication: use random price as an IV for adoption
 
 \vfill
 **BDM mechanism elecits WTP AND generates random stove adoption**
@@ -945,7 +939,7 @@ knitr::include_graphics(
 
 ## Yet, demand is low
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center"}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "55%", fig.align = "center"}
 
 knitr::include_graphics(
                         path = "assets/bd2022_fig7.png",
@@ -953,6 +947,8 @@ knitr::include_graphics(
                         )
 
 ```
+- Average WTP: $12
+- Breakeven demand: WTP to recover cost savings
 
 ## No evidence of inattention to energy savings!
 
@@ -978,21 +974,34 @@ knitr::include_graphics(
 - credit increases WTP by \$13 (104\% relative to control)
 <!-- - credit push demand curve to breakeven point (i.e. use savings to pay for stove) -->
 
-## Other Reasons why WTP is low
+## Other Results
 
-- Information access: Baylis et al. (2024), Jalan and Somanathan (2008), Bennear et al. (2013)
-\vfill
-- Credit: Ben-Yishay et al. (2017)
-\vfill
-- Property rights: Ali et al. (2014), Abman and Carney (2020), Bellemare et al. (2018), Noack and Costello (2024)
+- Attention to future benefits x credit has no impact
+
+- Attention to future costs reduces impact of credit on WTP by $4
+
+- Inattention contributes 1/3 of the total impact of credit
+
+- No evidence of concentration bias
+
+<!-- ## Other Reasons why WTP is low -->
+
+<!-- - Information access: Baylis et al. (2024), Jalan and Somanathan (2008), Bennear et al. (2013) -->
+<!-- \vfill -->
+<!-- - Credit: Ben-Yishay et al. (2017) -->
+<!-- \vfill -->
+<!-- - Property rights: Ali et al. (2014), Abman and Carney (2020), Bellemare et al. (2018), Noack and Costello (2024) -->
 
 ## Discussion
 
-- Market frictions affects many things $\rightarrow$ endogeneity
+- Credit relaxes one constraint (liquidity) while creating another (future costs less salient)
 
-- Partial vs. general equilibrium 
+- Partial vs. general equilibrium
+  - Scaling the intervention could increase demand and price of stove
 
-- Cannot separate measurement from actual distortions
-  - Compare across methods more/less affected by frictions?
+- Extensive margin and rebound effects
+
+- Breakeven benchmark assumes known discount factor
+
 
 
