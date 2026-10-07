@@ -60,6 +60,20 @@ $$MWTP_{e} = \frac{\partial c_{e}}{\partial \Delta e}$$
 - What if $\frac{\partial c_{e}}{\partial \Delta e}$ too high?
   - State capacity and monitoring/enforcement costs
 
+
+## 
+\centering
+\Huge Lecture 9
+
+\large Environmental Policy Design in LMICs
+
+## Housekeeping
+
+- Peer reviews are assigned
+  - Due Oct 14
+
+- Vote for Oct 19 lecture
+
 ## Today
 
 - **Guiding question:** How do we design optimal environmental policy in LMICs?
@@ -148,39 +162,6 @@ knitr::include_graphics(
 - Evidence of auditor shopping: Plants pay $\approx$ INR 24,000 (\$300)
   - Significantly less than true costs of conducting audit
 
-## Experimental Design: N=473 plants
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
-
-knitr::include_graphics(
-                        path = "assets/duflo2013_fig5.png",
-                        auto_pdf = TRUE
-                        )
-
-```
-
-## 
-\centering
-\Huge Lecture 9
-
-\large Environmental Policy Design in LMICs
-
-<!-- ## Housekeeping -->
-
-<!-- - First draft due on Thursday -->
-<!--   - Peer review due one week later (2 pages) -->
-<!-- \vfill -->
-<!-- - Proposal presentation (Oct 15th and 17th) -->
-<!--   - Consider drafting it as you write your first draft -->
-<!--   - Rubric added in github -->
-<!-- \vfill -->
-<!-- - Replication (3 pages, due Oct 21st) -->
-<!-- \vfill -->
-<!-- - Minor syllabus updates -->
-<!--   - State capacity in-class presentation -->
-<!-- \vfill -->
-<!-- - Migration lecture readings will be posted this week -->
-
 ## Model: Set Up
 
 - **Three Players**: plant, auditor, and  regulator.
@@ -232,7 +213,7 @@ $$w - a + E[V(\hat{p}|p)]$$
 
 - Reviews reports $\hat{p}$ and may impose $f$ on plant or disbar auditor
 
-- Let $q$ = probability regulator observes true $p$ (backchecks)
+- Let $q$ = probability regulator observes true $p$
 
 - Decide whether to impose $f$
 
@@ -284,7 +265,8 @@ Unique subgame-perfect equilibrium with regulation:
 ## Random Assignment of Auditors
 
 - **Flat fee:** Payment unconditional on report outcomes: $w({\hat{p}|p})=w(p)$
-  - Plant cannot bribe auditor, nor can they refuse to pay
+  - Plant cannot condition payment on auditor report
+  - Nor can they refuse to pay
 
 - Auditors only consider reputation $\rightarrow$ increase in $q$ for plants to abate is smaller
 
@@ -318,10 +300,22 @@ Unique subgame-perfect equilibrium with regulation:
 
 - The equilibrium shifts towards increased compliance and truthful reporting
 
+## Experimental Design: N=473 plants
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, out.width = "90%", fig.align = "center"}
+
+knitr::include_graphics(
+                        path = "assets/duflo2013_fig5.png",
+                        auto_pdf = TRUE
+                        )
+
+```
+
 ## Data
 
 - **Audit Reports (2009 & 2010)**: water and air pollution
    - Collected from auditors in both treatment and control groups
+   - Scheduled in advance
 \vfill
 - **Backchecks**: independent *unannounced* verification of pollution levels
    - Conducted randomly on 20% of treatment plants in 2009 and 2010

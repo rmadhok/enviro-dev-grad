@@ -715,11 +715,14 @@ $$ \text{Total WTP/death averted}= \text{10.1 workdays} \times \text{862 cas
 
 ## Housekeeping
 
-- First draft due at midnight
+- Remaining paper presentations
+
+- Proposal first draft due at midnight
 
 - I will assign peer reviews tomorrow
+  - See instructions on github
 
-- See instructions on github
+- JEEPS Seminar at 12:30pm today
 
 <!-- ## Today's lecture -->
 
