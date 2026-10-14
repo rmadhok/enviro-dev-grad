@@ -375,19 +375,13 @@ knitr::include_graphics(
 
 ## Housekeeping
 
-- Presentation order next week (30 mins)
-  - **Oct 15:** 1) Matt B 2) Jovin L 3) Ryan M
-  - **Oct 17:** 1) Gustavo M 2) Giang T 3) Sarah W
-\vfill
-- Peer review due Thursday at midnight
+- Peer review due at midnight
   - Remember to give **constructive** criticism + **suggestions**
-  - Look at instructions in assignment folder on github!
   - Submit through Canvas (not email)
-  - I will send it to authors by Friday afternoon
-
 \vfill
-- Thursday: migration (1 hour), future research directions (30 mins)
-  - Migration readings posted on syllabus (no presentation)
+- Replication due Oct 19th
+\vfill
+- Monday's reading is posted
 
 ## Back to Political Economy
 
@@ -464,7 +458,7 @@ knitr::include_graphics(
 - **Elections:** party, gender, age, occupation, education
   - **farmer politician** = agriculture occuption (18\% of sample)
 \vfill
-- **Deforestation:** Global forest change
+- **Deforestation:** Global forest change (Hansen 2013)
   - Number of deforestation pixels in municipality-year
 \vfill
 - **Land use:** MapBiomas
@@ -508,6 +502,8 @@ $$Y_{it}-Y_{i2004} = \sum_{\tau=2001}^{\tau=2016}\beta_{\tau}P_{it} + \sum_{\tau
 
 - $\beta_{\tau}$: change in environment b/w $t$ and 2004 in farmer vs. non-farmer places
 - Prediction: $\beta_{t}=0 \quad \forall \tau<2004$, $\beta_{t}<0 \quad \forall \tau>2004$
+- Why no municipality FEs?
+- How is this different from difference-in-differences?
 
 ## Results: Event Study
 ```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
@@ -581,8 +577,6 @@ knitr::include_graphics(
 - Limiting illegal rents from helping special interest groups can break the link between local politics and environmental degradation
 
 - But, Moffette et al. (2021) find no effect of deforestation alert technology
-
-- Alternative stories?
 
 ## Back to Political Economy
 
@@ -678,18 +672,40 @@ knitr::include_graphics(
 
 ```
 
-## Determinants of Mayor Verification
+## Empirical Strategy: Municipality-Level Effects
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "70%", fig.align = "center"}
+$$
+y_{mdt} ={} \beta^L (Post_t \times Loc_m)
++ \beta^N (Post_t \times Nat_m)
++ \beta^{LN} (Post_t \times Loc_m \times Nat_m)
++ \gamma_m + \gamma_{dt} + \varepsilon_{mdt}
+$$
+\vfill
+
+- $\beta^L$: Effect of informing **local authorities only**, relative to control
+- $\beta^N$: Effect of informing **national authorities only**, relative to control
+- $\beta^{LN}$: Effect of informing **both authorities**, relative to control
+
+\vfill
+
+- **Outcome:** Share of mined area without a legal title
+- **Fixed effects:** Municipality and department $\times$ year
+
+## Municipality Level Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "60%", fig.align = "center"}
 
 knitr::include_graphics(
-                        path = "assets/saavedra2024_fig3.png",
+                        path = "assets/saavedra2024_fig9.png",
                         auto_pdf = TRUE
                         )
 
 ```
+- 4.47ppt reduction in illegal mining in treated municipalities
+- Extremely cost effective: USD 229 million net benefits
+- Why no impact on deforestation?
 
-## Empirical Strategy
+
+## Empirical Strategy: grid cell effects + spillovers
 
 - Three locations within treated groups: 1) locations disclosed in letters, 2) neighbors of disclosed points, 3) locations further away from disclosed point
 
@@ -725,17 +741,6 @@ knitr::include_graphics(
 
 ```
 
-## Results: No impact on other outcomes
-```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "90%", fig.align = "center"}
-
-knitr::include_graphics(
-                        path = "assets/saavedra2024_fig6.png",
-                        auto_pdf = TRUE
-                        )
-
-```
-- No impact on deforestation. Why?
-
 ## Mechanisms: endline survey
 ```{r, echo = FALSE, message = FALSE, warning = FALSE,  out.width = "100%", fig.align = "center"}
 
@@ -745,7 +750,7 @@ knitr::include_graphics(
                         )
 
 ```
-- Increase in illegal mining investigations w/ National mining authority (col 2)
+- Increase in illegal mining joint investigations w/ National authority (col 2)
 - Increase in hard enforcement (col 3-6)
 
 ## Discussion
@@ -753,6 +758,8 @@ knitr::include_graphics(
 - Improved state capacity $\downarrow$ illegal activity
 
 - Thoughts?
+  - Gridded deforestation
+  - Information vs. punishment mechanisms
 
 ## Political Economy of the Environment
 
